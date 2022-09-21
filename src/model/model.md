@@ -1,4 +1,0 @@
-- 3 main actors
-    - Service Consumer (end-user or service provider)
-    - Service Vendor (might be a special case of service provider)
-    - Service Provider

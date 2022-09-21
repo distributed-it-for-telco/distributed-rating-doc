@@ -1,4 +1,16 @@
-# Contexte
+# Rationale
+
+## Context
+
+IPCEI CIS WP2
+- [Important Projects of Common European Interest](https://competition-policy.ec.europa.eu/state-aid/legislation/modernisation/ipcei_en)
+- Cloud Infrastructure and Services
+- Work Package #2
+- Orange submission: open-source and distributed Core Commerce for IT
+
+## Value proposition
+
+> TODO translate to English
 
 - Dans un écosystème complexe de service et/ou dans un contexte 5G, la valorisation de l'usage des services est fortement complexifiée :
     - les fournisseurs de service ne sont plus ceux qui sont au contact du client ou ceux qui facturent le client, aggrégateurs, marketplaces...

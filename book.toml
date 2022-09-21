@@ -1,0 +1,6 @@
+[book]
+authors = ["Yann Cardon"]
+language = "en"
+multilingual = false
+src = "src"
+title = "IPCEI CIS / WP02 / Distributed Rating for Telco"
