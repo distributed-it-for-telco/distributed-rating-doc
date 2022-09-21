@@ -1,2 +1,3 @@
 # distributed-rating-doc
-Distributed rating prototype documentation
+
+Distributed-Rating prototype documentation
