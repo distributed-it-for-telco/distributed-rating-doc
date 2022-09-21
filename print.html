@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="rationale.html"><strong aria-hidden="true">1.</strong> Rationale</a></li><li class="chapter-item expanded "><a href="requirements.html"><strong aria-hidden="true">2.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="model.html"><strong aria-hidden="true">3.</strong> Model</a></li><li class="chapter-item expanded "><a href="solution-wasmcloud.html"><strong aria-hidden="true">4.</strong> Solutions - wasmCloud</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rationale.html">Rationale</a></li><li class="chapter-item expanded affix "><li class="part-title">functional</li><li class="chapter-item expanded "><a href="requirements.html"><strong aria-hidden="true">1.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="model.html"><strong aria-hidden="true">2.</strong> Model</a></li><li class="chapter-item expanded affix "><li class="part-title">technical</li><li class="chapter-item expanded "><a href="wasmcloud.html"><strong aria-hidden="true">3.</strong> wasmCloud</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">4.</strong> Architecture</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -277,7 +277,7 @@
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="solutions---wasmcloud"><a class="header" href="#solutions---wasmcloud">Solutions - wasmCloud</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="wasmcloud-technology"><a class="header" href="#wasmcloud-technology">wasmCloud technology</a></h1>
 <p><img src="https://cosmonic.com/images/blogs/2022/wasmcloud-from-edge-to-cloud.png" alt="" /></p>
 <h2 id="pros--cons"><a class="header" href="#pros--cons">Pros &amp; Cons</a></h2>
 <p>wasmCloud pro &amp; cons of in the context of this prototype</p>
@@ -351,6 +351,30 @@
 <li><a href="https://wasmcloud.com/blog/wasmcloud_third_anniversary/">Reflections on Three Years of wasmCloud, Kevin Hoffman</a></li>
 <li><a href="https://wasmcloud.com/blog/webassembly_components_and_wasmcloud_actors_a_glimpse_of_the_future/">WebAssembly Components and wasmCloud Actors: A Glimpse of the Future, Taylor Thomas</a></li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="architecture"><a class="header" href="#architecture">Architecture</a></h1>
+<h2 id="components"><a class="header" href="#components">components</a></h2>
+<ul>
+<li>
+<p>browser runtime</p>
+<ul>
+<li>javascript wasmCloud runtime deployed as javascript SDK</li>
+</ul>
+</li>
+<li>
+<p>user ident/authent</p>
+<ul>
+<li>OIDC / OAuth</li>
+<li>expose service to recover browser runtime host-keys</li>
+</ul>
+</li>
+<li>
+<p>ngs</p>
+<ul>
+<li>NATS network</li>
+</ul>
+</li>
+</ul>
+<p><img src="./architecture.drawio.svg" alt="architecture" /></p>
 
                     </main>
 
