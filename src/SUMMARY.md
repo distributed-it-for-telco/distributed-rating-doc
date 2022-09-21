@@ -1,6 +1,13 @@
 # Summary
 
-- [Rationale](./rationale.md)
+[Rationale](./rationale.md)
+
+# functional
+
 - [Requirements](./requirements.md)
 - [Model](./model.md)
-- [Solutions - wasmCloud](./solution-wasmcloud.md)
+
+# technical
+
+- [wasmCloud](./wasmcloud.md)
+- [Architecture](./architecture.md)
