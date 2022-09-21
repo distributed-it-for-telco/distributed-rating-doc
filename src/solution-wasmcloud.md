@@ -1,8 +1,10 @@
-## Solutions - wasmCloud
+# Solutions - wasmCloud
 
 ![](https://cosmonic.com/images/blogs/2022/wasmcloud-from-edge-to-cloud.png)
 
-# wasmCloud pros & cons for this prototype
+## Pros & Cons
+
+wasmCloud pro & cons of in the context of this prototype
 
 - __pros__
     - robust and ubiquous connectivity, network mesh over IP (inherited from NATS)
@@ -27,8 +29,7 @@
 - __recommandations for this prototype__
     - use wasmCloud "at the egde", do not try to implement the whole solution with wasmCloud
 
----
-# wasmCloud main concepts
+## Main concepts
 
 concept               | caracteristics
 ---                   | ---
@@ -41,17 +42,16 @@ interface             | functionnal interface of an actor / capability
 
 ![dashboard](https://wasmcloud.com/images/blogs/ngs-global/dashboard.png)
 
----
-# Resources
+## Resources
 
-## main sites
+### main sites
 
 - [wasmcloud.com](https://wasmcloud.com/) - links, articles
 - [wasmcloud.dev](https://wasmcloud.dev/) - product documentation
 - [cosmonic.com](https://cosmonic.com/) - the company that supports the opensource
 - [nats.io](https://nats.io)
 
-## documentation and trainings
+### documentation and trainings
 
 - [wasmCloud doc](https://wasmcloud.dev/overview/)
 - [NATS doc](https://docs.nats.io/)
@@ -59,7 +59,7 @@ interface             | functionnal interface of an actor / capability
 - [Linux Foundation: WebAssembly Actors: From Cloud to Edge](https://training.linuxfoundation.org/training/webassembly-actors-from-cloud-to-edge-lfd134x/)
 
 
-## articles
+### articles
 
 - [Reflections on Three Years of wasmCloud, Kevin Hoffman](https://wasmcloud.com/blog/wasmcloud_third_anniversary/)
 - [WebAssembly Components and wasmCloud Actors: A Glimpse of the Future, Taylor Thomas](https://wasmcloud.com/blog/webassembly_components_and_wasmcloud_actors_a_glimpse_of_the_future/)
