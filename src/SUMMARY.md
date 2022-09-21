@@ -2,12 +2,12 @@
 
 [Rationale](./rationale.md)
 
-# functional
+# Functional
 
 - [Requirements](./requirements.md)
 - [Model](./model.md)
 
-# technical
+# Technical
 
 - [About wasmCloud](./about-wasmcloud.md)
 - [Architecture](./architecture.md)
