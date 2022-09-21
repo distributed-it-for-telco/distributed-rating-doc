@@ -6,7 +6,7 @@
     - vendors, aggregators, marketplaces, dynamic, as-a-service, recharging...
 
 - establish a shared trust between the 3 main actors (Service Provider, Vendor and Consumer)
-    - being able to distribute proofs (of usage, of subscription...)
+    - being able to distribute (crypto) proofs _of usage, of subscription..._
     - "good enought" security model, especially on the users devices
 
 ## Use cases
