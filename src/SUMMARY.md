@@ -9,5 +9,5 @@
 
 # technical
 
-- [wasmCloud](./wasmcloud.md)
+- [About wasmCloud](./about-wasmcloud.md)
 - [Architecture](./architecture.md)

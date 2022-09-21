@@ -1,4 +1,4 @@
-# wasmCloud technology
+# About wasmCloud
 
 ![](https://cosmonic.com/images/blogs/2022/wasmcloud-from-edge-to-cloud.png)
 
