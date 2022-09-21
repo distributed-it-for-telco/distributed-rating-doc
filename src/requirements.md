@@ -1,6 +1,6 @@
 # Requirements
 
-## Main problematics
+## main problematics
 
 - build a model that can support all scenarios of an open service ecosystem
     - vendors, aggregators, marketplaces, dynamic, as-a-service, recharging...
@@ -9,10 +9,16 @@
     - being able to distribute proofs (of usage, of subscription...)
     - "good enought" security model, especially on the users devices
 
+## use cases
 
-## Workshop sessions
+Some base examples, they could be combined
+- clients sharing the same bucket for a given service (eg. Friends and Family offers)
+- vendors reselling bundles of services with a different tarification (eg. 30% on Netflix + OCS bundle)
+- composite offer (eg. free dataplan for watching VOD service)
+- context dependant offers (eg. free videoconference while being at a special event)
+- sponsored services (eg. third party offering 20% coupons on VOD for two months)
 
-### 2022.09.16
+## workshop session 2022.09.16
 
 > TODO reintegrate in requirements, translate to English
 
