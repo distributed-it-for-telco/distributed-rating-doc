@@ -9,6 +9,8 @@
     - being able to distribute (crypto) proofs _of usage, of subscription..._
     - "good enought" security model, especially on the users devices
 
+- fraud detection mecanism
+
 ## Use cases
 
 Some base examples, they could be combined
@@ -21,21 +23,21 @@ Some base examples, they could be combined
 
 ## Workshop session 2022.09.16
 
-> TODO reintegrate in requirements, translate to English
+> TODO reintegrate in requirements
 
-- orientation service over-IP
+- over-IP orientation
 
-- decentraliser le moteur de règle
+- decentralize the rule engine
 
-- /!\ problématique de réconciliation > Fraude
-    - est-ce que ca implique forcément d'avoir un moteur centralisé ?
-        - pas forcément
-        - on peut faire du sampling pour "re-rater" coté serveur serveur pour vérifier qu'il n'y a pas de comportement suspect
+- /!\ reconciliation issue > Fraud
+    - does that necessarily imply having a centralized engine?
+    - not necessarily
+    - we can do sampling to "re-fail" on the server side to check that there is no suspicious behavior
 
-- rendre le système robuste au fait que le service vendor ne puisse plus "voir passer les flux"
+- make the system robust to the fact that the vendor service can no longer "see flows"
 
-- un service provider peut lui même être un service vendor (un aggregateur...)
+- a service provider can itself be a service vendor (an aggregator...)
 
-- appliquer le moteur d'évênement à quel evènement
+- apply the reting engine to which event
 
-- en "self-service", automatisable, sans entente prélalable humaine entre le service vendor et le service provider
+- in "self-service" mode, automatable, without prior human agreement between the service vendor and the service provider

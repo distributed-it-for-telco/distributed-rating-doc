@@ -10,21 +10,19 @@ IPCEI CIS WP2
 
 ## Value proposition
 
-> TODO translate to English
+- In a complex service ecosystem and/or 5G context, the rating of service usage is highly complex:
+    - service providers are no longer those who are in direct contact with the customer or those who invoice the customer, there are aggregators, marketplaces...
+    - the pricing rules for the usage of technical services may be different depending on the reseller (composite services, service bundles, discounts on purchase, on usage)
+    - even more: "à la carte" pricing for each customer
 
-- Dans un écosystème complexe de service et/ou dans un contexte 5G, la valorisation de l'usage des services est fortement complexifiée :
-    - les fournisseurs de service ne sont plus ceux qui sont au contact du client ou ceux qui facturent le client, aggrégateurs, marketplaces...
-        - les regles de tarification de l'usage des services techniques peut être différentes selon le revendeur (services composites, bundles de services, remises à l'achat, à l'usage)
-    - voire une tarification "à la carte" pour chaque client (ie. un catalogue tarifaire par client)
+- Rather than uploading raw usage data (~CDR), rated in a centralized rating engine system (or semi-distributed between the various partners who contribute to the final service provided to the customer), we propose to ditribute the rating process to the customer device and upload to the service vendor of usage tickets already valued
+    - each of the partners contributes to the specific pricing of the customer, the pricing is made directly at the same time as the consumption of the service
+    - to do a parallel with rights management: it is easier to have components that each carry their authorization model rather than applying the model externally to the entire system
+    - each partner brings (in the form of an agent) the valuation engine of his service, possibly configured / overloaded by a partner reusing this service
+    - "as code" rating engine approach rather than a fixed and parameterized system
 
-- Plutôt que de remonter des données brutes d'usage (~CDR), valorisées dans un système central (ou semi distribué entre les différents partenaires qui contribuent au service final rendu au client) on propose de déporté la valorisation au niveau du client et de remonter au service vendor des tickets d'usage déjà valorisés
-    - chacun des partenaires contribue au à la tarification spécifique du client, la tarification est faite directement en même temps que la consommation du service
-    - pour faire un // avec la gestion des droits : il est plus simple d'avoir des composants qui portent chacun leur modèle d'autorisation plutôt que d'appliquer de modèle de manière externe à l'ensemble du système
-    - chaque partenaite amène (sous forme d'agent) le moteur de valorisation de son service, éventuellement paramétré / surchargé par un partenaire réutlisant ce service
-    - moteur de rating "as code" plutôt qu'un système fixe et paramétré
+- Prerequisites for this scenario are: "reasonably secure" device environment, possibility of deploying code on this environment, ability to detect fraud
 
-- Prerequis a ce scenario : environnement device "raisonnabiement sécurisé", possibilité de déployer du code sur cet environnement
-
-- Orange propose un SDK à ses partenaires leur permettant d'intégrer simplement la valorisation du service dans l'application utilisée pour consommer le service
-    - le SDK est un runtime wasmcloud-js qui peut faire tourner du code (1 ou des agents wasmcloud) en charge de la valorisation
-    - l'application de consommation du service alimente le SDK avec des données d'usage
+- Orange offers an SDK to its partners allowing them to simply integrate the enhancement of the service into the application used to consume the service
+    - the SDK is a wasmcloud-js runtime that can run code (1 or wasmcloud agents) in charge of recovery
+    - the service consumer application feeds the SDK with usage data
