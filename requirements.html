@@ -163,6 +163,17 @@
 <p>fraud detection mecanism</p>
 </li>
 </ul>
+<h2 id="requirements-1"><a class="header" href="#requirements-1">Requirements</a></h2>
+<ul>
+<li>the solution 
+<ul>
+<li>cannot rely on DPI to identify trafic usage (cf. HTTP2/3/QUIC)</li>
+<li>is over-IP</li>
+<li>implement (or is frendly to) fraud detection mecanisms and is auditable</li>
+<li>does not require prior human agreement between the service vendor and the service provider (self-service)</li>
+</ul>
+</li>
+</ul>
 <h2 id="use-cases"><a class="header" href="#use-cases">Use cases</a></h2>
 <p>Some base examples, they could be combined</p>
 <ul>
@@ -172,38 +183,6 @@
 <li>context dependant offers (eg. free videoconference while being at a special event)</li>
 <li>sponsored services (eg. third party offering 20% coupons on VOD for two months)</li>
 <li>each client gets its personalized offer</li>
-</ul>
-<h2 id="workshop-session-20220916"><a class="header" href="#workshop-session-20220916">Workshop session 2022.09.16</a></h2>
-<blockquote>
-<p>TODO reintegrate in requirements</p>
-</blockquote>
-<ul>
-<li>
-<p>over-IP orientation</p>
-</li>
-<li>
-<p>decentralize the rule engine</p>
-</li>
-<li>
-<p>/!\ reconciliation issue &gt; Fraud</p>
-<ul>
-<li>does that necessarily imply having a centralized engine?</li>
-<li>not necessarily</li>
-<li>we can do sampling to &quot;re-fail&quot; on the server side to check that there is no suspicious behavior</li>
-</ul>
-</li>
-<li>
-<p>make the system robust to the fact that the vendor service can no longer &quot;see flows&quot;</p>
-</li>
-<li>
-<p>a service provider can itself be a service vendor (an aggregator...)</p>
-</li>
-<li>
-<p>apply the reting engine to which event</p>
-</li>
-<li>
-<p>in &quot;self-service&quot; mode, automatable, without prior human agreement between the service vendor and the service provider</p>
-</li>
 </ul>
 
                     </main>
