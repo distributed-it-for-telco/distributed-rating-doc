@@ -11,6 +11,14 @@
 
 - fraud detection mecanism
 
+## Requirements
+
+- the solution 
+    - cannot rely on DPI to identify trafic usage (cf. HTTP2/3/QUIC)
+    - is over-IP
+    - implement (or is frendly to) fraud detection mecanisms and is auditable
+    - does not require prior human agreement between the service vendor and the service provider (self-service)
+ 
 ## Use cases
 
 Some base examples, they could be combined
@@ -21,23 +29,3 @@ Some base examples, they could be combined
 - sponsored services (eg. third party offering 20% coupons on VOD for two months)
 - each client gets its personalized offer
 
-## Workshop session 2022.09.16
-
-> TODO reintegrate in requirements
-
-- over-IP orientation
-
-- decentralize the rule engine
-
-- /!\ reconciliation issue > Fraud
-    - does that necessarily imply having a centralized engine?
-    - not necessarily
-    - we can do sampling to "re-fail" on the server side to check that there is no suspicious behavior
-
-- make the system robust to the fact that the vendor service can no longer "see flows"
-
-- a service provider can itself be a service vendor (an aggregator...)
-
-- apply the reting engine to which event
-
-- in "self-service" mode, automatable, without prior human agreement between the service vendor and the service provider

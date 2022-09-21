@@ -24,4 +24,6 @@
     - where shoud the usage proof go ?
         - service vendor / provider / both
         - avoid proxies
-    
+    - similar / alternative approaches
+        - [Distributed IoT Online Rating – The Global Rating Grid @mavoco.com](https://www.mavoco.com/cmp-connenctivity-management-platform/connectivity-online-usage-controller/)
+        - are there research papers on the subject?
