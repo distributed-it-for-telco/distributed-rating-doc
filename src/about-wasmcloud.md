@@ -40,6 +40,7 @@ capability providers  | wasm payloads, stateful and attached to a node, offering
 links                 | declarative links between actors and capability providers
 interface             | functionnal interface of an actor / capability
 
+the wasmCloud dashboard
 ![dashboard](https://wasmcloud.com/images/blogs/ngs-global/dashboard.png)
 
 ## Resources
