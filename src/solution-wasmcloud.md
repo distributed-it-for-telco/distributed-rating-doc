@@ -14,11 +14,11 @@
     - polyglot platform (mostly Rust for now)
 
 - __cons__
-    - young technology (in the CNCF sandbox, quite active)
+    - young technology (in the CNCF sandbox, but quite active)
     - opinionated PaaS approach
         - no oob support from hyperscalers
     - wip on orchestration / observability
-    - hard to master development stack
+    - important learning curve on development stack
         - rust as main programming language
         - cannot (or difficult to) leverage on existing rust framework
         - sometimes cryptic error messages
