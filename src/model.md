@@ -24,7 +24,7 @@
 - payments
     - 3 types
         - µ-transaction: no billing, 1 usage = 1 __immediate__ payment
-        - billing: 1 usage = 1 __future__ payment on a bill
+        - post-paid: 1 usage = 1 __future__ payment on a bill
         - pre-paid: w/ bucket, 1 usage = 1 bucket update
     - in a 3-party interaction (user, vendor, provider)
         - either the provider has to trust the vendor to "recover user's paiments" 
@@ -47,17 +47,17 @@
 
 ### to be discussed
 
-    - entities modeling
-        - are Service Vendors also service providers?
-        - are service Vendors also service consumers?
-        - implementation note: instead of inheritance we can use traits
+- entities modeling
+    - are Service Vendors also service providers?
+    - are service Vendors also service consumers?
+    - implementation note: instead of inheritance we can use traits
 
-    - where shoud the usage proof go ?
-        - service vendor / provider / both
-        - avoid proxies
+- where shoud the usage proof go ?
+    - service vendor / provider / both
+    - avoid proxies
 
-    - similar / alternative approaches
-        - [Distributed IoT Online Rating – The Global Rating Grid @mavoco.com](https://www.mavoco.com/cmp-connenctivity-management-platform/connectivity-online-usage-controller/)
-        - are there research papers on the subject?
-        - Shine project third party use-cases
+- similar / alternative approaches
+    - [Distributed IoT Online Rating – The Global Rating Grid @mavoco.com](https://www.mavoco.com/cmp-connenctivity-management-platform/connectivity-online-usage-controller/)
+    - are there research papers on the subject?
+    - Shine (Orange internal project) third party use-cases
     
