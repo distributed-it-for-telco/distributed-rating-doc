@@ -170,30 +170,79 @@
 </ul>
 </li>
 <li>
-<p>to be discussed</p>
+<p>offers</p>
 <ul>
-<li>entities modeling
+<li>on usage</li>
+<li>pre-paid
 <ul>
-<li>are Service Vendors also service providers?</li>
-<li>are service Vendors also service consumers?</li>
-<li>implementation note: instead of inheritance we can use traits</li>
-</ul>
-</li>
-<li>where shoud the usage proof go ?
-<ul>
-<li>service vendor / provider / both</li>
-<li>avoid proxies</li>
-</ul>
-</li>
-<li>similar / alternative approaches
-<ul>
-<li><a href="https://www.mavoco.com/cmp-connenctivity-management-platform/connectivity-online-usage-controller/">Distributed IoT Online Rating – The Global Rating Grid @mavoco.com</a></li>
-<li>are there research papers on the subject?</li>
+<li>can an monthly subscription be seen as pre-paid?</li>
 </ul>
 </li>
 </ul>
 </li>
+<li>
+<p>payments</p>
+<ul>
+<li>3 types
+<ul>
+<li>µ-transaction: no billing, 1 usage = 1 <strong>immediate</strong> payment</li>
+<li>billing: 1 usage = 1 <strong>future</strong> payment on a bill</li>
+<li>pre-paid: w/ bucket, 1 usage = 1 bucket update</li>
 </ul>
+</li>
+<li>in a 3-party interaction (user, vendor, provider)
+<ul>
+<li>either the provider has to trust the vendor to &quot;recover user's paiments&quot; 
+<ul>
+<li>needs pre-agreement or a base of trusted vendors) <strong>DONT: incompatible w/ requirements</strong></li>
+</ul>
+</li>
+<li>either the vendor is paying the provider immediatly for the user's usage</li>
+<li>either the vendor has already bought a &quot;pre-paid bucket&quot; to the provider</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>B2B2C scenarios, bucket delegation</p>
+<ul>
+<li>the vendor buys pre-paid bucket to the provider
+<ul>
+<li>it can split it among it's users
+<ul>
+<li>user is paying the usage directly to the provider</li>
+</ul>
+</li>
+<li>or decide to have an other payment type (µ-payment, billing)
+<ul>
+<li>vendor is paying the usage to the provider</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="findings"><a class="header" href="#findings">findings</a></h3>
+<ul>
+<li>billing is a vendors responsibility, not a provider one</li>
+<li>it might be simplier (ie. support more scenarios) to always have a user&gt;vendor&gt;provider chain instead of a direct user&gt;provider relation</li>
+</ul>
+<h3 id="to-be-discussed"><a class="header" href="#to-be-discussed">to be discussed</a></h3>
+<pre><code>- entities modeling
+    - are Service Vendors also service providers?
+    - are service Vendors also service consumers?
+    - implementation note: instead of inheritance we can use traits
+
+- where shoud the usage proof go ?
+    - service vendor / provider / both
+    - avoid proxies
+
+- similar / alternative approaches
+    - [Distributed IoT Online Rating – The Global Rating Grid @mavoco.com](https://www.mavoco.com/cmp-connenctivity-management-platform/connectivity-online-usage-controller/)
+    - are there research papers on the subject?
+    - Shine project third party use-cases
+</code></pre>
 
                     </main>
 
