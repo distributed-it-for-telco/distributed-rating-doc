@@ -2,7 +2,7 @@
 
 ## Main problematics
 
-- build a model that can support all scenarios of an open service ecosystem
+- build a model that can support all scenarios of an open service ecosystem (B2B2X)
     - vendors, aggregators, marketplaces, dynamic, as-a-service, recharging...
 
 - establish a shared trust between the 3 main actors (Service Provider, Vendor and Consumer)
@@ -18,7 +18,10 @@
     - is over-IP
     - implement (or is frendly to) fraud detection mecanisms and is auditable
     - does not require prior human agreement between the service vendor and the service provider (self-service)
- 
+
+- optionnally, the solution should
+    - be compatible with a non reliable network (intermitent conncectivity, off-line mode)
+
 ## Use cases
 
 Some base examples, they could be combined
