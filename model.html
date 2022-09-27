@@ -186,7 +186,7 @@
 <li>3 types
 <ul>
 <li>µ-transaction: no billing, 1 usage = 1 <strong>immediate</strong> payment</li>
-<li>billing: 1 usage = 1 <strong>future</strong> payment on a bill</li>
+<li>post-paid: 1 usage = 1 <strong>future</strong> payment on a bill</li>
 <li>pre-paid: w/ bucket, 1 usage = 1 bucket update</li>
 </ul>
 </li>
@@ -229,20 +229,31 @@
 <li>it might be simplier (ie. support more scenarios) to always have a user&gt;vendor&gt;provider chain instead of a direct user&gt;provider relation</li>
 </ul>
 <h3 id="to-be-discussed"><a class="header" href="#to-be-discussed">to be discussed</a></h3>
-<pre><code>- entities modeling
-    - are Service Vendors also service providers?
-    - are service Vendors also service consumers?
-    - implementation note: instead of inheritance we can use traits
-
-- where shoud the usage proof go ?
-    - service vendor / provider / both
-    - avoid proxies
-
-- similar / alternative approaches
-    - [Distributed IoT Online Rating – The Global Rating Grid @mavoco.com](https://www.mavoco.com/cmp-connenctivity-management-platform/connectivity-online-usage-controller/)
-    - are there research papers on the subject?
-    - Shine project third party use-cases
-</code></pre>
+<ul>
+<li>
+<p>entities modeling</p>
+<ul>
+<li>are Service Vendors also service providers?</li>
+<li>are service Vendors also service consumers?</li>
+<li>implementation note: instead of inheritance we can use traits</li>
+</ul>
+</li>
+<li>
+<p>where shoud the usage proof go ?</p>
+<ul>
+<li>service vendor / provider / both</li>
+<li>avoid proxies</li>
+</ul>
+</li>
+<li>
+<p>similar / alternative approaches</p>
+<ul>
+<li><a href="https://www.mavoco.com/cmp-connenctivity-management-platform/connectivity-online-usage-controller/">Distributed IoT Online Rating – The Global Rating Grid @mavoco.com</a></li>
+<li>are there research papers on the subject?</li>
+<li>Shine (Orange internal project) third party use-cases</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 
