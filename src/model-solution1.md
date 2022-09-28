@@ -5,7 +5,7 @@ proposed solution (WIP)
 ## third party management
 
 - definitions
-    - service vendor: customer facing tier, manages the customer subscription, billing and payments
+    - service vendor: customer-facing tier, manages the customer subscription, billing and payments
     - service provider: provides a technical service, also acts as a service vendor in B2B2X scenarios
 
 ### basic case: the service vendor is the service provider
