@@ -25,10 +25,10 @@
 ## Use cases
 
 Some base examples, they could be combined
-- clients sharing the same bucket for a given service (eg. Friends and Family offers)
+- customers sharing the same bucket for a given service (eg. Friends and Family offers)
 - vendors reselling bundles of services with a different tarification (eg. 30% on Netflix + OCS bundle)
 - composite offer (eg. free dataplan for watching VOD service)
 - context dependant offers (eg. free videoconference while being at a special event)
 - sponsored services (eg. third party offering 20% coupons on VOD for two months)
-- each client gets its personalized offer
+- each customer gets its personalized offer
 
