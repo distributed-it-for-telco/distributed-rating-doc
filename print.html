@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rationale.html">Rationale</a></li><li class="chapter-item expanded affix "><li class="part-title">Functional</li><li class="chapter-item expanded "><a href="requirements.html"><strong aria-hidden="true">1.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="model.html"><strong aria-hidden="true">2.</strong> Model</a></li><li class="chapter-item expanded affix "><li class="part-title">Technical</li><li class="chapter-item expanded "><a href="about-wasmcloud.html"><strong aria-hidden="true">3.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">4.</strong> Architecture</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rationale.html">Rationale</a></li><li class="chapter-item expanded affix "><li class="part-title">Functional</li><li class="chapter-item expanded "><a href="requirements.html"><strong aria-hidden="true">1.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="model.html"><strong aria-hidden="true">2.</strong> Model</a></li><li class="chapter-item expanded "><a href="model-solution1.html"><strong aria-hidden="true">3.</strong> Solution 1</a></li><li class="chapter-item expanded affix "><li class="part-title">Technical</li><li class="chapter-item expanded "><a href="about-wasmcloud.html"><strong aria-hidden="true">4.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">5.</strong> Architecture</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -118,7 +118,10 @@
                                                 <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                                                                        
+                                                                        <a href="https://github.com/distributed-it-for-telco" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                                                
                     </div>
                 </div>
 
@@ -342,6 +345,31 @@
 </ul>
 </li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="solution-1"><a class="header" href="#solution-1">Solution 1</a></h1>
+<p>proposed solution (WIP)</p>
+<h2 id="third-party-management"><a class="header" href="#third-party-management">third party management</a></h2>
+<h3 id="basic-case-the-service-vendor-is-the-service-provider"><a class="header" href="#basic-case-the-service-vendor-is-the-service-provider">basic case: the service vendor is the service provider</a></h3>
+<p><img src="./sequence-3rdparty-basic.drawio.svg" alt="" /></p>
+<h3 id="complex-case-service-vendor-and-service-provider"><a class="header" href="#complex-case-service-vendor-and-service-provider">complex case: service vendor and service provider</a></h3>
+<ul>
+<li>key ideas
+<ul>
+<li>the users rating agent is a composite of service vendor and service provider rating agents</li>
+<li>end-user usage is uploaded to both service vendor and service provider</li>
+</ul>
+</li>
+</ul>
+<h4 id="service-subscription"><a class="header" href="#service-subscription">service subscription</a></h4>
+<p><img src="./sequence-3rdparty-complex-subscription.drawio.svg" alt="" /></p>
+<h4 id="service-usage"><a class="header" href="#service-usage">service usage</a></h4>
+<p><img src="./sequence-3rdparty-complex-usage.drawio.svg" alt="" /></p>
+<blockquote>
+<p>and what about provisionning?</p>
+</blockquote>
+<h2 id="counting-and-rating"><a class="header" href="#counting-and-rating">counting and rating</a></h2>
+<h3 id="prepaid--bucket-management"><a class="header" href="#prepaid--bucket-management">prepaid / bucket management</a></h3>
+<h3 id="post-paid"><a class="header" href="#post-paid">post-paid</a></h3>
+<h3 id="µ-payments"><a class="header" href="#µ-payments">µ-payments</a></h3>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="about-wasmcloud"><a class="header" href="#about-wasmcloud">About wasmCloud</a></h1>
 <p><img src="https://cosmonic.com/images/blogs/2022/wasmcloud-from-edge-to-cloud.png" alt="" /></p>
 <h2 id="pros--cons"><a class="header" href="#pros--cons">Pros &amp; Cons</a></h2>

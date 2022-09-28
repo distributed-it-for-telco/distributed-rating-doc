@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Architecture - IPCEI CIS / WP02 / Distributed Rating Engine</title>
+        <title>Solution 1 - IPCEI CIS / WP02 / Distributed Rating Engine</title>
                 
 
         <!-- Custom HTML head -->
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rationale.html">Rationale</a></li><li class="chapter-item expanded affix "><li class="part-title">Functional</li><li class="chapter-item expanded "><a href="requirements.html"><strong aria-hidden="true">1.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="model.html"><strong aria-hidden="true">2.</strong> Model</a></li><li class="chapter-item expanded "><a href="model-solution1.html"><strong aria-hidden="true">3.</strong> Solution 1</a></li><li class="chapter-item expanded affix "><li class="part-title">Technical</li><li class="chapter-item expanded "><a href="about-wasmcloud.html"><strong aria-hidden="true">4.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="architecture.html" class="active"><strong aria-hidden="true">5.</strong> Architecture</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rationale.html">Rationale</a></li><li class="chapter-item expanded affix "><li class="part-title">Functional</li><li class="chapter-item expanded "><a href="requirements.html"><strong aria-hidden="true">1.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="model.html"><strong aria-hidden="true">2.</strong> Model</a></li><li class="chapter-item expanded "><a href="model-solution1.html" class="active"><strong aria-hidden="true">3.</strong> Solution 1</a></li><li class="chapter-item expanded affix "><li class="part-title">Technical</li><li class="chapter-item expanded "><a href="about-wasmcloud.html"><strong aria-hidden="true">4.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">5.</strong> Architecture</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -120,7 +120,7 @@
                                                                         <a href="https://github.com/distributed-it-for-telco" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                                                                        <a href="https://github.com/distributed-it-for-telco/distributed-rating-doc/edit/main/src/architecture.md" title="Suggest an edit" aria-label="Suggest an edit">
+                                                                        <a href="https://github.com/distributed-it-for-telco/distributed-rating-doc/edit/main/src/model-solution1.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
                         
@@ -149,39 +149,43 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="architecture"><a class="header" href="#architecture">Architecture</a></h1>
-<h2 id="components"><a class="header" href="#components">components</a></h2>
+                        <h1 id="solution-1"><a class="header" href="#solution-1">Solution 1</a></h1>
+<p>proposed solution (WIP)</p>
+<h2 id="third-party-management"><a class="header" href="#third-party-management">third party management</a></h2>
+<h3 id="basic-case-the-service-vendor-is-the-service-provider"><a class="header" href="#basic-case-the-service-vendor-is-the-service-provider">basic case: the service vendor is the service provider</a></h3>
+<p><img src="./sequence-3rdparty-basic.drawio.svg" alt="" /></p>
+<h3 id="complex-case-service-vendor-and-service-provider"><a class="header" href="#complex-case-service-vendor-and-service-provider">complex case: service vendor and service provider</a></h3>
 <ul>
-<li>
-<p>browser runtime</p>
+<li>key ideas
 <ul>
-<li>javascript wasmCloud runtime deployed as javascript SDK</li>
-</ul>
-</li>
-<li>
-<p>user ident/authent</p>
-<ul>
-<li>OIDC / OAuth</li>
-<li>expose service to recover browser runtime host-keys</li>
-</ul>
-</li>
-<li>
-<p>ngs</p>
-<ul>
-<li>NATS network</li>
+<li>the users rating agent is a composite of service vendor and service provider rating agents</li>
+<li>end-user usage is uploaded to both service vendor and service provider</li>
 </ul>
 </li>
 </ul>
-<p><img src="./architecture.drawio.svg" alt="architecture" /></p>
+<h4 id="service-subscription"><a class="header" href="#service-subscription">service subscription</a></h4>
+<p><img src="./sequence-3rdparty-complex-subscription.drawio.svg" alt="" /></p>
+<h4 id="service-usage"><a class="header" href="#service-usage">service usage</a></h4>
+<p><img src="./sequence-3rdparty-complex-usage.drawio.svg" alt="" /></p>
+<blockquote>
+<p>and what about provisionning?</p>
+</blockquote>
+<h2 id="counting-and-rating"><a class="header" href="#counting-and-rating">counting and rating</a></h2>
+<h3 id="prepaid--bucket-management"><a class="header" href="#prepaid--bucket-management">prepaid / bucket management</a></h3>
+<h3 id="post-paid"><a class="header" href="#post-paid">post-paid</a></h3>
+<h3 id="µ-payments"><a class="header" href="#µ-payments">µ-payments</a></h3>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                                                    <a rel="prev" href="about-wasmcloud.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                                    <a rel="prev" href="model.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
+                                                    <a rel="next" href="about-wasmcloud.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
                         <div style="clear: both"></div>
                     </nav>
@@ -189,10 +193,13 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                                    <a rel="prev" href="about-wasmcloud.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                    <a rel="prev" href="model.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
+                                    <a rel="next" href="about-wasmcloud.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                             </nav>
 
         </div>
