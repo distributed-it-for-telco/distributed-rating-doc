@@ -8,7 +8,7 @@ proposed solution (WIP)
 
 - key ideas
     - usage rating is done client-side via a __rating agent__ deployed inside the service client app
-    - a rating agent also acts as an __authorization__ for consuming the service
+    - a rating agent also acts as an authorization for consuming the service
     - a rating agents is the implementation of a commercial offer subscibed by the client, it is managed like a contract
 
 - communication diagram
