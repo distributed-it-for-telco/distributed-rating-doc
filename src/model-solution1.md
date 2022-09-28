@@ -7,9 +7,11 @@ proposed solution (WIP)
 ### basic case: the service vendor is the service provider
 
 - key ideas
-    - usage rating is done client-side via a __rating agent__ deployed inside the service consumer app
+    - usage rating is done client-side via a __rating agent__ deployed inside the service client app
     - a rating agent also acts as an __authorization__ for consuming the service
-    - a rating agents is the implementation of a commercial offer subscibed by the client, it's managed like a contract
+    - a rating agents is the implementation of a commercial offer subscibed by the client, it is managed like a contract
+
+- communication diagram
 
 ![](./sequence-3rdparty-basic.drawio.svg)
 
