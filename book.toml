@@ -8,3 +8,4 @@ title = "IPCEI CIS / WP02 / Distributed Rating Engine"
 [output.html]
 git-repository-url = "https://github.com/distributed-it-for-telco"
 edit-url-template = "https://github.com/distributed-it-for-telco/distributed-rating-doc/edit/main/{path}"
+preferred-dark-theme = "light"
