@@ -227,12 +227,12 @@
 <h2 id="use-cases"><a class="header" href="#use-cases">Use cases</a></h2>
 <p>Some base examples, they could be combined</p>
 <ul>
-<li>clients sharing the same bucket for a given service (eg. Friends and Family offers)</li>
+<li>customers sharing the same bucket for a given service (eg. Friends and Family offers)</li>
 <li>vendors reselling bundles of services with a different tarification (eg. 30% on Netflix + OCS bundle)</li>
 <li>composite offer (eg. free dataplan for watching VOD service)</li>
 <li>context dependant offers (eg. free videoconference while being at a special event)</li>
 <li>sponsored services (eg. third party offering 20% coupons on VOD for two months)</li>
-<li>each client gets its personalized offer</li>
+<li>each customer gets its personalized offer</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="model"><a class="header" href="#model">Model</a></h1>
 <h2 id="domain-exploration"><a class="header" href="#domain-exploration">Domain exploration</a></h2>
@@ -348,6 +348,14 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="solution-1"><a class="header" href="#solution-1">Solution 1</a></h1>
 <p>proposed solution (WIP)</p>
 <h2 id="third-party-management"><a class="header" href="#third-party-management">third party management</a></h2>
+<ul>
+<li>definitions
+<ul>
+<li>service vendor: customer facing tier, manages the customer subscription, billing and payments</li>
+<li>service provider: provides a technical service, also acts as a service vendor in B2B2X scenarios</li>
+</ul>
+</li>
+</ul>
 <h3 id="basic-case-the-service-vendor-is-the-service-provider"><a class="header" href="#basic-case-the-service-vendor-is-the-service-provider">basic case: the service vendor is the service provider</a></h3>
 <ul>
 <li>
@@ -355,7 +363,7 @@
 <ul>
 <li>usage rating is done client-side via a <strong>rating agent</strong> deployed inside the service client app</li>
 <li>a rating agent also acts as an authorization for consuming the service</li>
-<li>a rating agents is the implementation of a commercial offer subscibed by the client, it is managed like a contract</li>
+<li>a rating agents is the implementation of a commercial offer subscibed by the customer, it is managed like a contract</li>
 </ul>
 </li>
 <li>
@@ -382,9 +390,31 @@
 <p>and what about provisionning?</p>
 </blockquote>
 <h2 id="counting-and-rating"><a class="header" href="#counting-and-rating">counting and rating</a></h2>
-<h3 id="prepaid--bucket-management"><a class="header" href="#prepaid--bucket-management">prepaid / bucket management</a></h3>
+<ul>
+<li>a rating agent is a program specific a service / a commercial offer / a payment mode</li>
+<li>its implementation will depend on the use cases</li>
+</ul>
 <h3 id="post-paid"><a class="header" href="#post-paid">post-paid</a></h3>
+<p>rating agent will</p>
+<ul>
+<li>authorize the customer to consume the service</li>
+<li>generate <strong>rated proofs of service usage</strong> that will be aggrégated on the customer bill (maintained by the service vendor)</li>
+</ul>
+<h3 id="prepaid--bucket-management"><a class="header" href="#prepaid--bucket-management">prepaid / bucket management</a></h3>
+<p>rating agent will</p>
+<ul>
+<li>manage a <strong>stateful service bucket</strong> and consume it according to customer usage</li>
+<li>report on the consuption of the service bucket</li>
+<li>authorize the customer to consume the service</li>
+<li>generates rated proofs of service usage, used for auditing / fraud detection</li>
+</ul>
 <h3 id="µ-payments"><a class="header" href="#µ-payments">µ-payments</a></h3>
+<p>rating agent will</p>
+<ul>
+<li>trigger payment request and expect payment proof before allowing the usage of the service</li>
+<li>authorize the customer to consume the service</li>
+<li>generates rated proofs of service usage, used for auditing / fraud detection</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="about-wasmcloud"><a class="header" href="#about-wasmcloud">About wasmCloud</a></h1>
 <p><img src="https://cosmonic.com/images/blogs/2022/wasmcloud-from-edge-to-cloud.png" alt="" /></p>
 <h2 id="pros--cons"><a class="header" href="#pros--cons">Pros &amp; Cons</a></h2>
