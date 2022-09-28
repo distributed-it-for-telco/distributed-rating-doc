@@ -349,12 +349,23 @@
 <p>proposed solution (WIP)</p>
 <h2 id="third-party-management"><a class="header" href="#third-party-management">third party management</a></h2>
 <h3 id="basic-case-the-service-vendor-is-the-service-provider"><a class="header" href="#basic-case-the-service-vendor-is-the-service-provider">basic case: the service vendor is the service provider</a></h3>
+<ul>
+<li>key ideas
+<ul>
+<li>usage rating is done client-side via a <strong>rating agent</strong> deployed inside the service consumer app</li>
+<li>a rating agent also acts as an <strong>authorization</strong> for consuming the service</li>
+<li>a rating agents is the implementation of a commercial offer subscibed by the client, it's managed like a contract</li>
+</ul>
+</li>
+</ul>
 <p><img src="./sequence-3rdparty-basic.drawio.svg" alt="" /></p>
 <h3 id="complex-case-service-vendor-and-service-provider"><a class="header" href="#complex-case-service-vendor-and-service-provider">complex case: service vendor and service provider</a></h3>
 <ul>
 <li>key ideas
 <ul>
+<li>the service vendor subscribes to a service provider (exactly like an end-user customer)</li>
 <li>the users rating agent is a composite of service vendor and service provider rating agents</li>
+<li>the service provider's rating agent is used as the authorization for consuming the service</li>
 <li>end-user usage is uploaded to both service vendor and service provider</li>
 </ul>
 </li>
