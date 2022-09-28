@@ -12,3 +12,4 @@
 
 - [About wasmCloud](./about-wasmcloud.md)
 - [Architecture](./architecture.md)
+- [Technical requirements](./technical-requirements.md)
