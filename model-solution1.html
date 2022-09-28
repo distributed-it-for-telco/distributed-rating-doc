@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rationale.html">Rationale</a></li><li class="chapter-item expanded affix "><li class="part-title">Functional</li><li class="chapter-item expanded "><a href="requirements.html"><strong aria-hidden="true">1.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="model.html"><strong aria-hidden="true">2.</strong> Model</a></li><li class="chapter-item expanded "><a href="model-solution1.html" class="active"><strong aria-hidden="true">3.</strong> Solution 1</a></li><li class="chapter-item expanded affix "><li class="part-title">Technical</li><li class="chapter-item expanded "><a href="about-wasmcloud.html"><strong aria-hidden="true">4.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">5.</strong> Architecture</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rationale.html">Rationale</a></li><li class="chapter-item expanded affix "><li class="part-title">Functional</li><li class="chapter-item expanded "><a href="requirements.html"><strong aria-hidden="true">1.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="model.html"><strong aria-hidden="true">2.</strong> Model</a></li><li class="chapter-item expanded "><a href="model-solution1.html" class="active"><strong aria-hidden="true">3.</strong> Solution 1</a></li><li class="chapter-item expanded affix "><li class="part-title">Technical</li><li class="chapter-item expanded "><a href="about-wasmcloud.html"><strong aria-hidden="true">4.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">5.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="technical-requirements.html"><strong aria-hidden="true">6.</strong> Technical requirements</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -172,12 +172,13 @@
 </li>
 <li>
 <p>communication diagram</p>
+<p><img src="./sequence-3rdparty-basic.drawio.svg" alt="" /></p>
 </li>
 </ul>
-<p><img src="./sequence-3rdparty-basic.drawio.svg" alt="" /></p>
 <h3 id="complex-case-service-vendor-and-service-provider"><a class="header" href="#complex-case-service-vendor-and-service-provider">complex case: service vendor and service provider</a></h3>
 <ul>
-<li>key ideas
+<li>
+<p>key ideas</p>
 <ul>
 <li>the service vendor subscribes to a service provider (exactly like an end-user customer)</li>
 <li>the users rating agent is a composite of service vendor and service provider rating agents</li>
@@ -185,24 +186,33 @@
 <li>end-user usage is uploaded to both service vendor and service provider</li>
 </ul>
 </li>
-</ul>
-<h4 id="service-subscription"><a class="header" href="#service-subscription">service subscription</a></h4>
+<li>
+<p>communication diagram: service subscription</p>
 <p><img src="./sequence-3rdparty-complex-subscription.drawio.svg" alt="" /></p>
-<h4 id="service-usage"><a class="header" href="#service-usage">service usage</a></h4>
+</li>
+<li>
+<p>communication diagram: service usage</p>
 <p><img src="./sequence-3rdparty-complex-usage.drawio.svg" alt="" /></p>
+</li>
+</ul>
 <blockquote>
 <p>and what about provisionning?</p>
 </blockquote>
 <h2 id="counting-and-rating"><a class="header" href="#counting-and-rating">counting and rating</a></h2>
 <ul>
-<li>a rating agent is a program specific a service / a commercial offer / a payment mode</li>
-<li>its implementation will depend on the use cases</li>
+<li>
+<p>a rating agent is a program specific a service / a commercial offer / a payment mode</p>
+</li>
+<li>
+<p>its implementation will depend on the use cases</p>
+<p><img src="./contract-agent.drawio.svg" alt="" /></p>
+</li>
 </ul>
 <h3 id="post-paid"><a class="header" href="#post-paid">post-paid</a></h3>
 <p>rating agent will</p>
 <ul>
 <li>authorize the customer to consume the service</li>
-<li>generate <strong>rated proofs of service usage</strong> that will be aggrégated on the customer bill (maintained by the service vendor)</li>
+<li>generate <strong>rated proofs of service usage</strong> that will be aggregated on the customer bill (maintained by the service vendor)</li>
 </ul>
 <h3 id="prepaid--bucket-management"><a class="header" href="#prepaid--bucket-management">prepaid / bucket management</a></h3>
 <p>rating agent will</p>
