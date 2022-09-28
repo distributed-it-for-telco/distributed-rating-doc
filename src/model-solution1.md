@@ -6,12 +6,19 @@ proposed solution (WIP)
 
 ### basic case: the service vendor is the service provider
 
+- key ideas
+    - usage rating is done client-side via a __rating agent__ deployed inside the service consumer app
+    - a rating agent also acts as an __authorization__ for consuming the service
+    - a rating agents is the implementation of a commercial offer subscibed by the client, it's managed like a contract
+
 ![](./sequence-3rdparty-basic.drawio.svg)
 
 ### complex case: service vendor and service provider
 
 - key ideas
+    - the service vendor subscribes to a service provider (exactly like an end-user customer)
     - the users rating agent is a composite of service vendor and service provider rating agents
+    - the service provider's rating agent is used as the authorization for consuming the service
     - end-user usage is uploaded to both service vendor and service provider
 
 #### service subscription
