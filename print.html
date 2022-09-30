@@ -524,8 +524,9 @@
 </li>
 </ul>
 <p><img src="./architecture.drawio.svg" alt="architecture" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="technical-requirements-wip"><a class="header" href="#technical-requirements-wip">Technical requirements (WIP)</a></h1>
-<h2 id="fraud--risk-analysis"><a class="header" href="#fraud--risk-analysis">fraud / risk analysis</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="technical-requirements-and-questions-wip"><a class="header" href="#technical-requirements-and-questions-wip">Technical requirements and questions (WIP)</a></h1>
+<h2 id="project-specific"><a class="header" href="#project-specific">project specific</a></h2>
+<h3 id="fraud--risk-analysis"><a class="header" href="#fraud--risk-analysis">fraud / risk analysis</a></h3>
 <ul>
 <li>
 <p>is there a risk of a rating-agent doing non-legitimate modifications of its associated bucket / an other bucket?</p>
@@ -534,9 +535,18 @@
 <p>if those risks are too high, can we have &quot;server-side&quot; rating agent proxy to mitigate them?</p>
 </li>
 </ul>
-<h2 id="stateless-agents"><a class="header" href="#stateless-agents">stateless agents</a></h2>
+<h3 id="stateless-agents"><a class="header" href="#stateless-agents">stateless agents</a></h3>
 <ul>
 <li>how to manage efficiently agents configuration in a stateless word? (caching mechanisms / via dedicated local capability providers?)</li>
+</ul>
+<h2 id="wasmcloud-generic"><a class="header" href="#wasmcloud-generic">wasmCloud generic</a></h2>
+<h3 id="keep-the-rating-agent-code-public-"><a class="header" href="#keep-the-rating-agent-code-public-">keep the rating agent code public ?</a></h3>
+<ul>
+<li>link between the source code and the wasmCloud actor on OCI regristry ?</li>
+</ul>
+<h3 id="message-delivery-guarantee"><a class="header" href="#message-delivery-guarantee">message delivery guarantee</a></h3>
+<ul>
+<li>by design &quot;naked NATS&quot; does <a href="https://docs.nats.io/nats-concepts/overview/compare-nats">not guarantee message delivery</a>, does wasmCloud implement it?</li>
 </ul>
 
                     </main>
