@@ -1,11 +1,23 @@
-# Technical requirements (WIP)
+# Technical requirements and questions (WIP)
 
-## fraud / risk analysis
+## project specific
+
+### fraud / risk analysis
 
 - is there a risk of a rating-agent doing non-legitimate modifications of its associated bucket / an other bucket?
 
 - if those risks are too high, can we have "server-side" rating agent proxy to mitigate them?
 
-## stateless agents
+### stateless agents
 
 - how to manage efficiently agents configuration in a stateless word? (caching mechanisms / via dedicated local capability providers?)
+
+## wasmCloud generic
+
+### keep the rating agent code public ?
+
+- link between the source code and the wasmCloud actor on OCI regristry ?
+
+### message delivery guarantee
+
+- by design "naked NATS" does [not guarantee message delivery](https://docs.nats.io/nats-concepts/overview/compare-nats), does wasmCloud implement it?
