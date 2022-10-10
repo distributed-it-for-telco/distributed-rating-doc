@@ -64,3 +64,32 @@ rating agent will
 - trigger payment request and expect payment proof before allowing the usage of the service
 - authorize the customer to consume the service
 - generates rated proofs of service usage, used for auditing / fraud detection
+
+## agent mandatory traits
+
+- authorizer trait: `authorize(identity) -> key`
+- rater trait: `rate(usage) -> void`
+
+### basic case
+
+![](./contract-agent-detailed.drawio.svg)
+
+### composite case
+
+![](./contract-agent-detailed-composite.drawio.svg)
+
+- NB: there is "shortcut" in `3. get vendor identity`. It does does return a vendor service usage authorization token. Check next paragraph
+
+## identity management
+
+The IAM have been simplified in the previous diagrams.
+
+We distinguish
+- Client identity (OIDC OAuth profile)
+- Client service usage authorization token
+
+And the same for Vendors
+
+The authorizer trait signature is `authorize(service usage authorization token) -> key`
+
+
