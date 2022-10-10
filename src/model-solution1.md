@@ -78,7 +78,7 @@ rating agent will
 
 ![](./contract-agent-detailed-composite.drawio.svg)
 
-- note that there is "shortcut" in `3. get vendor identity`. It does return a vendor service usage authorization token. Check next paragraph
+- note that there is "shortcut" in `3. get vendor identity`. It does not really return an identity but a vendor service usage authorization token. Check next paragraph
 
 ## identity management
 
