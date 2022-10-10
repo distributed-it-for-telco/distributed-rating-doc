@@ -85,11 +85,11 @@ rating agent will
 The IAM have been simplified in the previous diagrams.
 
 We distinguish
-- Client identity (OIDC OAuth profile)
-- Client service usage authorization token
+- Client identity (OIDC profile, OAuth token)
+- Client service subscription authorization token (OAuth token): traded from the client identity, represents the fact that the client has subscribed to the service, regardless its right to access the service (for instance with an empty bucket on a prepaid service)
 
-And the same for Vendors
+And the same for Service Vendors (which are Clients of Service Providers)
 
-The authorizer trait signature is `authorize(service usage authorization token) -> key`
+The authorizer trait signature is `authorize(service subscription authorization token) -> key`
 
 
