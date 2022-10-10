@@ -229,6 +229,27 @@
 <li>authorize the customer to consume the service</li>
 <li>generates rated proofs of service usage, used for auditing / fraud detection</li>
 </ul>
+<h2 id="agent-mandatory-traits"><a class="header" href="#agent-mandatory-traits">agent mandatory traits</a></h2>
+<ul>
+<li>authorizer trait: <code>authorize(identity) -&gt; key</code></li>
+<li>rater trait: <code>rate(usage) -&gt; void</code></li>
+</ul>
+<h3 id="basic-case"><a class="header" href="#basic-case">basic case</a></h3>
+<p><img src="./contract-agent-detailed.drawio.svg" alt="" /></p>
+<h3 id="composite-case"><a class="header" href="#composite-case">composite case</a></h3>
+<p><img src="./contract-agent-detailed-composite.drawio.svg" alt="" /></p>
+<ul>
+<li>NB: there is &quot;shortcut&quot; in <code>3. get vendor identity</code>. It does does return a vendor service usage authorization token. Check next paragraph</li>
+</ul>
+<h2 id="identity-management"><a class="header" href="#identity-management">identity management</a></h2>
+<p>The IAM have been simplified in the previous diagrams.</p>
+<p>We distinguish</p>
+<ul>
+<li>Client identity (OIDC OAuth profile)</li>
+<li>Client service usage authorization token</li>
+</ul>
+<p>And the same for Vendors</p>
+<p>The authorizer trait signature is <code>authorize(service usage authorization token) -&gt; key</code></p>
 
                     </main>
 
