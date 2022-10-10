@@ -441,11 +441,11 @@
 <p>The IAM have been simplified in the previous diagrams.</p>
 <p>We distinguish</p>
 <ul>
-<li>Client identity (OIDC OAuth profile)</li>
-<li>Client service usage authorization token</li>
+<li>Client identity (OIDC profile, OAuth token)</li>
+<li>Client service subscription authorization token (OAuth token): traded from the client identity, represents the fact that the client has subscribed to the service, regardless its right to access the service (for instance with an empty bucket on a prepaid service)</li>
 </ul>
-<p>And the same for Vendors</p>
-<p>The authorizer trait signature is <code>authorize(service usage authorization token) -&gt; key</code></p>
+<p>And the same for Service Vendors (which are Clients of Service Providers)</p>
+<p>The authorizer trait signature is <code>authorize(service subscription authorization token) -&gt; key</code></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="about-wasmcloud"><a class="header" href="#about-wasmcloud">About wasmCloud</a></h1>
 <p><img src="https://cosmonic.com/images/blogs/2022/wasmcloud-from-edge-to-cloud.png" alt="" /></p>
 <h2 id="pros--cons"><a class="header" href="#pros--cons">Pros &amp; Cons</a></h2>
