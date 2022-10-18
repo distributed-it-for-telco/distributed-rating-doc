@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rationale.html">Rationale</a></li><li class="chapter-item expanded affix "><li class="part-title">Functional</li><li class="chapter-item expanded "><a href="requirements.html"><strong aria-hidden="true">1.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="model.html"><strong aria-hidden="true">2.</strong> Model</a></li><li class="chapter-item expanded "><a href="model-solution1.html"><strong aria-hidden="true">3.</strong> Solution 1</a></li><li class="chapter-item expanded affix "><li class="part-title">Technical</li><li class="chapter-item expanded "><a href="about-wasmcloud.html"><strong aria-hidden="true">4.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">5.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="technical-requirements.html"><strong aria-hidden="true">6.</strong> Technical requirements</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rationale.html">Rationale</a></li><li class="chapter-item expanded affix "><li class="part-title">Functional</li><li class="chapter-item expanded "><a href="requirements.html"><strong aria-hidden="true">1.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="model.html"><strong aria-hidden="true">2.</strong> Model</a></li><li class="chapter-item expanded "><a href="model-solution1.html"><strong aria-hidden="true">3.</strong> Solution 1</a></li><li class="chapter-item expanded affix "><li class="part-title">Technical</li><li class="chapter-item expanded "><a href="about-wasmcloud.html"><strong aria-hidden="true">4.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">5.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="prototype-architecture.html"><strong aria-hidden="true">6.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="technical-requirements.html"><strong aria-hidden="true">7.</strong> Technical requirements</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -545,6 +545,26 @@
 </li>
 </ul>
 <p><img src="./architecture.drawio.svg" alt="architecture" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="prototype-architecture"><a class="header" href="#prototype-architecture">Prototype Architecture</a></h1>
+<h2 id="actor-model"><a class="header" href="#actor-model">actor model</a></h2>
+<p><img src="prototype-architecture.drawio.svg" alt="" /></p>
+<h2 id="git-repos"><a class="header" href="#git-repos">git repos</a></h2>
+<pre><code>├── generic
+│   ├── agent-api-provider
+│   ├── agent-storage-provider
+│   └── collector-provider
+├── interface
+│   ├── agent-storage-interface
+│   ├── authorizer-interface
+│   ├── collector-interface
+│   └── rater-interface
+├── specific-orange
+│   ├── orange-offer1-agent
+│   └── orange-offer1-authorization-provider
+└── specific-vendor1
+    ├── vendor1-offer1-agent
+    └── vendor1-offer1-authorization-provider
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="technical-requirements-and-questions-wip"><a class="header" href="#technical-requirements-and-questions-wip">Technical requirements and questions (WIP)</a></h1>
 <h2 id="project-specific"><a class="header" href="#project-specific">project specific</a></h2>
 <h3 id="fraud--risk-analysis"><a class="header" href="#fraud--risk-analysis">fraud / risk analysis</a></h3>
@@ -560,6 +580,10 @@
 <ul>
 <li>how to manage efficiently agents configuration in a stateless word? (caching mechanisms / via dedicated local capability providers?)</li>
 </ul>
+<h3 id="interagent-communication"><a class="header" href="#interagent-communication">interagent communication</a></h3>
+<ul>
+<li>how to ensure an actor (rating agent for instance) only speak to its conterpart (collector agent for instance)</li>
+</ul>
 <h2 id="wasmcloud-generic"><a class="header" href="#wasmcloud-generic">wasmCloud generic</a></h2>
 <h3 id="keep-the-rating-agent-code-public-"><a class="header" href="#keep-the-rating-agent-code-public-">keep the rating agent code public ?</a></h3>
 <ul>
@@ -569,6 +593,8 @@
 <ul>
 <li>by design &quot;naked NATS&quot; does <a href="https://docs.nats.io/nats-concepts/overview/compare-nats">not guarantee message delivery</a>, does wasmCloud implement it?</li>
 </ul>
+<h3 id="do-interfaces-support-inheritance-"><a class="header" href="#do-interfaces-support-inheritance-">do interfaces support inheritance ?</a></h3>
+<h3 id="how-to-use-links"><a class="header" href="#how-to-use-links">how to use links</a></h3>
 
                     </main>
 

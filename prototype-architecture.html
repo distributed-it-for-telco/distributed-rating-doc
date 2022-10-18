@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Technical requirements - IPCEI CIS / WP02 / Distributed Rating Engine</title>
+        <title>Prototype Architecture - IPCEI CIS / WP02 / Distributed Rating Engine</title>
                 
 
         <!-- Custom HTML head -->
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rationale.html">Rationale</a></li><li class="chapter-item expanded affix "><li class="part-title">Functional</li><li class="chapter-item expanded "><a href="requirements.html"><strong aria-hidden="true">1.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="model.html"><strong aria-hidden="true">2.</strong> Model</a></li><li class="chapter-item expanded "><a href="model-solution1.html"><strong aria-hidden="true">3.</strong> Solution 1</a></li><li class="chapter-item expanded affix "><li class="part-title">Technical</li><li class="chapter-item expanded "><a href="about-wasmcloud.html"><strong aria-hidden="true">4.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">5.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="prototype-architecture.html"><strong aria-hidden="true">6.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="technical-requirements.html" class="active"><strong aria-hidden="true">7.</strong> Technical requirements</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rationale.html">Rationale</a></li><li class="chapter-item expanded affix "><li class="part-title">Functional</li><li class="chapter-item expanded "><a href="requirements.html"><strong aria-hidden="true">1.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="model.html"><strong aria-hidden="true">2.</strong> Model</a></li><li class="chapter-item expanded "><a href="model-solution1.html"><strong aria-hidden="true">3.</strong> Solution 1</a></li><li class="chapter-item expanded affix "><li class="part-title">Technical</li><li class="chapter-item expanded "><a href="about-wasmcloud.html"><strong aria-hidden="true">4.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">5.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="prototype-architecture.html" class="active"><strong aria-hidden="true">6.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="technical-requirements.html"><strong aria-hidden="true">7.</strong> Technical requirements</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -120,7 +120,7 @@
                                                                         <a href="https://github.com/distributed-it-for-telco" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                                                                        <a href="https://github.com/distributed-it-for-telco/distributed-rating-doc/edit/main/src/technical-requirements.md" title="Suggest an edit" aria-label="Suggest an edit">
+                                                                        <a href="https://github.com/distributed-it-for-telco/distributed-rating-doc/edit/main/src/prototype-architecture.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
                         
@@ -149,45 +149,38 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="technical-requirements-and-questions-wip"><a class="header" href="#technical-requirements-and-questions-wip">Technical requirements and questions (WIP)</a></h1>
-<h2 id="project-specific"><a class="header" href="#project-specific">project specific</a></h2>
-<h3 id="fraud--risk-analysis"><a class="header" href="#fraud--risk-analysis">fraud / risk analysis</a></h3>
-<ul>
-<li>
-<p>is there a risk of a rating-agent doing non-legitimate modifications of its associated bucket / an other bucket?</p>
-</li>
-<li>
-<p>if those risks are too high, can we have &quot;server-side&quot; rating agent proxy to mitigate them?</p>
-</li>
-</ul>
-<h3 id="stateless-agents"><a class="header" href="#stateless-agents">stateless agents</a></h3>
-<ul>
-<li>how to manage efficiently agents configuration in a stateless word? (caching mechanisms / via dedicated local capability providers?)</li>
-</ul>
-<h3 id="interagent-communication"><a class="header" href="#interagent-communication">interagent communication</a></h3>
-<ul>
-<li>how to ensure an actor (rating agent for instance) only speak to its conterpart (collector agent for instance)</li>
-</ul>
-<h2 id="wasmcloud-generic"><a class="header" href="#wasmcloud-generic">wasmCloud generic</a></h2>
-<h3 id="keep-the-rating-agent-code-public-"><a class="header" href="#keep-the-rating-agent-code-public-">keep the rating agent code public ?</a></h3>
-<ul>
-<li>link between the source code and the wasmCloud actor on OCI regristry ?</li>
-</ul>
-<h3 id="message-delivery-guarantee"><a class="header" href="#message-delivery-guarantee">message delivery guarantee</a></h3>
-<ul>
-<li>by design &quot;naked NATS&quot; does <a href="https://docs.nats.io/nats-concepts/overview/compare-nats">not guarantee message delivery</a>, does wasmCloud implement it?</li>
-</ul>
-<h3 id="do-interfaces-support-inheritance-"><a class="header" href="#do-interfaces-support-inheritance-">do interfaces support inheritance ?</a></h3>
-<h3 id="how-to-use-links"><a class="header" href="#how-to-use-links">how to use links</a></h3>
+                        <h1 id="prototype-architecture"><a class="header" href="#prototype-architecture">Prototype Architecture</a></h1>
+<h2 id="actor-model"><a class="header" href="#actor-model">actor model</a></h2>
+<p><img src="prototype-architecture.drawio.svg" alt="" /></p>
+<h2 id="git-repos"><a class="header" href="#git-repos">git repos</a></h2>
+<pre><code>├── generic
+│   ├── agent-api-provider
+│   ├── agent-storage-provider
+│   └── collector-provider
+├── interface
+│   ├── agent-storage-interface
+│   ├── authorizer-interface
+│   ├── collector-interface
+│   └── rater-interface
+├── specific-orange
+│   ├── orange-offer1-agent
+│   └── orange-offer1-authorization-provider
+└── specific-vendor1
+    ├── vendor1-offer1-agent
+    └── vendor1-offer1-authorization-provider
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                                                    <a rel="prev" href="prototype-architecture.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                                    <a rel="prev" href="architecture.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
+                                                    <a rel="next" href="technical-requirements.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
                         <div style="clear: both"></div>
                     </nav>
@@ -195,10 +188,13 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                                    <a rel="prev" href="prototype-architecture.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                    <a rel="prev" href="architecture.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
+                                    <a rel="next" href="technical-requirements.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                             </nav>
 
         </div>
