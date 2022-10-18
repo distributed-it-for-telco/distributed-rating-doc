@@ -11,5 +11,6 @@
 # Technical
 
 - [About wasmCloud](./about-wasmcloud.md)
-- [Architecture](./architecture.md)
+- [wasmCloud Architecture](./architecture.md)
+- [Prototype Architecture](./prototype-architecture.md)
 - [Technical requirements](./technical-requirements.md)

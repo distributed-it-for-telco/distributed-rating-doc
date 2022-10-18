@@ -12,6 +12,10 @@
 
 - how to manage efficiently agents configuration in a stateless word? (caching mechanisms / via dedicated local capability providers?)
 
+### interagent communication
+
+- how to ensure an actor (rating agent for instance) only speak to its conterpart (collector agent for instance)
+
 ## wasmCloud generic
 
 ### keep the rating agent code public ?
@@ -21,3 +25,7 @@
 ### message delivery guarantee
 
 - by design "naked NATS" does [not guarantee message delivery](https://docs.nats.io/nats-concepts/overview/compare-nats), does wasmCloud implement it?
+
+### do interfaces support inheritance ?
+
+### how to use links
