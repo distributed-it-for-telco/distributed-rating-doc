@@ -3,7 +3,6 @@
 ## Context
 
 IPCEI CIS WP2
-- [Important Projects of Common European Interest](https://competition-policy.ec.europa.eu/state-aid/legislation/modernisation/ipcei_en)
 - Cloud Infrastructure and Services
 - Work Package #2
 - Orange submission: open-source and distributed Core Commerce for IT
