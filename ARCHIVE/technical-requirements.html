@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>About - IPCEI CIS / WP02 / Distributed Rating Engine</title>
+        <title>Technical requirements - IPCEI CIS / WP02 / Distributed Rating Engine</title>
                 
 
         <!-- Custom HTML head -->
@@ -14,21 +14,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-                <link rel="icon" href="favicon.svg">
-                        <link rel="shortcut icon" href="favicon.png">
-                <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-                <link rel="stylesheet" href="css/print.css" media="print">
+                <link rel="icon" href="../favicon.svg">
+                        <link rel="shortcut icon" href="../favicon.png">
+                <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+                <link rel="stylesheet" href="../css/print.css" media="print">
         
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-                <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../fonts/fonts.css">
         
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -36,7 +36,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
         </script>
 
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook</li><li class="chapter-item expanded affix "><li class="part-title">Architecture decision records</li><li class="chapter-item expanded affix "><li class="part-title">Archives</li><li class="chapter-item expanded "><a href="ARCHIVE/rationale.html"><strong aria-hidden="true">1.</strong> Rationale</a></li><li class="chapter-item expanded "><a href="ARCHIVE/requirements.html"><strong aria-hidden="true">2.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="ARCHIVE/model.html"><strong aria-hidden="true">3.</strong> Model</a></li><li class="chapter-item expanded "><a href="ARCHIVE/model-solution1.html"><strong aria-hidden="true">4.</strong> Solution 1</a></li><li class="chapter-item expanded "><a href="ARCHIVE/about-wasmcloud.html"><strong aria-hidden="true">5.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="ARCHIVE/architecture.html"><strong aria-hidden="true">6.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="ARCHIVE/prototype-architecture.html"><strong aria-hidden="true">7.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="ARCHIVE/technical-requirements.html"><strong aria-hidden="true">8.</strong> Technical requirements</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook</li><li class="chapter-item expanded affix "><li class="part-title">Architecture decision records</li><li class="chapter-item expanded affix "><li class="part-title">Archives</li><li class="chapter-item expanded "><a href="../ARCHIVE/rationale.html"><strong aria-hidden="true">1.</strong> Rationale</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/requirements.html"><strong aria-hidden="true">2.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/model.html"><strong aria-hidden="true">3.</strong> Model</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/model-solution1.html"><strong aria-hidden="true">4.</strong> Solution 1</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/about-wasmcloud.html"><strong aria-hidden="true">5.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/architecture.html"><strong aria-hidden="true">6.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/prototype-architecture.html"><strong aria-hidden="true">7.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/technical-requirements.html" class="active"><strong aria-hidden="true">8.</strong> Technical requirements</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -114,13 +114,13 @@
                     <h1 class="menu-title">IPCEI CIS / WP02 / Distributed Rating Engine</h1>
 
                     <div class="right-buttons">
-                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                                                <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                                                                         <a href="https://github.com/distributed-it-for-telco" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                                                                        <a href="https://github.com/distributed-it-for-telco/distributed-rating-doc/edit/main/src/about.md" title="Suggest an edit" aria-label="Suggest an edit">
+                                                                        <a href="https://github.com/distributed-it-for-telco/distributed-rating-doc/edit/main/src/ARCHIVE/technical-requirements.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
                         
@@ -149,16 +149,45 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="about-the-distributed-rating-project"><a class="header" href="#about-the-distributed-rating-project">About the distributed-rating project</a></h1>
+                        <h1 id="technical-requirements-and-questions-wip"><a class="header" href="#technical-requirements-and-questions-wip">Technical requirements and questions (WIP)</a></h1>
+<h2 id="project-specific"><a class="header" href="#project-specific">project specific</a></h2>
+<h3 id="fraud--risk-analysis"><a class="header" href="#fraud--risk-analysis">fraud / risk analysis</a></h3>
+<ul>
+<li>
+<p>is there a risk of a rating-agent doing non-legitimate modifications of its associated bucket / an other bucket?</p>
+</li>
+<li>
+<p>if those risks are too high, can we have &quot;server-side&quot; rating agent proxy to mitigate them?</p>
+</li>
+</ul>
+<h3 id="stateless-agents"><a class="header" href="#stateless-agents">stateless agents</a></h3>
+<ul>
+<li>how to manage efficiently agents configuration in a stateless word? (caching mechanisms / via dedicated local capability providers?)</li>
+</ul>
+<h3 id="interagent-communication"><a class="header" href="#interagent-communication">interagent communication</a></h3>
+<ul>
+<li>how to ensure an actor (rating agent for instance) only speak to its conterpart (collector agent for instance)</li>
+</ul>
+<h2 id="wasmcloud-generic"><a class="header" href="#wasmcloud-generic">wasmCloud generic</a></h2>
+<h3 id="keep-the-rating-agent-code-public-"><a class="header" href="#keep-the-rating-agent-code-public-">keep the rating agent code public ?</a></h3>
+<ul>
+<li>link between the source code and the wasmCloud actor on OCI regristry ?</li>
+</ul>
+<h3 id="message-delivery-guarantee"><a class="header" href="#message-delivery-guarantee">message delivery guarantee</a></h3>
+<ul>
+<li>by design &quot;naked NATS&quot; does <a href="https://docs.nats.io/nats-concepts/overview/compare-nats">not guarantee message delivery</a>, does wasmCloud implement it?</li>
+</ul>
+<h3 id="do-interfaces-support-inheritance-"><a class="header" href="#do-interfaces-support-inheritance-">do interfaces support inheritance ?</a></h3>
+<h3 id="how-to-use-links"><a class="header" href="#how-to-use-links">how to use links</a></h3>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
-                                                    <a rel="next" href="ARCHIVE/rationale.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                                    <a rel="prev" href="../ARCHIVE/prototype-architecture.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
                             </a>
+                        
                         
                         <div style="clear: both"></div>
                     </nav>
@@ -166,10 +195,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
-                                    <a rel="next" href="ARCHIVE/rationale.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                                    <a rel="prev" href="../ARCHIVE/prototype-architecture.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
                     </a>
+                
                             </nav>
 
         </div>
@@ -182,13 +211,13 @@
         </script>
         
         
-                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+                <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         

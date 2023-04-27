@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rationale.html">Rationale</a></li><li class="chapter-item expanded affix "><li class="part-title">Functional</li><li class="chapter-item expanded "><a href="requirements.html"><strong aria-hidden="true">1.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="model.html"><strong aria-hidden="true">2.</strong> Model</a></li><li class="chapter-item expanded "><a href="model-solution1.html"><strong aria-hidden="true">3.</strong> Solution 1</a></li><li class="chapter-item expanded affix "><li class="part-title">Technical</li><li class="chapter-item expanded "><a href="about-wasmcloud.html"><strong aria-hidden="true">4.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">5.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="prototype-architecture.html"><strong aria-hidden="true">6.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="technical-requirements.html"><strong aria-hidden="true">7.</strong> Technical requirements</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook</li><li class="chapter-item expanded affix "><li class="part-title">Architecture decision records</li><li class="chapter-item expanded affix "><li class="part-title">Archives</li><li class="chapter-item expanded "><a href="ARCHIVE/rationale.html"><strong aria-hidden="true">1.</strong> Rationale</a></li><li class="chapter-item expanded "><a href="ARCHIVE/requirements.html"><strong aria-hidden="true">2.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="ARCHIVE/model.html"><strong aria-hidden="true">3.</strong> Model</a></li><li class="chapter-item expanded "><a href="ARCHIVE/model-solution1.html"><strong aria-hidden="true">4.</strong> Solution 1</a></li><li class="chapter-item expanded "><a href="ARCHIVE/about-wasmcloud.html"><strong aria-hidden="true">5.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="ARCHIVE/architecture.html"><strong aria-hidden="true">6.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="ARCHIVE/prototype-architecture.html"><strong aria-hidden="true">7.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="ARCHIVE/technical-requirements.html"><strong aria-hidden="true">8.</strong> Technical requirements</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -147,7 +147,8 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="rationale"><a class="header" href="#rationale">Rationale</a></h1>
+                        <h1 id="about-the-distributed-rating-project"><a class="header" href="#about-the-distributed-rating-project">About the distributed-rating project</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rationale"><a class="header" href="#rationale">Rationale</a></h1>
 <h2 id="context"><a class="header" href="#context">Context</a></h2>
 <p>IPCEI CIS WP2</p>
 <ul>
@@ -244,7 +245,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="./model-overview.drawio.svg" alt="" /></p>
+<p><img src="ARCHIVE/./model-overview.drawio.svg" alt="" /></p>
 <ul>
 <li>
 <p>concepts</p>
@@ -367,7 +368,7 @@
 </li>
 <li>
 <p>communication diagram</p>
-<p><img src="./sequence-3rdparty-basic.drawio.svg" alt="" /></p>
+<p><img src="ARCHIVE/./sequence-3rdparty-basic.drawio.svg" alt="" /></p>
 </li>
 </ul>
 <h3 id="complex-case-service-vendor-and-service-provider"><a class="header" href="#complex-case-service-vendor-and-service-provider">complex case: service vendor and service provider</a></h3>
@@ -383,11 +384,11 @@
 </li>
 <li>
 <p>communication diagram: service subscription</p>
-<p><img src="./sequence-3rdparty-complex-subscription.drawio.svg" alt="" /></p>
+<p><img src="ARCHIVE/./sequence-3rdparty-complex-subscription.drawio.svg" alt="" /></p>
 </li>
 <li>
 <p>communication diagram: service usage</p>
-<p><img src="./sequence-3rdparty-complex-usage.drawio.svg" alt="" /></p>
+<p><img src="ARCHIVE/./sequence-3rdparty-complex-usage.drawio.svg" alt="" /></p>
 </li>
 </ul>
 <blockquote>
@@ -400,7 +401,7 @@
 </li>
 <li>
 <p>its implementation will depend on the use cases</p>
-<p><img src="./contract-agent.drawio.svg" alt="" /></p>
+<p><img src="ARCHIVE/./contract-agent.drawio.svg" alt="" /></p>
 </li>
 </ul>
 <h3 id="post-paid"><a class="header" href="#post-paid">post-paid</a></h3>
@@ -430,9 +431,9 @@
 <li>rater trait: <code>rate(usage) -&gt; void</code></li>
 </ul>
 <h3 id="basic-case"><a class="header" href="#basic-case">basic case</a></h3>
-<p><img src="./contract-agent-detailed.drawio.svg" alt="" /></p>
+<p><img src="ARCHIVE/./contract-agent-detailed.drawio.svg" alt="" /></p>
 <h3 id="composite-case"><a class="header" href="#composite-case">composite case</a></h3>
-<p><img src="./contract-agent-detailed-composite.drawio.svg" alt="" /></p>
+<p><img src="ARCHIVE/./contract-agent-detailed-composite.drawio.svg" alt="" /></p>
 <ul>
 <li>note that there is &quot;shortcut&quot; in <code>3. get vendor identity</code>. It does not really return an identity but a &quot;vendor service subscription&quot; authorization token. Check next paragraph</li>
 </ul>
@@ -543,10 +544,10 @@
 </ul>
 </li>
 </ul>
-<p><img src="./architecture.drawio.svg" alt="architecture" /></p>
+<p><img src="ARCHIVE/./architecture.drawio.svg" alt="architecture" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="prototype-architecture"><a class="header" href="#prototype-architecture">Prototype Architecture</a></h1>
 <h2 id="actor-model"><a class="header" href="#actor-model">actor model</a></h2>
-<p><img src="prototype-architecture.drawio.svg" alt="" /></p>
+<p><img src="ARCHIVE/prototype-architecture.drawio.svg" alt="" /></p>
 <h2 id="git-repos"><a class="header" href="#git-repos">git repos</a></h2>
 <pre><code>├── generic
 │   ├── agent-api-provider

@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Model - IPCEI CIS / WP02 / Distributed Rating Engine</title>
+        <title>Rationale - IPCEI CIS / WP02 / Distributed Rating Engine</title>
                 
 
         <!-- Custom HTML head -->
@@ -14,21 +14,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-                <link rel="icon" href="favicon.svg">
-                        <link rel="shortcut icon" href="favicon.png">
-                <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-                <link rel="stylesheet" href="css/print.css" media="print">
+                <link rel="icon" href="../favicon.svg">
+                        <link rel="shortcut icon" href="../favicon.png">
+                <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+                <link rel="stylesheet" href="../css/print.css" media="print">
         
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-                <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../fonts/fonts.css">
         
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -36,7 +36,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
         </script>
 
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rationale.html">Rationale</a></li><li class="chapter-item expanded affix "><li class="part-title">Functional</li><li class="chapter-item expanded "><a href="requirements.html"><strong aria-hidden="true">1.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="model.html" class="active"><strong aria-hidden="true">2.</strong> Model</a></li><li class="chapter-item expanded "><a href="model-solution1.html"><strong aria-hidden="true">3.</strong> Solution 1</a></li><li class="chapter-item expanded affix "><li class="part-title">Technical</li><li class="chapter-item expanded "><a href="about-wasmcloud.html"><strong aria-hidden="true">4.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">5.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="prototype-architecture.html"><strong aria-hidden="true">6.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="technical-requirements.html"><strong aria-hidden="true">7.</strong> Technical requirements</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook</li><li class="chapter-item expanded affix "><li class="part-title">Architecture decision records</li><li class="chapter-item expanded affix "><li class="part-title">Archives</li><li class="chapter-item expanded "><a href="../ARCHIVE/rationale.html" class="active"><strong aria-hidden="true">1.</strong> Rationale</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/requirements.html"><strong aria-hidden="true">2.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/model.html"><strong aria-hidden="true">3.</strong> Model</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/model-solution1.html"><strong aria-hidden="true">4.</strong> Solution 1</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/about-wasmcloud.html"><strong aria-hidden="true">5.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/architecture.html"><strong aria-hidden="true">6.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/prototype-architecture.html"><strong aria-hidden="true">7.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/technical-requirements.html"><strong aria-hidden="true">8.</strong> Technical requirements</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -114,13 +114,13 @@
                     <h1 class="menu-title">IPCEI CIS / WP02 / Distributed Rating Engine</h1>
 
                     <div class="right-buttons">
-                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                                                <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                                                                         <a href="https://github.com/distributed-it-for-telco" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                                                                        <a href="https://github.com/distributed-it-for-telco/distributed-rating-doc/edit/main/src/model.md" title="Suggest an edit" aria-label="Suggest an edit">
+                                                                        <a href="https://github.com/distributed-it-for-telco/distributed-rating-doc/edit/main/src/ARCHIVE/rationale.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
                         
@@ -149,114 +149,41 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="model"><a class="header" href="#model">Model</a></h1>
-<h2 id="domain-exploration"><a class="header" href="#domain-exploration">Domain exploration</a></h2>
+                        <h1 id="rationale"><a class="header" href="#rationale">Rationale</a></h1>
+<h2 id="context"><a class="header" href="#context">Context</a></h2>
+<p>IPCEI CIS WP2</p>
 <ul>
-<li>3 main actors
-<ul>
-<li>Service Consumer</li>
-<li>Service Vendor</li>
-<li>Service Provider</li>
+<li>Cloud Infrastructure and Services</li>
+<li>Work Package #2</li>
+<li>Orange submission: open-source and distributed Core Commerce for IT</li>
 </ul>
-</li>
-</ul>
-<p><img src="./model-overview.drawio.svg" alt="" /></p>
+<h2 id="value-proposition"><a class="header" href="#value-proposition">Value proposition</a></h2>
 <ul>
 <li>
-<p>concepts</p>
+<p>In a complex service ecosystem and/or 5G context, the rating of service usage is highly complex:</p>
 <ul>
-<li>rating engine</li>
-<li>proofs
-<ul>
-<li>subscription</li>
-<li>usage</li>
-<li>identity</li>
-</ul>
-</li>
+<li>service providers are no longer those who are in direct contact with the customer or those who invoice the customer, there are aggregators, marketplaces...</li>
+<li>the pricing rules for the usage of technical services may be different depending on the reseller (composite services, service bundles, discounts on purchase, on usage)</li>
+<li>even more: &quot;à la carte&quot; pricing for each customer</li>
 </ul>
 </li>
 <li>
-<p>offers</p>
+<p>Rather than uploading raw usage data (~CDR), rated in a centralized rating engine system (or semi-distributed between the various partners who contribute to the final service provided to the customer), we propose to ditribute the rating process to the customer device and upload to the service vendor of usage tickets already valued</p>
 <ul>
-<li>on usage</li>
-<li>pre-paid
-<ul>
-<li>can an monthly subscription be seen as pre-paid?</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>payments</p>
-<ul>
-<li>3 types
-<ul>
-<li>µ-transaction: no billing, 1 usage = 1 <strong>immediate</strong> payment</li>
-<li>post-paid: 1 usage = 1 <strong>future</strong> payment on a bill</li>
-<li>pre-paid: w/ bucket, 1 usage = 1 bucket update</li>
-</ul>
-</li>
-<li>in a 3-party interaction (user, vendor, provider)
-<ul>
-<li>either the provider has to trust the vendor to &quot;recover user's paiments&quot; 
-<ul>
-<li>needs pre-agreement or a base of trusted vendors) <strong>DONT: incompatible w/ requirements</strong></li>
-</ul>
-</li>
-<li>either the vendor is paying the provider immediatly for the user's usage</li>
-<li>either the vendor has already bought a &quot;pre-paid bucket&quot; to the provider</li>
-</ul>
-</li>
+<li>each of the partners contributes to the specific pricing of the customer, the pricing is made directly at the same time as the consumption of the service</li>
+<li>to do a parallel with rights management: it is easier to have components that each carry their authorization model rather than applying the model externally to the entire system</li>
+<li>each partner brings (in the form of an agent) the valuation engine of his service, possibly configured / overloaded by a partner reusing this service</li>
+<li>&quot;as code&quot; rating engine approach rather than a fixed and parameterized system</li>
 </ul>
 </li>
 <li>
-<p>B2B2C scenarios, bucket delegation</p>
-<ul>
-<li>the vendor buys pre-paid bucket to the provider
-<ul>
-<li>it can split it among it's users
-<ul>
-<li>user is paying the usage directly to the provider</li>
-</ul>
-</li>
-<li>or decide to have an other payment type (µ-payment, billing)
-<ul>
-<li>vendor is paying the usage to the provider</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="findings"><a class="header" href="#findings">findings</a></h3>
-<ul>
-<li>billing is a vendors responsibility, not a provider one</li>
-<li>it might be simplier (ie. support more scenarios) to always have a user&gt;vendor&gt;provider chain instead of a direct user&gt;provider relation</li>
-</ul>
-<h3 id="to-be-discussed"><a class="header" href="#to-be-discussed">to be discussed</a></h3>
-<ul>
-<li>
-<p>entities modeling</p>
-<ul>
-<li>are Service Vendors also service providers?</li>
-<li>are service Vendors also service consumers?</li>
-<li>implementation note: instead of inheritance we can use traits</li>
-</ul>
+<p>Prerequisites for this scenario are: &quot;reasonably secure&quot; device environment, possibility of deploying code on this environment, ability to detect fraud</p>
 </li>
 <li>
-<p>where shoud the usage proof go ?</p>
+<p>Orange offers an SDK to its partners allowing them to simply integrate the enhancement of the service into the application used to consume the service</p>
 <ul>
-<li>service vendor / provider / both</li>
-<li>avoid proxies</li>
-</ul>
-</li>
-<li>
-<p>similar / alternative approaches</p>
-<ul>
-<li><a href="https://www.mavoco.com/cmp-connenctivity-management-platform/connectivity-online-usage-controller/">Distributed IoT Online Rating – The Global Rating Grid @mavoco.com</a></li>
-<li>are there research papers on the subject?</li>
-<li>Shine (Orange internal project) third party use-cases</li>
+<li>the SDK is a wasmcloud-js runtime that can run code (1 or wasmcloud agents) in charge of recovery</li>
+<li>the service consumer application feeds the SDK with usage data</li>
 </ul>
 </li>
 </ul>
@@ -265,11 +192,11 @@
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                                                    <a rel="prev" href="requirements.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                                    <a rel="prev" href="../about.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
-                                                    <a rel="next" href="model-solution1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                                    <a rel="next" href="../ARCHIVE/requirements.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -279,11 +206,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                                    <a rel="prev" href="requirements.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                    <a rel="prev" href="../about.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
-                                    <a rel="next" href="model-solution1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                    <a rel="next" href="../ARCHIVE/requirements.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                             </nav>
@@ -298,13 +225,13 @@
         </script>
         
         
-                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+                <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         
