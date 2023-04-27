@@ -1,16 +1,18 @@
 # Summary
 
-[Rationale](./rationale.md)
+[About](./about.md)
 
-# Functional
+# Handbook
 
-- [Requirements](./requirements.md)
-- [Model](./model.md)
-- [Solution 1](./model-solution1.md)
+# Architecture decision records
 
-# Technical
+# Archives
 
-- [About wasmCloud](./about-wasmcloud.md)
-- [wasmCloud Architecture](./architecture.md)
-- [Prototype Architecture](./prototype-architecture.md)
-- [Technical requirements](./technical-requirements.md)
+- [Rationale](./ARCHIVE/rationale.md)
+- [Requirements](./ARCHIVE/requirements.md)
+- [Model](./ARCHIVE/model.md)
+- [Solution 1](./ARCHIVE/model-solution1.md)
+- [About wasmCloud](./ARCHIVE/about-wasmcloud.md)
+- [wasmCloud Architecture](./ARCHIVE/architecture.md)
+- [Prototype Architecture](./ARCHIVE/prototype-architecture.md)
+- [Technical requirements](./ARCHIVE/technical-requirements.md)
