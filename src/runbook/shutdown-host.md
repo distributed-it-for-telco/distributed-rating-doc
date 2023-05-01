@@ -1,7 +1,9 @@
 # Runbook : Shutdown a host
-### Product name : Disco-rating
+### Product name : 
+- Disco-rating
 
-### Product version : *
+### Product version :
+-  All
 
 ### Runbook Goals :
 - Shudown a host in a local machine 
