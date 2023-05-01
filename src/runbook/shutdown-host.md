@@ -11,8 +11,8 @@
 - [Cosmonic cli](https://cosmonic.com/docs/user_guide/cosmo_cli) installed
 - [wash](https://wasmcloud.com/docs/installation?os=mac) installed
 ### Stages :
-1. Stage 1 : Get yout local host id
-2. Stage 2 : Stop the host
+1. **Stage 1** : Get yout local host id
+2. **Stage 2** : Stop the host
 
 
 
