@@ -32,6 +32,8 @@ open your terminal and execute the below command
 
 This command will retun the id of the running hosts
 
+![example!](img/06_10_00.jpg)
+
 
 
 ## Stage 2 : Stop the host
