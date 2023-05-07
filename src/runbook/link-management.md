@@ -31,8 +31,6 @@ open your terminal and execute the below command
 This command will retun the id of the Links
 
 
-
-
 ## Stage 2 : Delete Link <a name="stage2"></a>
 
 open your terminal and execute the below command
