@@ -3,6 +3,9 @@
 [About](./about.md)
 
 # Handbook
+- [Key-Value store management](./HANDBOOK/link-management.md)
+- [Link management](./HANDBOOK/link-management.md)
+- [Shutdown host](./HANDBOOK/link-management.md)
 
 # Architecture decision records
 

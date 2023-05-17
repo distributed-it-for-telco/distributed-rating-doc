@@ -1,6 +1,6 @@
 # Runbook : Manage ks store
 ### Product name : 
-- Disco-rating
+- distributed-rating
 
 ### Product version :
 -  All
@@ -19,7 +19,6 @@
 
 
 
-***
 ***
 
 

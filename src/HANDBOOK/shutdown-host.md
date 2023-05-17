@@ -1,6 +1,6 @@
 # Runbook : Shutdown a host
 ### Product name : 
-- Disco-rating
+- distributed-rating
 
 ### Product version :
 -  All
@@ -15,12 +15,7 @@
 2. **Stage 2** : Stop the host
 
 
-
 ***
-***
-
-
-
 
 
 ## Stage 1 : Get your local host id

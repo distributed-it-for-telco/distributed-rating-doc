@@ -1,6 +1,6 @@
 # Runbook : Link management
 ### Product name : 
-- Disco-rating
+- distributed-rating
 
 ### Product version :
 -  All
@@ -17,7 +17,6 @@
 
 
 
-***
 ***
 
 
