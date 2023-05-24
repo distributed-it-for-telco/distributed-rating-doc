@@ -2,12 +2,19 @@
 
 [About](./about.md)
 
+# Concepts
+- [Concepts](./CONCEPTS/concepts.md)
+
+# Architecture
+- [Software architecture](./ARCHITECTURE/architecture.md)
+
+# Architecture decision records
+
 # Handbook
 - [Key-Value store management](./HANDBOOK/kv-store-management.md)
 - [Link management](./HANDBOOK/link-management.md)
 - [Shutdown host](./HANDBOOK/shutdown-host.md)
 
-# Architecture decision records
 
 # Archives
 
