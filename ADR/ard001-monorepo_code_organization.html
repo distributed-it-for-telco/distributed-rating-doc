@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Prototype Architecture - Distributed Rating Engine with wasmCloud</title>
+        <title>Monorepo code organization - Distributed Rating Engine with wasmCloud</title>
                 
 
         <!-- Custom HTML head -->
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="../CONCEPTS/concepts.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="chapter-item expanded affix "><li class="part-title">Architecture</li><li class="chapter-item expanded "><a href="../ARCHITECTURE/architecture.html"><strong aria-hidden="true">2.</strong> Software architecture</a></li><li class="chapter-item expanded affix "><li class="part-title">Architecture decision records</li><li class="chapter-item expanded "><a href="../ADR/ard001-monorepo_code_organization.html"><strong aria-hidden="true">3.</strong> Monorepo code organization</a></li><li class="chapter-item expanded affix "><li class="part-title">How-to</li><li class="chapter-item expanded "><a href="../HOW-TO/kickstart.html"><strong aria-hidden="true">4.</strong> WasmCloud Kickstart</a></li><li class="chapter-item expanded "><a href="../HOW-TO/smithy-notes.html"><strong aria-hidden="true">5.</strong> Smithy</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook</li><li class="chapter-item expanded "><a href="../HANDBOOK/kv-store-management.html"><strong aria-hidden="true">6.</strong> Key-Value store management</a></li><li class="chapter-item expanded "><a href="../HANDBOOK/link-management.html"><strong aria-hidden="true">7.</strong> Link management</a></li><li class="chapter-item expanded "><a href="../HANDBOOK/shutdown-host.html"><strong aria-hidden="true">8.</strong> Shutdown host</a></li><li class="chapter-item expanded affix "><li class="part-title">Archives</li><li class="chapter-item expanded "><a href="../ARCHIVE/rationale.html"><strong aria-hidden="true">9.</strong> Rationale</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/requirements.html"><strong aria-hidden="true">10.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/model.html"><strong aria-hidden="true">11.</strong> Model</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/model-solution1.html"><strong aria-hidden="true">12.</strong> Solution 1</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/about-wasmcloud.html"><strong aria-hidden="true">13.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/architecture.html"><strong aria-hidden="true">14.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/prototype-architecture.html" class="active"><strong aria-hidden="true">15.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/technical-requirements.html"><strong aria-hidden="true">16.</strong> Technical requirements</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="../CONCEPTS/concepts.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="chapter-item expanded affix "><li class="part-title">Architecture</li><li class="chapter-item expanded "><a href="../ARCHITECTURE/architecture.html"><strong aria-hidden="true">2.</strong> Software architecture</a></li><li class="chapter-item expanded affix "><li class="part-title">Architecture decision records</li><li class="chapter-item expanded "><a href="../ADR/ard001-monorepo_code_organization.html" class="active"><strong aria-hidden="true">3.</strong> Monorepo code organization</a></li><li class="chapter-item expanded affix "><li class="part-title">How-to</li><li class="chapter-item expanded "><a href="../HOW-TO/kickstart.html"><strong aria-hidden="true">4.</strong> WasmCloud Kickstart</a></li><li class="chapter-item expanded "><a href="../HOW-TO/smithy-notes.html"><strong aria-hidden="true">5.</strong> Smithy</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook</li><li class="chapter-item expanded "><a href="../HANDBOOK/kv-store-management.html"><strong aria-hidden="true">6.</strong> Key-Value store management</a></li><li class="chapter-item expanded "><a href="../HANDBOOK/link-management.html"><strong aria-hidden="true">7.</strong> Link management</a></li><li class="chapter-item expanded "><a href="../HANDBOOK/shutdown-host.html"><strong aria-hidden="true">8.</strong> Shutdown host</a></li><li class="chapter-item expanded affix "><li class="part-title">Archives</li><li class="chapter-item expanded "><a href="../ARCHIVE/rationale.html"><strong aria-hidden="true">9.</strong> Rationale</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/requirements.html"><strong aria-hidden="true">10.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/model.html"><strong aria-hidden="true">11.</strong> Model</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/model-solution1.html"><strong aria-hidden="true">12.</strong> Solution 1</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/about-wasmcloud.html"><strong aria-hidden="true">13.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/architecture.html"><strong aria-hidden="true">14.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/prototype-architecture.html"><strong aria-hidden="true">15.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/technical-requirements.html"><strong aria-hidden="true">16.</strong> Technical requirements</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -120,7 +120,7 @@
                                                                         <a href="https://github.com/distributed-it-for-telco" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                                                                        <a href="https://github.com/distributed-it-for-telco/distributed-rating-doc/edit/main/src/ARCHIVE/prototype-architecture.md" title="Suggest an edit" aria-label="Suggest an edit">
+                                                                        <a href="https://github.com/distributed-it-for-telco/distributed-rating-doc/edit/main/src/ADR/ard001-monorepo_code_organization.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
                         
@@ -149,36 +149,49 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="prototype-architecture"><a class="header" href="#prototype-architecture">Prototype Architecture</a></h1>
-<h2 id="actor-model"><a class="header" href="#actor-model">actor model</a></h2>
-<p><img src="prototype-architecture.drawio.svg" alt="" /></p>
-<h2 id="git-repos"><a class="header" href="#git-repos">git repos</a></h2>
-<pre><code>├── generic
-│   ├── agent-api-provider
-│   ├── agent-storage-provider
-│   └── collector-provider
-├── interface
-│   ├── agent-storage-interface
-│   ├── authorizer-interface
-│   ├── collector-interface
-│   └── rater-interface
-├── specific-orange
-│   ├── orange-offer1-agent
-│   └── orange-offer1-authorization-provider
-└── specific-vendor1
-    ├── vendor1-offer1-agent
-    └── vendor1-offer1-authorization-provider
-</code></pre>
+                        <h1 id="monorepo-code-organization"><a class="header" href="#monorepo-code-organization">Monorepo code organization</a></h1>
+<ul>
+<li>Status: proposed</li>
+<li>Deciders:</li>
+<li>Date: YYYY.MM.DD</li>
+</ul>
+<p>Technical Story: N/A</p>
+<h2 id="context-and-problem-statement"><a class="header" href="#context-and-problem-statement">Context and Problem Statement</a></h2>
+<p>Code organization in the distributed-agent prototype</p>
+<h2 id="decision-drivers"><a class="header" href="#decision-drivers">Decision Drivers</a></h2>
+<p>Simplicity, agility</p>
+<h2 id="considered-options"><a class="header" href="#considered-options">Considered Options</a></h2>
+<ol>
+<li>
+<p>one unique repo for interfaces, agents and other artifacts</p>
+</li>
+<li>
+<p>one repo for each artifact</p>
+</li>
+</ol>
+<h2 id="decision-outcome"><a class="header" href="#decision-outcome">Decision Outcome</a></h2>
+<ol>
+<li>one unique repo for interfaces and agents</li>
+</ol>
+<h3 id="positive-consequences"><a class="header" href="#positive-consequences">Positive Consequences</a></h3>
+<ul>
+<li>simple and agile, suited for a prototype</li>
+</ul>
+<h3 id="negative-consequences"><a class="header" href="#negative-consequences">Negative Consequences</a></h3>
+<ul>
+<li>only one lifecycle (~release) for all artifacts</li>
+</ul>
+<p>We will want to reassess this decision in the target implementation</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                                                    <a rel="prev" href="../ARCHIVE/architecture.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                                    <a rel="prev" href="../ARCHITECTURE/architecture.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
-                                                    <a rel="next" href="../ARCHIVE/technical-requirements.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                                    <a rel="next" href="../HOW-TO/kickstart.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -188,11 +201,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                                    <a rel="prev" href="../ARCHIVE/architecture.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                    <a rel="prev" href="../ARCHITECTURE/architecture.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
-                                    <a rel="next" href="../ARCHIVE/technical-requirements.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                    <a rel="next" href="../HOW-TO/kickstart.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                             </nav>
