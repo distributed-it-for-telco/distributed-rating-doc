@@ -9,6 +9,7 @@
 - [Software architecture](./ARCHITECTURE/architecture.md)
 
 # Architecture decision records
+- [Monorepo code organization](./ADR/ard001-monorepo_code_organization.md)
 
 # How-to
 - [WasmCloud Kickstart](./HOW-TO/kickstart.md)
