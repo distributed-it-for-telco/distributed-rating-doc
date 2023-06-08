@@ -10,6 +10,10 @@
 
 # Architecture decision records
 
+# How-to
+- [WasmCloud Kickstart](./HOW-TO/kickstart.md)
+- [Smithy](./HOW-TO/smithy-notes.md)
+
 # Handbook
 - [Key-Value store management](./HANDBOOK/kv-store-management.md)
 - [Link management](./HANDBOOK/link-management.md)
