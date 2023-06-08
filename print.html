@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="CONCEPTS/concepts.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="chapter-item expanded affix "><li class="part-title">Architecture</li><li class="chapter-item expanded "><a href="ARCHITECTURE/architecture.html"><strong aria-hidden="true">2.</strong> Software architecture</a></li><li class="chapter-item expanded affix "><li class="part-title">Architecture decision records</li><li class="chapter-item expanded affix "><li class="part-title">Handbook</li><li class="chapter-item expanded "><a href="HANDBOOK/kv-store-management.html"><strong aria-hidden="true">3.</strong> Key-Value store management</a></li><li class="chapter-item expanded "><a href="HANDBOOK/link-management.html"><strong aria-hidden="true">4.</strong> Link management</a></li><li class="chapter-item expanded "><a href="HANDBOOK/shutdown-host.html"><strong aria-hidden="true">5.</strong> Shutdown host</a></li><li class="chapter-item expanded affix "><li class="part-title">Archives</li><li class="chapter-item expanded "><a href="ARCHIVE/rationale.html"><strong aria-hidden="true">6.</strong> Rationale</a></li><li class="chapter-item expanded "><a href="ARCHIVE/requirements.html"><strong aria-hidden="true">7.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="ARCHIVE/model.html"><strong aria-hidden="true">8.</strong> Model</a></li><li class="chapter-item expanded "><a href="ARCHIVE/model-solution1.html"><strong aria-hidden="true">9.</strong> Solution 1</a></li><li class="chapter-item expanded "><a href="ARCHIVE/about-wasmcloud.html"><strong aria-hidden="true">10.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="ARCHIVE/architecture.html"><strong aria-hidden="true">11.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="ARCHIVE/prototype-architecture.html"><strong aria-hidden="true">12.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="ARCHIVE/technical-requirements.html"><strong aria-hidden="true">13.</strong> Technical requirements</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="CONCEPTS/concepts.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="chapter-item expanded affix "><li class="part-title">Architecture</li><li class="chapter-item expanded "><a href="ARCHITECTURE/architecture.html"><strong aria-hidden="true">2.</strong> Software architecture</a></li><li class="chapter-item expanded affix "><li class="part-title">Architecture decision records</li><li class="chapter-item expanded affix "><li class="part-title">How-to</li><li class="chapter-item expanded "><a href="HOW-TO/kickstart.html"><strong aria-hidden="true">3.</strong> WasmCloud Kickstart</a></li><li class="chapter-item expanded "><a href="HOW-TO/smithy-notes.html"><strong aria-hidden="true">4.</strong> Smithy</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook</li><li class="chapter-item expanded "><a href="HANDBOOK/kv-store-management.html"><strong aria-hidden="true">5.</strong> Key-Value store management</a></li><li class="chapter-item expanded "><a href="HANDBOOK/link-management.html"><strong aria-hidden="true">6.</strong> Link management</a></li><li class="chapter-item expanded "><a href="HANDBOOK/shutdown-host.html"><strong aria-hidden="true">7.</strong> Shutdown host</a></li><li class="chapter-item expanded affix "><li class="part-title">Archives</li><li class="chapter-item expanded "><a href="ARCHIVE/rationale.html"><strong aria-hidden="true">8.</strong> Rationale</a></li><li class="chapter-item expanded "><a href="ARCHIVE/requirements.html"><strong aria-hidden="true">9.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="ARCHIVE/model.html"><strong aria-hidden="true">10.</strong> Model</a></li><li class="chapter-item expanded "><a href="ARCHIVE/model-solution1.html"><strong aria-hidden="true">11.</strong> Solution 1</a></li><li class="chapter-item expanded "><a href="ARCHIVE/about-wasmcloud.html"><strong aria-hidden="true">12.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="ARCHIVE/architecture.html"><strong aria-hidden="true">13.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="ARCHIVE/prototype-architecture.html"><strong aria-hidden="true">14.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="ARCHIVE/technical-requirements.html"><strong aria-hidden="true">15.</strong> Technical requirements</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -251,6 +251,55 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="architecture"><a class="header" href="#architecture">Architecture</a></h1>
 <h2 id="wasmcloud-actors"><a class="header" href="#wasmcloud-actors">wasmCloud actors</a></h2>
 <p><img src="ARCHITECTURE/./software_architecture.drawio.svg" alt="actors" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="kickstart"><a class="header" href="#kickstart">Kickstart</a></h1>
+<p>This document to give you kick to start your journey in Wasmcloud world.</p>
+<h1 id="table-of-contents"><a class="header" href="#table-of-contents">Table of contents</a></h1>
+<ol>
+<li><a href="HOW-TO/kickstart.html#introduction">Introduction</a></li>
+<li><a href="HOW-TO/kickstart.html#links">Important links</a></li>
+<li><a href="HOW-TO/kickstart.html#install">Installation</a>
+<ol>
+<li><a href="HOW-TO/kickstart.html#cosmonic">Cosmonic</a></li>
+<li><a href="HOW-TO/kickstart.html#wash">Wash cli</a></li>
+</ol>
+</li>
+<li><a href="HOW-TO/kickstart.html#constellations">Use Cosmonic constellations</a></li>
+</ol>
+<br/>
+<br/>
+<h2 id="introduction-a-nameintroductiona"><a class="header" href="#introduction-a-nameintroductiona">Introduction <a name="introduction"></a></a></h2>
+<p>This document will take you step by step in your journey in Wasmcloud technology , starting from important links you must check passing by installation &amp; running until testing your 1st actor :tada:</p>
+<h2 id="important-links-a-namelinksa"><a class="header" href="#important-links-a-namelinksa">Important links <a name="links"></a></a></h2>
+<h2 id="installation-a-nameinstalla"><a class="header" href="#installation-a-nameinstalla">Installation <a name="install"></a></a></h2>
+<h3 id="cosmonic-a-namecosmonica"><a class="header" href="#cosmonic-a-namecosmonica">Cosmonic <a name="cosmonic"></a></a></h3>
+<h3 id="wash-a-namewasha"><a class="header" href="#wash-a-namewasha">Wash <a name="wash"></a></a></h3>
+<h2 id="use-cosmonic-constellations-a-nameconstellationsa"><a class="header" href="#use-cosmonic-constellations-a-nameconstellationsa">Use cosmonic constellations <a name="constellations"></a></a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="smithy-notes"><a class="header" href="#smithy-notes">Smithy Notes</a></h1>
+<p>This document to give you some notes about smithy with wasmcloud and Rust.</p>
+<h1 id="table-of-contents-1"><a class="header" href="#table-of-contents-1">Table of contents</a></h1>
+<ol>
+<li><a href="HOW-TO/smithy-notes.html#introduction">Introduction</a></li>
+<li><a href="HOW-TO/smithy-notes.html#links">Important links</a></li>
+<li><a href="HOW-TO/smithy-notes.html#annotation">Annotation traits</a>
+<ol>
+<li><a href="HOW-TO/smithy-notes.html#codegen">codegen</a></li>
+</ol>
+</li>
+</ol>
+<h2 id="introduction-a-nameintroductiona-1"><a class="header" href="#introduction-a-nameintroductiona-1">Introduction <a name="introduction"></a></a></h2>
+<p>Every capability provider has a capability contract - an interface definition - that defines a service and a set of operations it supports. Even actor-to-actor messages, which don't use capability contracts, benefit by well-defined API contracts. In wasmCloud, we define these API contracts in Smithy files.</p>
+<h2 id="important-links-a-namelinksa-1"><a class="header" href="#important-links-a-namelinksa-1">Important links <a name="links"></a></a></h2>
+<p><a href="HOW-TO/smithy-notes.html#https://wasmcloud.com/docs/hosts/abis/wasmbus/interfaces/">Interfaces</a></p>
+<h2 id="annotation-traits-a-nameannotationa"><a class="header" href="#annotation-traits-a-nameannotationa">Annotation traits <a name="annotation"></a></a></h2>
+<h3 id="codegen-a-namecodegena"><a class="header" href="#codegen-a-namecodegena">codegen <a name="codegen"></a></a></h3>
+<p>when can we use this traits will be mentioned in this <a href="HOW-TO/smithy-notes.html#https://wasmcloud.com/docs/hosts/abis/wasmbus/interfaces/traits#codegenrust">link</a>
+but the only note you need to know is :</p>
+<ul>
+<li>you should add the import for codegenrust in your smithy file to see the effect of using this trait </li>
+</ul>
+<blockquote>
+<p>use org.wasmcloud.model#codegenRust</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="runbook--manage-ks-store"><a class="header" href="#runbook--manage-ks-store">Runbook : Manage ks store</a></h1>
 <h3 id="product-name-"><a class="header" href="#product-name-">Product name :</a></h3>
 <ul>

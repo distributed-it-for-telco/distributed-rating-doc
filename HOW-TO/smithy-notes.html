@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Rationale - Distributed Rating Engine with wasmCloud</title>
+        <title>Smithy - Distributed Rating Engine with wasmCloud</title>
                 
 
         <!-- Custom HTML head -->
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="../CONCEPTS/concepts.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="chapter-item expanded affix "><li class="part-title">Architecture</li><li class="chapter-item expanded "><a href="../ARCHITECTURE/architecture.html"><strong aria-hidden="true">2.</strong> Software architecture</a></li><li class="chapter-item expanded affix "><li class="part-title">Architecture decision records</li><li class="chapter-item expanded affix "><li class="part-title">How-to</li><li class="chapter-item expanded "><a href="../HOW-TO/kickstart.html"><strong aria-hidden="true">3.</strong> WasmCloud Kickstart</a></li><li class="chapter-item expanded "><a href="../HOW-TO/smithy-notes.html"><strong aria-hidden="true">4.</strong> Smithy</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook</li><li class="chapter-item expanded "><a href="../HANDBOOK/kv-store-management.html"><strong aria-hidden="true">5.</strong> Key-Value store management</a></li><li class="chapter-item expanded "><a href="../HANDBOOK/link-management.html"><strong aria-hidden="true">6.</strong> Link management</a></li><li class="chapter-item expanded "><a href="../HANDBOOK/shutdown-host.html"><strong aria-hidden="true">7.</strong> Shutdown host</a></li><li class="chapter-item expanded affix "><li class="part-title">Archives</li><li class="chapter-item expanded "><a href="../ARCHIVE/rationale.html" class="active"><strong aria-hidden="true">8.</strong> Rationale</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/requirements.html"><strong aria-hidden="true">9.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/model.html"><strong aria-hidden="true">10.</strong> Model</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/model-solution1.html"><strong aria-hidden="true">11.</strong> Solution 1</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/about-wasmcloud.html"><strong aria-hidden="true">12.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/architecture.html"><strong aria-hidden="true">13.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/prototype-architecture.html"><strong aria-hidden="true">14.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/technical-requirements.html"><strong aria-hidden="true">15.</strong> Technical requirements</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="../CONCEPTS/concepts.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="chapter-item expanded affix "><li class="part-title">Architecture</li><li class="chapter-item expanded "><a href="../ARCHITECTURE/architecture.html"><strong aria-hidden="true">2.</strong> Software architecture</a></li><li class="chapter-item expanded affix "><li class="part-title">Architecture decision records</li><li class="chapter-item expanded affix "><li class="part-title">How-to</li><li class="chapter-item expanded "><a href="../HOW-TO/kickstart.html"><strong aria-hidden="true">3.</strong> WasmCloud Kickstart</a></li><li class="chapter-item expanded "><a href="../HOW-TO/smithy-notes.html" class="active"><strong aria-hidden="true">4.</strong> Smithy</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook</li><li class="chapter-item expanded "><a href="../HANDBOOK/kv-store-management.html"><strong aria-hidden="true">5.</strong> Key-Value store management</a></li><li class="chapter-item expanded "><a href="../HANDBOOK/link-management.html"><strong aria-hidden="true">6.</strong> Link management</a></li><li class="chapter-item expanded "><a href="../HANDBOOK/shutdown-host.html"><strong aria-hidden="true">7.</strong> Shutdown host</a></li><li class="chapter-item expanded affix "><li class="part-title">Archives</li><li class="chapter-item expanded "><a href="../ARCHIVE/rationale.html"><strong aria-hidden="true">8.</strong> Rationale</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/requirements.html"><strong aria-hidden="true">9.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/model.html"><strong aria-hidden="true">10.</strong> Model</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/model-solution1.html"><strong aria-hidden="true">11.</strong> Solution 1</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/about-wasmcloud.html"><strong aria-hidden="true">12.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/architecture.html"><strong aria-hidden="true">13.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/prototype-architecture.html"><strong aria-hidden="true">14.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="../ARCHIVE/technical-requirements.html"><strong aria-hidden="true">15.</strong> Technical requirements</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -120,7 +120,7 @@
                                                                         <a href="https://github.com/distributed-it-for-telco" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                                                                        <a href="https://github.com/distributed-it-for-telco/distributed-rating-doc/edit/main/src/ARCHIVE/rationale.md" title="Suggest an edit" aria-label="Suggest an edit">
+                                                                        <a href="https://github.com/distributed-it-for-telco/distributed-rating-doc/edit/main/src/HOW-TO/smithy-notes.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
                         
@@ -149,54 +149,42 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="rationale"><a class="header" href="#rationale">Rationale</a></h1>
-<h2 id="context"><a class="header" href="#context">Context</a></h2>
-<p>IPCEI CIS WP2</p>
-<ul>
-<li>Cloud Infrastructure and Services</li>
-<li>Work Package #2</li>
-<li>Orange submission: open-source and distributed Core Commerce for IT</li>
-</ul>
-<h2 id="value-proposition"><a class="header" href="#value-proposition">Value proposition</a></h2>
-<ul>
-<li>
-<p>In a complex service ecosystem and/or 5G context, the rating of service usage is highly complex:</p>
-<ul>
-<li>service providers are no longer those who are in direct contact with the customer or those who invoice the customer, there are aggregators, marketplaces...</li>
-<li>the pricing rules for the usage of technical services may be different depending on the reseller (composite services, service bundles, discounts on purchase, on usage)</li>
-<li>even more: &quot;à la carte&quot; pricing for each customer</li>
-</ul>
+                        <h1 id="smithy-notes"><a class="header" href="#smithy-notes">Smithy Notes</a></h1>
+<p>This document to give you some notes about smithy with wasmcloud and Rust.</p>
+<h1 id="table-of-contents"><a class="header" href="#table-of-contents">Table of contents</a></h1>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#links">Important links</a></li>
+<li><a href="#annotation">Annotation traits</a>
+<ol>
+<li><a href="#codegen">codegen</a></li>
+</ol>
 </li>
-<li>
-<p>Rather than uploading raw usage data (~CDR), rated in a centralized rating engine system (or semi-distributed between the various partners who contribute to the final service provided to the customer), we propose to ditribute the rating process to the customer device and upload to the service vendor of usage tickets already valued</p>
+</ol>
+<h2 id="introduction-a-nameintroductiona"><a class="header" href="#introduction-a-nameintroductiona">Introduction <a name="introduction"></a></a></h2>
+<p>Every capability provider has a capability contract - an interface definition - that defines a service and a set of operations it supports. Even actor-to-actor messages, which don't use capability contracts, benefit by well-defined API contracts. In wasmCloud, we define these API contracts in Smithy files.</p>
+<h2 id="important-links-a-namelinksa"><a class="header" href="#important-links-a-namelinksa">Important links <a name="links"></a></a></h2>
+<p><a href="#https://wasmcloud.com/docs/hosts/abis/wasmbus/interfaces/">Interfaces</a></p>
+<h2 id="annotation-traits-a-nameannotationa"><a class="header" href="#annotation-traits-a-nameannotationa">Annotation traits <a name="annotation"></a></a></h2>
+<h3 id="codegen-a-namecodegena"><a class="header" href="#codegen-a-namecodegena">codegen <a name="codegen"></a></a></h3>
+<p>when can we use this traits will be mentioned in this <a href="#https://wasmcloud.com/docs/hosts/abis/wasmbus/interfaces/traits#codegenrust">link</a>
+but the only note you need to know is :</p>
 <ul>
-<li>each of the partners contributes to the specific pricing of the customer, the pricing is made directly at the same time as the consumption of the service</li>
-<li>to do a parallel with rights management: it is easier to have components that each carry their authorization model rather than applying the model externally to the entire system</li>
-<li>each partner brings (in the form of an agent) the valuation engine of his service, possibly configured / overloaded by a partner reusing this service</li>
-<li>&quot;as code&quot; rating engine approach rather than a fixed and parameterized system</li>
+<li>you should add the import for codegenrust in your smithy file to see the effect of using this trait </li>
 </ul>
-</li>
-<li>
-<p>Prerequisites for this scenario are: &quot;reasonably secure&quot; device environment, possibility of deploying code on this environment, ability to detect fraud</p>
-</li>
-<li>
-<p>Orange offers an SDK to its partners allowing them to simply integrate the enhancement of the service into the application used to consume the service</p>
-<ul>
-<li>the SDK is a wasmcloud-js runtime that can run code (1 or wasmcloud agents) in charge of recovery</li>
-<li>the service consumer application feeds the SDK with usage data</li>
-</ul>
-</li>
-</ul>
+<blockquote>
+<p>use org.wasmcloud.model#codegenRust</p>
+</blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                                                    <a rel="prev" href="../HANDBOOK/shutdown-host.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                                    <a rel="prev" href="../HOW-TO/kickstart.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
-                                                    <a rel="next" href="../ARCHIVE/requirements.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                                    <a rel="next" href="../HANDBOOK/kv-store-management.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -206,11 +194,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                                    <a rel="prev" href="../HANDBOOK/shutdown-host.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                    <a rel="prev" href="../HOW-TO/kickstart.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
-                                    <a rel="next" href="../ARCHIVE/requirements.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                    <a rel="next" href="../HANDBOOK/kv-store-management.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                             </nav>
