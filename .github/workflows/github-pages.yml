@@ -17,6 +17,7 @@ jobs:
       - name: Setup mdBook
         uses: jontze/action-mdbook@v2
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           use-linkcheck: false
           use-mermaid: true
           use-toc: false
