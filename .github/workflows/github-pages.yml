@@ -22,7 +22,7 @@ jobs:
           use-mermaid: true
           use-toc: false
           use-opengh: false
-          use-admonish: false
+          use-admonish: true
           use-katex: false
 
       - name: Build mdBook

@@ -9,3 +9,9 @@ graph TD;
     B-->D;
     C-->D;
 ```
+
+Admonish test
+
+```admonish info
+A beautifully styled message.
+```
