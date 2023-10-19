@@ -5,7 +5,11 @@ multilingual = false
 src = "src"
 title = "Distributed Rating Engine with wasmCloud"
 
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
 [output.html]
 git-repository-url = "https://github.com/distributed-it-for-telco"
 edit-url-template = "https://github.com/distributed-it-for-telco/distributed-rating-doc/edit/main/{path}"
 preferred-dark-theme = "light"
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
