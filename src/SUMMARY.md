@@ -6,7 +6,7 @@
 - [Concepts](./CONCEPTS/concepts.md)
 
 # Architecture
-- [Software architecture](./ARCHITECTURE/architecture.md)
+- [Software Architecture](./ARCHITECTURE/architecture.md)
 
 # Architecture decision records
 - [Monorepo code organization](./ADR/ard001-monorepo_code_organization.md)
