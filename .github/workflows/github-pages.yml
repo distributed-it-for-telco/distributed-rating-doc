@@ -20,7 +20,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           use-linkcheck: false
           use-mermaid: true
-          use-toc: false
+          use-toc: true
           use-opengh: false
           use-admonish: true
           use-katex: false
