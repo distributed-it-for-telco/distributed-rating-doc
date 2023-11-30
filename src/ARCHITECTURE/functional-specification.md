@@ -1,0 +1,519 @@
+# Functional Specification
+
+## Introduction
+
+The aim of this page is to describe the business aspects for the distributed charging and rating process. The specification should try to describe when possible the similarities between the distributed rating and the charging and billing components in TMF.
+
+### Context
+
+Distributed Rating aims to explore the use of distributed architecture for the rating and part of the charging process to optimize the utilization of the various infrastructure components. For reference the software architecture for the stream can be found [here](./architecture.md).
+
+### Assumptions
+
+Given the fact that this part is a research activity, this component will aim to comply with the TMF guidelines while allowing room for the needs of its innovative nature. in the first evolution the system may mock any external components to expedite the research activities.
+
+The first evolution should focus on services that are provided over IP through a client application, this should facilitate the tracking of the usage through the client application.
+
+**TABLE OF CONTENT**
+<!-- toc -->
+
+## Charging & Billing
+
+![Charging & Billing BPM](./charging_billing_overview.svg)
+
+The process called "Billing" consists of a set of different processes, each working on one type of data:
+
+* **Charging**
+in charge of controlling the usage and decrementation of bundles. It is part of the "Factory" platform and uses the Charging rules and features described at the Product level.
+* **Rating**
+which valuates the usage tickets sent by the Charging. It is part of the "Offer & Products" platform and uses the tariffs and tariff plans described in the Offers to determine the tariff codes (InstalledTariff) that will be used to make the invoice.
+* **Bill**
+alculation, which calculates the billable items (AppliedTariff) that will be sent to billing to be put on the bill. It is part of the "Offer & Products" platform and uses the rates and tariff plan described in the Offers
+* **Invoicing**
+which establishes the invoice from billable items received. It is part of the "Party" platform and uses commercial catalog information to calculate invoice elements and layout.
+
+Part of the charging and rating will be distributed in the new architecture, the rating component should then feed the generated tariff to the billing component. There's no direct impact from the invoicing component so it will not be discussed in this document's scope.
+
+## Charging and Billing within eTOM
+
+Below are listed level 2 business processes that are related to Product rating & Bill Calculation from within the eTOM business process framework, these processes should be used as a guide while distributing the operations on the new architecture.
+
+### Product Usage Management
+
+The Product Usage management processes encompass the functions required to guide, distribute, mediate, summarize, accumulate, and analyze Product Usage records. These processes may occur in real-time, near real-time (i.e. just at the end of the usage), or may be executed on a periodic basis.
+
+Conventionally the usage is collected on the network component and forwarded to be processed in the usage management component.
+
+In the distributed rating, the Client SDK should do the usage collection and forward it to the rating agent to be processed in real-time.
+
+Below is the data schema of the product usage management as defined in TMF-635, the main entity used in the usage management process is the Usage and UsageSpecification
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
+classDiagram
+  direction LR
+  class RelatedParty{
+    URI href
+    String id
+    String name
+    String role
+    String @type
+    String @baseType
+    String @referredType
+    URI @schemaLocation
+  }
+  class UsageSpecificationRef{
+    URI href
+    String id
+    String name
+    String @type
+    String @baseType
+    String @referredType
+    URI @schemaLocation
+  }
+  class Usage{
+    URI href
+    String id
+    String usageType
+    Date usageDate
+    UsageStatusType status
+    String @type
+    String @baseType
+    URI @schemaLocation
+  }
+  class UsageStatusType{
+    <<Enumeration>>
+    received
+    rejected
+    recycled
+    guided
+    rated
+    rerated
+  }
+  class UsageCharacteristic{
+    String id
+    String name
+    String valueType
+    Any value
+    String @type
+    String @baseType
+    URI @schemaLocation
+  }
+  class CharacteristicRelationship{
+    URI href
+    String id
+    String relationshipType
+    String @type
+    String @baseType
+    URI @schemaLocation
+  }
+  RelatedParty "0..*" <--* Usage
+  UsageSpecificationRef "0..1" <--* Usage
+  Usage -- "1" UsageStatusType
+  Usage *--> "0..*" UsageCharacteristic
+  UsageCharacteristic *--> "0..*" CharacteristicRelationship
+
+```
+  classDef clazz fill:#ffe6cc
+  class CharacteristicRelationship,RelatedParty,Usage,UsageCharacteristic,UsageSpecificationRef,UsageStatusType clazz
+
+### Product Rating & Rate Assignment
+
+The purpose of Product Rating & Assignment is to rate a value (monetary or other) to Product Usage or a set of Product Usages and assign the result to a Product and a Billing Account. The charge may be either a credit or a debit and can be handled either online or offline.
+
+Online charging is performed in real-time, requiring an authorization component which may affect how the service is rendered and enables an operator to provide prepaid services to its customers. Whereas offline charging is performed after the service is rendered and is not required to be done in real-time and generally relates to subscription based products.
+
+in the distributed rating, optimally the process of usage and rating should be done on the edge or the FOG levels to minimize the loud on the infrastructure.
+
+Below is the data schema of the product usage management as defined in TMF-635, the main entity used in the product rating and rate assignment process is the RatedProductUsage entity
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
+classDiagram
+  direction LR
+  class RelatedParty{
+    URI href
+    String id
+    String name
+    String role
+    String @type
+    String @baseType
+    String @referredType
+    URI @schemaLocation
+  }
+  class UsageSpecificationRef{
+    URI href
+    String id
+    String name
+    String @type
+    String @baseType
+    String @referredType
+    URI @schemaLocation
+  }
+  class Usage{
+    URI href
+    String id
+    String usageType
+    Date usageDate
+    UsageStatusType status
+    String @type
+    String @baseType
+    URI @schemaLocation
+  }
+  class UsageCharacteristic{
+    String id
+    String name
+    String valueType
+    Any value
+    String @type
+    String @baseType
+    URI @schemaLocation
+  }
+  class CharacteristicRelationship{
+    URI href
+    String id
+    String relationshipType
+    String @type
+    String @baseType
+    URI @schemaLocation
+  }
+  class UsageStatusType{
+    <<Enumeration>>
+    received
+    rejected
+    recycled
+    guided
+    rated
+    rerated
+  }
+  class RatedProductUsage{
+    Money bucketValueConvertedInAmount
+    bool isBilled
+    bool isTaxExempted
+    String offerTariffType
+    String ratingAmountType
+    Date ratingDate
+    Money taxExcludedRatingAmount
+    Money taxIncludedRatingAmount
+    float taxRate
+    String usageRatingTag
+    String @type
+    String @baseType
+    URI @schemaLocation
+  }
+  class ProductRef{
+    URI href
+    String id
+    String name
+    String @type
+    String @baseType
+    String @referredType
+    URI @schemaLocation
+  }
+  RelatedParty "0..*" <--* Usage
+  UsageSpecificationRef "0..1" <--* Usage
+  Usage -- "1" UsageStatusType
+  Usage *--> "0..*" UsageCharacteristic
+  Usage *--> "0..*" RatedProductUsage
+  UsageCharacteristic *--> "0..*" CharacteristicRelationship
+  RatedProductUsage *--> "0..1" ProductRef
+```
+
+### Product Balance Management
+
+This process is responsible for holding, calculating, applying policies and managing functionality/interfaces for the Product balances, Here the values resulting from rating and the application of discounts are applied to a Product balance. The balance affected by the value may be monetary or other balances such as minutes, points, or tokens.
+
+The rating agent should ensure that the balance is impacted and reduce it to match the service usage. The aim is to ensure that the balance is impacted instantly and is managed in a distributed manner. The operations for balance management (like top-up operations) will be out of scope of the first evolution and only the reduction of balance based on usage will be represented.
+
+Below is the data schema of the balance as defined in TMF-654
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
+classDiagram
+  direction LR
+  class PartyAccountRef{
+    String id
+    String href
+    String name
+  }
+  class RelatedPartyRef{
+    String id
+    String href
+    String role
+    String name
+  }
+  class BucketBalance{
+    [ SID CustomerAccountBalance ]
+    String id
+    String href
+    String name
+    String discription
+    String bucketType
+    TimePeriod validFor
+    Quantity remainedAmount
+    Quantity reservedAmount
+    String status
+  }
+  class RealizingResourceRef{
+    String id
+    String href
+    String name
+    String @type
+    String value
+  }
+  class ProductRef{
+    String id
+    String href
+    String name
+  }
+  PartyAccountRef "1" --o "1" BucketBalance
+  RelatedPartyRef "0..*" --o "1" BucketBalance
+  BucketBalance "1" o-- "0..*" RealizingResourceRef
+  BucketBalance "1" o-- "0..*" ProductRef
+  RealizingResourceRef "*" -- "1" ProductRef
+```
+
+### Bill Calculation
+
+Customer Bill Invoice Management processes ensure the bill invoice is created, physically and/or electronically produced and distributed to customers, and that the appropriate taxes, discounts, adjustments, rebates and credits for the products and services delivered to customers have been applied. These processes are accountable for assuring that enterprise revenue is billed and invoices delivered appropriately to customers.
+
+These processes are responsible for, but not limited to:
+
+* Establishment and application of taxes and charges to the services delivered to customers;
+* Application of the adjustment (adjustment decision done in Customer Bill Inquiry Handling);
+* Creation of accurate Customer bill invoices including all adjustments, rebates, discounts, credits, etc.
+* Production & distribution of Customer bill in physical and/or electronic form to customers in accordance with the billing cycle;
+* Forecasting of physical resources associated with Customer bill production, such as paper and envelope quantities;
+* Alignment and management of promotional material insertion into distributed Customer bills
+* Establishment and management of third party arrangements to support Customer bill invoice generation, production and distribution.
+
+The implementation of the Bill Calculation component is out of scope of the distributed rating however the system should ensure that it can generate Proof of Usages and rated events that can be forwarded to the Bill calculation component - through events or shared storage - to support post paid business scenarios. The support for aggregated rating will not be addressed in the first release and can be included in later evolution due to the technical complexity associated with it.
+
+### Managed entities
+
+#### Customer Product Inventory
+
+The customer product inventory component holds the information about the customer and his installed products. it's used to track all the services that the customer has subscribed to asl well as their cost. in the first release the customer inventory will be a simple key-value store that holds the customer id as the key and party information with a list of their installed product in the value. the figure below show the schema of the data stored in the value.
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
+classDiagram
+  direction LR
+  class Party {
+    string id
+    string name
+  }
+  class CustomerInventory {
+    Party relatedParty
+    List~Product~ products
+  }
+  class ProductOfferingRef {
+    string id
+    string name
+    string agentId
+    Quantity unitOfMeasure
+  }
+  class Quantity {
+    string amount
+    string units
+  }
+  class Product {
+    string id
+    string partnerId
+    string description
+    ProductOfferingRef productOffering
+    ProductPrice productPrice
+  }
+  class ProductPrice {
+    PriceType priceType
+    DataTime validTill
+    string description
+    Quantity unitOfMeasure
+    Price price
+  }
+  class PriceType {
+    <<Enumeration>>
+    recurring
+    none-recurring
+    penalty
+    one-time
+  }
+  class Price {
+    string unit
+    float value
+  }
+  Party --o CustomerInventory
+  CustomerInventory *-- Product
+  ProductOfferingRef --o Product
+  ProductOfferingRef *-- Quantity
+  Product o-- ProductPrice
+  Quantity --* ProductPrice
+  ProductPrice o-- PriceType
+  ProductPrice *-- Price
+```
+
+  productPrice: An amount, usually of money, that represents the actual price paid by a Customer for a purchase, a rent or a lease of a Product. The price is valid for a defined period of time.
+price: A money (Money). The amount of money that characterizes the price.
+
+Money sub-resource
+A base / value business entity used to represent money.
+unit: A string. Currency (ISO4217 norm uses 3 letters to define the currency).
+value: A float. A positive floating point number.
+
+```admonish summary title="Customer product inventory field descriptions" collapsible=true
+
+RelatedParty sub-resource:
+Related Entity reference. A related party defines party or party role linked to a specific entity.
+- name: A string. Name of the related entity.
+- id: A string. unique identifier.
+
+productOffering A product offering reference (ProductOfferingRef). A product offering represents entities that are orderable from the provider of the catalog.
+- name: A string. Name of the related entity.
+- id: A string. unique identifier.
+- agentId: the identifier for the agent in charge of rating this offer
+
+productPrice: An amount, usually of money, that represents the actual price paid by a Customer for a purchase, a rent or a lease of a Product. The price is valid for a defined period of time.
+- price: A money (Money). The amount of money that characterizes the price.
+- priceType: A string. A category that describes the price charge, such as recurring, penalty, One time fee and so forth.
+- unitOfMeasure A quantity (Quantity). A number and unit representing how many (for instance 1 dozen) of an ProductOffering is available at the offered price. Its meaning depends on the priceType. It could be a price, a rate, or a discount.
+
+Money sub-resource:
+A base / value business entity used to represent money.
+- unit: A string. Currency (ISO4217 norm uses 3 letters to define the currency).
+- value: A float. A positive floating point number.
+
+```
+
+#### Rated Usage Inventory
+
+The rated usage inventory component holds the information about the customer's consumption and its associated cost. it's used to hold the rated usage information that can be forwarded later on to the billing component. the figure below show the schema of the rated usage.
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
+classDiagram
+  direction TB
+  class Party {
+    string id
+    string name
+    string role
+    string @referredType
+  }
+  class RatedUsage {
+    string id
+    string usageDate
+    string description
+    string usageType
+    string status
+    Party relatedParty
+    RatedProductUsage ratedProductUsage
+    List~UsageCharacteristic~ usageCharacteristics
+  }
+  class UsageCharacteristic {
+    string id
+    string name
+    string valueType
+    string value
+  }
+  class RatedProductUsage {
+    bool isBilled
+    string ratingAmountType
+    string ratingDate
+    BucketValueConvertedInAmount bucketValueConvertedInAmount
+    ProductRef productRef
+  }
+  class BucketValueConvertedInAmount {
+    string unit
+    int value
+  }
+  class ProductRef {
+    string id
+    string name
+  }
+  Party --o RatedUsage
+  UsageCharacteristic --* RatedUsage
+  RatedUsage *-- RatedProductUsage
+  RatedProductUsage o-- ProductRef
+  RatedProductUsage o-- BucketValueConvertedInAmount
+```
+
+```admonish summary title="Rated usage inventory field descriptions" collapsible=true
+
+RatedUsage fields:
+- id: A string. unique identifier.
+- usageDate: A date time (DateTime). Date of usage.
+- description:  A string. Description of usage.
+- ratedProductUsage: rated product usages (RatedProductUsage). An occurrence of employing a product for its intended purpose with all rating details.
+- relatedParty: related party (RelatedParty ). Related Entity reference. A related party defines party or party role linked to a specific entity.
+- status: A usage status type (UsageStatusType). Possible values for the status of the Usage.
+- usageCharacteristic: A list of usage characteristics (UsageCharacteristic [*]). Provides the value of a given characteristic.
+- usageType: A string. Type of usage.
+
+Money sub-resource:
+A base / value business entity used to represent money.
+- unit: A string. Currency (ISO4217 norm uses 3 letters to define the currency).
+- value: A float. A positive floating point number.
+
+RatedProductUsage sub-resource:
+An occurrence of employing a product for its intended purpose with all rating details.
+- bucketValueConvertedInAmount: A money (Money). A base / value business entity used to represent money.
+- isBilled: A boolean. Boolean indicating if usage have been billed or not.
+- productRef: A product reference (ProductRef).
+- ratingAmountType: A string. Type of amount.
+- ratingDate: A date time (DateTime). Date of usage rating.
+- usageRatingTag A string. Tag value: [usage]: the usage is always rated outside a usage bundle [included usage]: the usage is rated inside a usage bundle, [non included usage]: the usage bundle is exhausted. The usage is rated outside the usage bundle.
+
+RelatedParty sub-resource:
+Related Entity reference. A related party defines party or party role linked to a specific entity.
+- name A string. Name of the related entity.
+- id A string. unique identifier.
+- role A string. Role played by the related party.
+
+UsageCharacteristic sub-resource:
+Provides the value of a given characteristic.
+- id: A string. Unique identifier of the characteristic.
+- name: A string. Name of the characteristic.
+- valueType: A string. Data type of the value of the characteristic.
+
+```
+
+### System Personas
+
+#### Customer
+
+The end user that is benefiting from the service irrespective of his relation with different entities involved.
+
+```admonish example title="Customer Example"
+- Person requesting to watch a movie on a streaming service through his teleco account.
+- Person requesting to consume a hosting service from a cloud provider which relies on a teleco service for connectivity
+```
+
+#### Vendor
+
+The entity that's managing the customer account. a vendor can be reselling a service, building a composite service or providing his own services as well.
+
+Depending on the usecase the same entity can be regarded as vendor, provider or a partner.
+
+```admonish example title="Vendor Example"
+- Orange reselling the streaming services to Orange customers
+- Dropbox composing file management service by using AWS storage and Orange 5g slice
+- Orange selling data bundles for customer to consume
+```
+
+#### Provider
+
+The entity providing their services for partners with a revenue sharing model. providers can also be represented as the Vendor in case of selling directly yo the Customer.
+
+```admonish example title="Provider Example"
+- Streaming service provider allowing Orange customers access to their service through their Orange account
+- AWS providing storage services used by dropbox to compose file management service
+- Orange selling data bundles for customer to consume
+```
+
+#### Partner
+
+Describes the relation between Vendors and providers, providers are considered a partner for the vendor that's reselling/composing their services. Providers are also considered partners to other providers if the use other services.
+
+```admonish example title="Partner Example"
+- Streaming provider is a partner for Orange when providing streaming service through orange account
+- AWS & Orange is a partner for DropBox when composing file management service
+```

@@ -7,6 +7,7 @@
 
 # Architecture
 - [Software Architecture](./ARCHITECTURE/architecture.md)
+- [Functional Specification](./ARCHITECTURE/functional-specification.md)
 
 # Architecture decision records
 - [Monorepo code organization](./ADR/ard001-monorepo_code_organization.md)
