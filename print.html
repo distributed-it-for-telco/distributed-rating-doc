@@ -90,9 +90,11 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="CONCEPTS/concepts.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="chapter-item expanded affix "><li class="part-title">Architecture</li><li class="chapter-item expanded "><a href="ARCHITECTURE/architecture.html"><strong aria-hidden="true">2.</strong> Software architecture</a></li><li class="chapter-item expanded affix "><li class="part-title">Architecture decision records</li><li class="chapter-item expanded "><a href="ADR/ard001-monorepo_code_organization.html"><strong aria-hidden="true">3.</strong> Monorepo code organization</a></li><li class="chapter-item expanded affix "><li class="part-title">How-to</li><li class="chapter-item expanded "><a href="HOW-TO/kickstart.html"><strong aria-hidden="true">4.</strong> WasmCloud Kickstart</a></li><li class="chapter-item expanded "><a href="HOW-TO/smithy-notes.html"><strong aria-hidden="true">5.</strong> Smithy</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook</li><li class="chapter-item expanded "><a href="HANDBOOK/kv-store-management.html"><strong aria-hidden="true">6.</strong> Key-Value store management</a></li><li class="chapter-item expanded "><a href="HANDBOOK/link-management.html"><strong aria-hidden="true">7.</strong> Link management</a></li><li class="chapter-item expanded "><a href="HANDBOOK/shutdown-host.html"><strong aria-hidden="true">8.</strong> Shutdown host</a></li><li class="chapter-item expanded affix "><li class="part-title">Archives</li><li class="chapter-item expanded "><a href="ARCHIVE/rationale.html"><strong aria-hidden="true">9.</strong> Rationale</a></li><li class="chapter-item expanded "><a href="ARCHIVE/requirements.html"><strong aria-hidden="true">10.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="ARCHIVE/model.html"><strong aria-hidden="true">11.</strong> Model</a></li><li class="chapter-item expanded "><a href="ARCHIVE/model-solution1.html"><strong aria-hidden="true">12.</strong> Solution 1</a></li><li class="chapter-item expanded "><a href="ARCHIVE/about-wasmcloud.html"><strong aria-hidden="true">13.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="ARCHIVE/architecture.html"><strong aria-hidden="true">14.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="ARCHIVE/prototype-architecture.html"><strong aria-hidden="true">15.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="ARCHIVE/technical-requirements.html"><strong aria-hidden="true">16.</strong> Technical requirements</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="CONCEPTS/concepts.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="chapter-item expanded affix "><li class="part-title">Architecture</li><li class="chapter-item expanded "><a href="ARCHITECTURE/architecture.html"><strong aria-hidden="true">2.</strong> Software Architecture</a></li><li class="chapter-item expanded "><a href="ARCHITECTURE/functional-specification.html"><strong aria-hidden="true">3.</strong> Functional Specification</a></li><li class="chapter-item expanded affix "><li class="part-title">Architecture decision records</li><li class="chapter-item expanded "><a href="ADR/ard001-monorepo_code_organization.html"><strong aria-hidden="true">4.</strong> Monorepo code organization</a></li><li class="chapter-item expanded affix "><li class="part-title">How-to</li><li class="chapter-item expanded "><a href="HOW-TO/kickstart.html"><strong aria-hidden="true">5.</strong> WasmCloud Kickstart</a></li><li class="chapter-item expanded "><a href="HOW-TO/smithy-notes.html"><strong aria-hidden="true">6.</strong> Smithy</a></li><li class="chapter-item expanded affix "><li class="part-title">Handbook</li><li class="chapter-item expanded "><a href="HANDBOOK/kv-store-management.html"><strong aria-hidden="true">7.</strong> Key-Value store management</a></li><li class="chapter-item expanded "><a href="HANDBOOK/link-management.html"><strong aria-hidden="true">8.</strong> Link management</a></li><li class="chapter-item expanded "><a href="HANDBOOK/shutdown-host.html"><strong aria-hidden="true">9.</strong> Shutdown host</a></li><li class="chapter-item expanded affix "><li class="part-title">Archives</li><li class="chapter-item expanded "><a href="ARCHIVE/rationale.html"><strong aria-hidden="true">10.</strong> Rationale</a></li><li class="chapter-item expanded "><a href="ARCHIVE/requirements.html"><strong aria-hidden="true">11.</strong> Requirements</a></li><li class="chapter-item expanded "><a href="ARCHIVE/model.html"><strong aria-hidden="true">12.</strong> Model</a></li><li class="chapter-item expanded "><a href="ARCHIVE/model-solution1.html"><strong aria-hidden="true">13.</strong> Solution 1</a></li><li class="chapter-item expanded "><a href="ARCHIVE/about-wasmcloud.html"><strong aria-hidden="true">14.</strong> About wasmCloud</a></li><li class="chapter-item expanded "><a href="ARCHIVE/architecture.html"><strong aria-hidden="true">15.</strong> wasmCloud Architecture</a></li><li class="chapter-item expanded "><a href="ARCHIVE/prototype-architecture.html"><strong aria-hidden="true">16.</strong> Prototype Architecture</a></li><li class="chapter-item expanded "><a href="ARCHIVE/technical-requirements.html"><strong aria-hidden="true">17.</strong> Technical requirements</a></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -293,9 +295,603 @@
 </ul>
 <p>And the same for Service Vendors (which are Clients of Service Providers)</p>
 <p>The authorizer trait signature is <code>authorize(service subscription authorization token) -&gt; key</code></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="architecture"><a class="header" href="#architecture">Architecture</a></h1>
-<h2 id="wasmcloud-actors"><a class="header" href="#wasmcloud-actors">wasmCloud actors</a></h2>
-<p><img src="ARCHITECTURE/./software_architecture.drawio.svg" alt="actors" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="software-architecture"><a class="header" href="#software-architecture">Software Architecture</a></h1>
+<h2 id="actors"><a class="header" href="#actors">Actors</a></h2>
+<pre class="mermaid">flowchart LR
+
+  vod(VOD Application)
+  subgraph common [Common Sub-lattice]
+    authz(Client AuthZ Service)
+    coordinator(Rating Coordinator)
+    crypto(Crypto Provider)
+    facade(&quot;Customer Product &lt;br&gt; Inventory Facade&quot;)
+    gateway(API gateway)
+    httpd(HTTP server provider)
+  end
+  subgraph orange [Orange Sub-lattice]
+    orange_agent_http(&quot;HTTP client Provider &lt;br&gt; (fetch auth keys)&quot;)
+    orange_agent_kv(&quot;KV Provider &lt;br&gt; (agent, conf, buckets)&quot;)
+    orange_agent(&quot;Orange VOD &lt;br&gt; Rating Agent&quot;)
+    orange_collector_kv(KV/SQL Provider)
+    orange_collector(&quot;Usage Collector&quot;)
+    orange_inventory_kv(KV Provider)
+    orange_inventory(&quot;Orange Customer &lt;br&gt; Product Inventory&quot;)
+  end
+  subgraph partner_x [Partner X Sub-lattice]
+    partner_x_agent(&quot;Partner X VOD &lt;br&gt; Rating Agent&quot;)
+    partner_x_inventory(&quot;Partner X Customer &lt;br&gt; Product Inventory&quot;)
+  end
+  subgraph partner_y [Partner Y Sub-lattice]
+    partner_y_agent(&quot;Partner Y VOD &lt;br&gt; Rating Agent&quot;)
+    partner_y_inventory(&quot;Partner Y Customer &lt;br&gt; Product Inventory&quot;)
+  end
+
+  coordinator --&gt; orange_agent
+  coordinator --&gt; partner_x_agent
+  coordinator --&gt; partner_y_agent
+  crypto -.-&gt; authz
+  facade --&gt;|Search|orange_inventory
+  facade --&gt;|Search|partner_x_inventory
+  facade --&gt;|Search|partner_y_inventory
+  gateway --&gt; authz
+  gateway --&gt; coordinator
+  gateway --&gt; facade
+  gateway &lt;-.- httpd
+  orange_agent --&gt; orange_collector
+  orange_agent &lt;-.- orange_agent_http
+  orange_agent &lt;-.- orange_agent_kv
+  orange_collector_kv -.-&gt; orange_collector
+  orange_inventory_kv -.-&gt; orange_inventory
+  vod --&gt; httpd
+  
+  classDef domain fill:#fffff7,stroke-dasharray:10,stroke-width:2px,font-weight:bold
+  class common,orange,partner_x,partner_y domain
+
+  classDef offer fill:#d6e8d5
+  class vod,orange_agent,partner_x_agent,partner_y_agent offer
+
+  classDef provider fill:#ffe6cc
+  class crypto,httpd,orange_agent_http,orange_agent_kv,orange_collector_kv,orange_inventory_kv provider
+
+  classDef actor fill:#dae8fc
+  class authz,gateway,facade,coordinator,orange_collector,orange_inventory,partner_x_inventory,partner_y_inventory actor
+</pre>
+<div class="table-wrapper"><table><thead><tr><th>Legend</th><th></th></tr></thead><tbody>
+<tr><td>ORANGE</td><td>Capability Providers</td></tr>
+<tr><td>BLUE</td><td>Non offer-dependent Actors</td></tr>
+<tr><td>GREEN</td><td>Offer-dependent Actors <br><ins><em>There is as many actor types as offers</em></ins></td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="functional-specification"><a class="header" href="#functional-specification">Functional Specification</a></h1>
+<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
+<p>The aim of this page is to describe the business aspects for the distributed charging and rating process. The specification should try to describe when possible the similarities between the distributed rating and the charging and billing components in TMF.</p>
+<h3 id="context"><a class="header" href="#context">Context</a></h3>
+<p>Distributed Rating aims to explore the use of distributed architecture for the rating and part of the charging process to optimize the utilization of the various infrastructure components. For reference the software architecture for the stream can be found <a href="ARCHITECTURE/./architecture.html">here</a>.</p>
+<h3 id="assumptions"><a class="header" href="#assumptions">Assumptions</a></h3>
+<p>Given the fact that this part is a research activity, this component will aim to comply with the TMF guidelines while allowing room for the needs of its innovative nature. in the first evolution the system may mock any external components to expedite the research activities.</p>
+<p>The first evolution should focus on services that are provided over IP through a client application, this should facilitate the tracking of the usage through the client application.</p>
+<p><strong>TABLE OF CONTENT</strong></p>
+<ul>
+<li><a href="ARCHITECTURE/functional-specification.html#charging--billing">Charging &amp; Billing</a></li>
+<li><a href="ARCHITECTURE/functional-specification.html#charging-and-billing-within-etom">Charging and Billing within eTOM</a>
+<ul>
+<li><a href="ARCHITECTURE/functional-specification.html#product-usage-management">Product Usage Management</a></li>
+<li><a href="ARCHITECTURE/functional-specification.html#product-rating--rate-assignment">Product Rating &amp; Rate Assignment</a></li>
+<li><a href="ARCHITECTURE/functional-specification.html#product-balance-management">Product Balance Management</a></li>
+<li><a href="ARCHITECTURE/functional-specification.html#bill-calculation">Bill Calculation</a></li>
+<li><a href="ARCHITECTURE/functional-specification.html#managed-entities">Managed entities</a>
+<ul>
+<li><a href="ARCHITECTURE/functional-specification.html#customer-product-inventory">Customer Product Inventory</a></li>
+<li><a href="ARCHITECTURE/functional-specification.html#rated-usage-inventory">Rated Usage Inventory</a></li>
+</ul>
+</li>
+<li><a href="ARCHITECTURE/functional-specification.html#system-personas">System Personas</a>
+<ul>
+<li><a href="ARCHITECTURE/functional-specification.html#customer">Customer</a></li>
+<li><a href="ARCHITECTURE/functional-specification.html#vendor">Vendor</a></li>
+<li><a href="ARCHITECTURE/functional-specification.html#provider">Provider</a></li>
+<li><a href="ARCHITECTURE/functional-specification.html#partner">Partner</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="charging--billing"><a class="header" href="#charging--billing">Charging &amp; Billing</a></h2>
+<p><img src="ARCHITECTURE/./charging_billing_overview.svg" alt="Charging &amp; Billing BPM" /></p>
+<p>The process called &quot;Billing&quot; consists of a set of different processes, each working on one type of data:</p>
+<ul>
+<li><strong>Charging</strong>
+in charge of controlling the usage and decrementation of bundles. It is part of the &quot;Factory&quot; platform and uses the Charging rules and features described at the Product level.</li>
+<li><strong>Rating</strong>
+which valuates the usage tickets sent by the Charging. It is part of the &quot;Offer &amp; Products&quot; platform and uses the tariffs and tariff plans described in the Offers to determine the tariff codes (InstalledTariff) that will be used to make the invoice.</li>
+<li><strong>Bill</strong>
+alculation, which calculates the billable items (AppliedTariff) that will be sent to billing to be put on the bill. It is part of the &quot;Offer &amp; Products&quot; platform and uses the rates and tariff plan described in the Offers</li>
+<li><strong>Invoicing</strong>
+which establishes the invoice from billable items received. It is part of the &quot;Party&quot; platform and uses commercial catalog information to calculate invoice elements and layout.</li>
+</ul>
+<p>Part of the charging and rating will be distributed in the new architecture, the rating component should then feed the generated tariff to the billing component. There's no direct impact from the invoicing component so it will not be discussed in this document's scope.</p>
+<h2 id="charging-and-billing-within-etom"><a class="header" href="#charging-and-billing-within-etom">Charging and Billing within eTOM</a></h2>
+<p>Below are listed level 2 business processes that are related to Product rating &amp; Bill Calculation from within the eTOM business process framework, these processes should be used as a guide while distributing the operations on the new architecture.</p>
+<h3 id="product-usage-management"><a class="header" href="#product-usage-management">Product Usage Management</a></h3>
+<p>The Product Usage management processes encompass the functions required to guide, distribute, mediate, summarize, accumulate, and analyze Product Usage records. These processes may occur in real-time, near real-time (i.e. just at the end of the usage), or may be executed on a periodic basis.</p>
+<p>Conventionally the usage is collected on the network component and forwarded to be processed in the usage management component.</p>
+<p>In the distributed rating, the Client SDK should do the usage collection and forward it to the rating agent to be processed in real-time.</p>
+<p>Below is the data schema of the product usage management as defined in TMF-635, the main entity used in the usage management process is the Usage and UsageSpecification</p>
+<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
+classDiagram
+  direction LR
+  class RelatedParty{
+    URI href
+    String id
+    String name
+    String role
+    String @type
+    String @baseType
+    String @referredType
+    URI @schemaLocation
+  }
+  class UsageSpecificationRef{
+    URI href
+    String id
+    String name
+    String @type
+    String @baseType
+    String @referredType
+    URI @schemaLocation
+  }
+  class Usage{
+    URI href
+    String id
+    String usageType
+    Date usageDate
+    UsageStatusType status
+    String @type
+    String @baseType
+    URI @schemaLocation
+  }
+  class UsageStatusType{
+    &lt;&lt;Enumeration&gt;&gt;
+    received
+    rejected
+    recycled
+    guided
+    rated
+    rerated
+  }
+  class UsageCharacteristic{
+    String id
+    String name
+    String valueType
+    Any value
+    String @type
+    String @baseType
+    URI @schemaLocation
+  }
+  class CharacteristicRelationship{
+    URI href
+    String id
+    String relationshipType
+    String @type
+    String @baseType
+    URI @schemaLocation
+  }
+  RelatedParty &quot;0..*&quot; &lt;--* Usage
+  UsageSpecificationRef &quot;0..1&quot; &lt;--* Usage
+  Usage -- &quot;1&quot; UsageStatusType
+  Usage *--&gt; &quot;0..*&quot; UsageCharacteristic
+  UsageCharacteristic *--&gt; &quot;0..*&quot; CharacteristicRelationship
+
+</pre>
+<p>classDef clazz fill:#ffe6cc
+class CharacteristicRelationship,RelatedParty,Usage,UsageCharacteristic,UsageSpecificationRef,UsageStatusType clazz</p>
+<h3 id="product-rating--rate-assignment"><a class="header" href="#product-rating--rate-assignment">Product Rating &amp; Rate Assignment</a></h3>
+<p>The purpose of Product Rating &amp; Assignment is to rate a value (monetary or other) to Product Usage or a set of Product Usages and assign the result to a Product and a Billing Account. The charge may be either a credit or a debit and can be handled either online or offline.</p>
+<p>Online charging is performed in real-time, requiring an authorization component which may affect how the service is rendered and enables an operator to provide prepaid services to its customers. Whereas offline charging is performed after the service is rendered and is not required to be done in real-time and generally relates to subscription based products.</p>
+<p>in the distributed rating, optimally the process of usage and rating should be done on the edge or the FOG levels to minimize the loud on the infrastructure.</p>
+<p>Below is the data schema of the product usage management as defined in TMF-635, the main entity used in the product rating and rate assignment process is the RatedProductUsage entity</p>
+<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
+classDiagram
+  direction LR
+  class RelatedParty{
+    URI href
+    String id
+    String name
+    String role
+    String @type
+    String @baseType
+    String @referredType
+    URI @schemaLocation
+  }
+  class UsageSpecificationRef{
+    URI href
+    String id
+    String name
+    String @type
+    String @baseType
+    String @referredType
+    URI @schemaLocation
+  }
+  class Usage{
+    URI href
+    String id
+    String usageType
+    Date usageDate
+    UsageStatusType status
+    String @type
+    String @baseType
+    URI @schemaLocation
+  }
+  class UsageCharacteristic{
+    String id
+    String name
+    String valueType
+    Any value
+    String @type
+    String @baseType
+    URI @schemaLocation
+  }
+  class CharacteristicRelationship{
+    URI href
+    String id
+    String relationshipType
+    String @type
+    String @baseType
+    URI @schemaLocation
+  }
+  class UsageStatusType{
+    &lt;&lt;Enumeration&gt;&gt;
+    received
+    rejected
+    recycled
+    guided
+    rated
+    rerated
+  }
+  class RatedProductUsage{
+    Money bucketValueConvertedInAmount
+    bool isBilled
+    bool isTaxExempted
+    String offerTariffType
+    String ratingAmountType
+    Date ratingDate
+    Money taxExcludedRatingAmount
+    Money taxIncludedRatingAmount
+    float taxRate
+    String usageRatingTag
+    String @type
+    String @baseType
+    URI @schemaLocation
+  }
+  class ProductRef{
+    URI href
+    String id
+    String name
+    String @type
+    String @baseType
+    String @referredType
+    URI @schemaLocation
+  }
+  RelatedParty &quot;0..*&quot; &lt;--* Usage
+  UsageSpecificationRef &quot;0..1&quot; &lt;--* Usage
+  Usage -- &quot;1&quot; UsageStatusType
+  Usage *--&gt; &quot;0..*&quot; UsageCharacteristic
+  Usage *--&gt; &quot;0..*&quot; RatedProductUsage
+  UsageCharacteristic *--&gt; &quot;0..*&quot; CharacteristicRelationship
+  RatedProductUsage *--&gt; &quot;0..1&quot; ProductRef
+</pre>
+<h3 id="product-balance-management"><a class="header" href="#product-balance-management">Product Balance Management</a></h3>
+<p>This process is responsible for holding, calculating, applying policies and managing functionality/interfaces for the Product balances, Here the values resulting from rating and the application of discounts are applied to a Product balance. The balance affected by the value may be monetary or other balances such as minutes, points, or tokens.</p>
+<p>The rating agent should ensure that the balance is impacted and reduce it to match the service usage. The aim is to ensure that the balance is impacted instantly and is managed in a distributed manner. The operations for balance management (like top-up operations) will be out of scope of the first evolution and only the reduction of balance based on usage will be represented.</p>
+<p>Below is the data schema of the balance as defined in TMF-654</p>
+<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
+classDiagram
+  direction LR
+  class PartyAccountRef{
+    String id
+    String href
+    String name
+  }
+  class RelatedPartyRef{
+    String id
+    String href
+    String role
+    String name
+  }
+  class BucketBalance{
+    [ SID CustomerAccountBalance ]
+    String id
+    String href
+    String name
+    String discription
+    String bucketType
+    TimePeriod validFor
+    Quantity remainedAmount
+    Quantity reservedAmount
+    String status
+  }
+  class RealizingResourceRef{
+    String id
+    String href
+    String name
+    String @type
+    String value
+  }
+  class ProductRef{
+    String id
+    String href
+    String name
+  }
+  PartyAccountRef &quot;1&quot; --o &quot;1&quot; BucketBalance
+  RelatedPartyRef &quot;0..*&quot; --o &quot;1&quot; BucketBalance
+  BucketBalance &quot;1&quot; o-- &quot;0..*&quot; RealizingResourceRef
+  BucketBalance &quot;1&quot; o-- &quot;0..*&quot; ProductRef
+  RealizingResourceRef &quot;*&quot; -- &quot;1&quot; ProductRef
+</pre>
+<h3 id="bill-calculation"><a class="header" href="#bill-calculation">Bill Calculation</a></h3>
+<p>Customer Bill Invoice Management processes ensure the bill invoice is created, physically and/or electronically produced and distributed to customers, and that the appropriate taxes, discounts, adjustments, rebates and credits for the products and services delivered to customers have been applied. These processes are accountable for assuring that enterprise revenue is billed and invoices delivered appropriately to customers.</p>
+<p>These processes are responsible for, but not limited to:</p>
+<ul>
+<li>Establishment and application of taxes and charges to the services delivered to customers;</li>
+<li>Application of the adjustment (adjustment decision done in Customer Bill Inquiry Handling);</li>
+<li>Creation of accurate Customer bill invoices including all adjustments, rebates, discounts, credits, etc.</li>
+<li>Production &amp; distribution of Customer bill in physical and/or electronic form to customers in accordance with the billing cycle;</li>
+<li>Forecasting of physical resources associated with Customer bill production, such as paper and envelope quantities;</li>
+<li>Alignment and management of promotional material insertion into distributed Customer bills</li>
+<li>Establishment and management of third party arrangements to support Customer bill invoice generation, production and distribution.</li>
+</ul>
+<p>The implementation of the Bill Calculation component is out of scope of the distributed rating however the system should ensure that it can generate Proof of Usages and rated events that can be forwarded to the Bill calculation component - through events or shared storage - to support post paid business scenarios. The support for aggregated rating will not be addressed in the first release and can be included in later evolution due to the technical complexity associated with it.</p>
+<h3 id="managed-entities"><a class="header" href="#managed-entities">Managed entities</a></h3>
+<h4 id="customer-product-inventory"><a class="header" href="#customer-product-inventory">Customer Product Inventory</a></h4>
+<p>The customer product inventory component holds the information about the customer and his installed products. it's used to track all the services that the customer has subscribed to asl well as their cost. in the first release the customer inventory will be a simple key-value store that holds the customer id as the key and party information with a list of their installed product in the value. the figure below show the schema of the data stored in the value.</p>
+<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
+classDiagram
+  direction LR
+  class Party {
+    string id
+    string name
+  }
+  class CustomerInventory {
+    Party relatedParty
+    List~Product~ products
+  }
+  class ProductOfferingRef {
+    string id
+    string name
+    string agentId
+    Quantity unitOfMeasure
+  }
+  class Quantity {
+    string amount
+    string units
+  }
+  class Product {
+    string id
+    string partnerId
+    string description
+    ProductOfferingRef productOffering
+    ProductPrice productPrice
+  }
+  class ProductPrice {
+    PriceType priceType
+    DataTime validTill
+    string description
+    Quantity unitOfMeasure
+    Price price
+  }
+  class PriceType {
+    &lt;&lt;Enumeration&gt;&gt;
+    recurring
+    none-recurring
+    penalty
+    one-time
+  }
+  class Price {
+    string unit
+    float value
+  }
+  Party --o CustomerInventory
+  CustomerInventory *-- Product
+  ProductOfferingRef --o Product
+  ProductOfferingRef *-- Quantity
+  Product o-- ProductPrice
+  Quantity --* ProductPrice
+  ProductPrice o-- PriceType
+  ProductPrice *-- Price
+</pre>
+<p>productPrice: An amount, usually of money, that represents the actual price paid by a Customer for a purchase, a rent or a lease of a Product. The price is valid for a defined period of time.
+price: A money (Money). The amount of money that characterizes the price.</p>
+<p>Money sub-resource
+A base / value business entity used to represent money.
+unit: A string. Currency (ISO4217 norm uses 3 letters to define the currency).
+value: A float. A positive floating point number.</p>
+<details id="admonition-customer-product-inventory-field-descriptions" class="admonition admonish-abstract">
+<summary class="admonition-title">
+<p>Customer product inventory field descriptions</p>
+<p><a class="admonition-anchor-link" href="ARCHITECTURE/functional-specification.html#admonition-customer-product-inventory-field-descriptions"></a></p>
+</summary>
+<div>
+<p>RelatedParty sub-resource:
+Related Entity reference. A related party defines party or party role linked to a specific entity.</p>
+<ul>
+<li>name: A string. Name of the related entity.</li>
+<li>id: A string. unique identifier.</li>
+</ul>
+<p>productOffering A product offering reference (ProductOfferingRef). A product offering represents entities that are orderable from the provider of the catalog.</p>
+<ul>
+<li>name: A string. Name of the related entity.</li>
+<li>id: A string. unique identifier.</li>
+<li>agentId: the identifier for the agent in charge of rating this offer</li>
+</ul>
+<p>productPrice: An amount, usually of money, that represents the actual price paid by a Customer for a purchase, a rent or a lease of a Product. The price is valid for a defined period of time.</p>
+<ul>
+<li>price: A money (Money). The amount of money that characterizes the price.</li>
+<li>priceType: A string. A category that describes the price charge, such as recurring, penalty, One time fee and so forth.</li>
+<li>unitOfMeasure A quantity (Quantity). A number and unit representing how many (for instance 1 dozen) of an ProductOffering is available at the offered price. Its meaning depends on the priceType. It could be a price, a rate, or a discount.</li>
+</ul>
+<p>Money sub-resource:
+A base / value business entity used to represent money.</p>
+<ul>
+<li>unit: A string. Currency (ISO4217 norm uses 3 letters to define the currency).</li>
+<li>value: A float. A positive floating point number.</li>
+</ul>
+</div>
+</details>
+<h4 id="rated-usage-inventory"><a class="header" href="#rated-usage-inventory">Rated Usage Inventory</a></h4>
+<p>The rated usage inventory component holds the information about the customer's consumption and its associated cost. it's used to hold the rated usage information that can be forwarded later on to the billing component. the figure below show the schema of the rated usage.</p>
+<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
+classDiagram
+  direction TB
+  class Party {
+    string id
+    string name
+    string role
+    string @referredType
+  }
+  class RatedUsage {
+    string id
+    string usageDate
+    string description
+    string usageType
+    string status
+    Party relatedParty
+    RatedProductUsage ratedProductUsage
+    List~UsageCharacteristic~ usageCharacteristics
+  }
+  class UsageCharacteristic {
+    string id
+    string name
+    string valueType
+    string value
+  }
+  class RatedProductUsage {
+    bool isBilled
+    string ratingAmountType
+    string ratingDate
+    BucketValueConvertedInAmount bucketValueConvertedInAmount
+    ProductRef productRef
+  }
+  class BucketValueConvertedInAmount {
+    string unit
+    int value
+  }
+  class ProductRef {
+    string id
+    string name
+  }
+  Party --o RatedUsage
+  UsageCharacteristic --* RatedUsage
+  RatedUsage *-- RatedProductUsage
+  RatedProductUsage o-- ProductRef
+  RatedProductUsage o-- BucketValueConvertedInAmount
+</pre>
+<details id="admonition-rated-usage-inventory-field-descriptions" class="admonition admonish-abstract">
+<summary class="admonition-title">
+<p>Rated usage inventory field descriptions</p>
+<p><a class="admonition-anchor-link" href="ARCHITECTURE/functional-specification.html#admonition-rated-usage-inventory-field-descriptions"></a></p>
+</summary>
+<div>
+<p>RatedUsage fields:</p>
+<ul>
+<li>id: A string. unique identifier.</li>
+<li>usageDate: A date time (DateTime). Date of usage.</li>
+<li>description:  A string. Description of usage.</li>
+<li>ratedProductUsage: rated product usages (RatedProductUsage). An occurrence of employing a product for its intended purpose with all rating details.</li>
+<li>relatedParty: related party (RelatedParty ). Related Entity reference. A related party defines party or party role linked to a specific entity.</li>
+<li>status: A usage status type (UsageStatusType). Possible values for the status of the Usage.</li>
+<li>usageCharacteristic: A list of usage characteristics (UsageCharacteristic [*]). Provides the value of a given characteristic.</li>
+<li>usageType: A string. Type of usage.</li>
+</ul>
+<p>Money sub-resource:
+A base / value business entity used to represent money.</p>
+<ul>
+<li>unit: A string. Currency (ISO4217 norm uses 3 letters to define the currency).</li>
+<li>value: A float. A positive floating point number.</li>
+</ul>
+<p>RatedProductUsage sub-resource:
+An occurrence of employing a product for its intended purpose with all rating details.</p>
+<ul>
+<li>bucketValueConvertedInAmount: A money (Money). A base / value business entity used to represent money.</li>
+<li>isBilled: A boolean. Boolean indicating if usage have been billed or not.</li>
+<li>productRef: A product reference (ProductRef).</li>
+<li>ratingAmountType: A string. Type of amount.</li>
+<li>ratingDate: A date time (DateTime). Date of usage rating.</li>
+<li>usageRatingTag A string. Tag value: [usage]: the usage is always rated outside a usage bundle [included usage]: the usage is rated inside a usage bundle, [non included usage]: the usage bundle is exhausted. The usage is rated outside the usage bundle.</li>
+</ul>
+<p>RelatedParty sub-resource:
+Related Entity reference. A related party defines party or party role linked to a specific entity.</p>
+<ul>
+<li>name A string. Name of the related entity.</li>
+<li>id A string. unique identifier.</li>
+<li>role A string. Role played by the related party.</li>
+</ul>
+<p>UsageCharacteristic sub-resource:
+Provides the value of a given characteristic.</p>
+<ul>
+<li>id: A string. Unique identifier of the characteristic.</li>
+<li>name: A string. Name of the characteristic.</li>
+<li>valueType: A string. Data type of the value of the characteristic.</li>
+</ul>
+</div>
+</details>
+<h3 id="system-personas"><a class="header" href="#system-personas">System Personas</a></h3>
+<h4 id="customer"><a class="header" href="#customer">Customer</a></h4>
+<p>The end user that is benefiting from the service irrespective of his relation with different entities involved.</p>
+<div id="admonition-customer-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Customer Example</p>
+<p><a class="admonition-anchor-link" href="ARCHITECTURE/functional-specification.html#admonition-customer-example"></a></p>
+</div>
+<div>
+<ul>
+<li>Person requesting to watch a movie on a streaming service through his teleco account.</li>
+<li>Person requesting to consume a hosting service from a cloud provider which relies on a teleco service for connectivity</li>
+</ul>
+</div>
+</div>
+<h4 id="vendor"><a class="header" href="#vendor">Vendor</a></h4>
+<p>The entity that's managing the customer account. a vendor can be reselling a service, building a composite service or providing his own services as well.</p>
+<p>Depending on the usecase the same entity can be regarded as vendor, provider or a partner.</p>
+<div id="admonition-vendor-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Vendor Example</p>
+<p><a class="admonition-anchor-link" href="ARCHITECTURE/functional-specification.html#admonition-vendor-example"></a></p>
+</div>
+<div>
+<ul>
+<li>Orange reselling the streaming services to Orange customers</li>
+<li>Dropbox composing file management service by using AWS storage and Orange 5g slice</li>
+<li>Orange selling data bundles for customer to consume</li>
+</ul>
+</div>
+</div>
+<h4 id="provider"><a class="header" href="#provider">Provider</a></h4>
+<p>The entity providing their services for partners with a revenue sharing model. providers can also be represented as the Vendor in case of selling directly yo the Customer.</p>
+<div id="admonition-provider-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Provider Example</p>
+<p><a class="admonition-anchor-link" href="ARCHITECTURE/functional-specification.html#admonition-provider-example"></a></p>
+</div>
+<div>
+<ul>
+<li>Streaming service provider allowing Orange customers access to their service through their Orange account</li>
+<li>AWS providing storage services used by dropbox to compose file management service</li>
+<li>Orange selling data bundles for customer to consume</li>
+</ul>
+</div>
+</div>
+<h4 id="partner"><a class="header" href="#partner">Partner</a></h4>
+<p>Describes the relation between Vendors and providers, providers are considered a partner for the vendor that's reselling/composing their services. Providers are also considered partners to other providers if the use other services.</p>
+<div id="admonition-partner-example" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Partner Example</p>
+<p><a class="admonition-anchor-link" href="ARCHITECTURE/functional-specification.html#admonition-partner-example"></a></p>
+</div>
+<div>
+<ul>
+<li>Streaming provider is a partner for Orange when providing streaming service through orange account</li>
+<li>AWS &amp; Orange is a partner for DropBox when composing file management service</li>
+</ul>
+</div>
+</div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="monorepo-code-organization"><a class="header" href="#monorepo-code-organization">Monorepo code organization</a></h1>
 <ul>
 <li>Status: proposed</li>
@@ -345,7 +941,7 @@
 </ol>
 <br/>
 <br/>
-<h2 id="introduction"><a class="header" href="#introduction">Introduction <a name="introduction"></a></a></h2>
+<h2 id="introduction-1"><a class="header" href="#introduction-1">Introduction <a name="introduction"></a></a></h2>
 <p>This document will take you step by step in your journey in Wasmcloud technology , starting from important links you must check passing by installation &amp; running until testing your 1st actor :tada:</p>
 <h2 id="important-links"><a class="header" href="#important-links">Important links <a name="links"></a></a></h2>
 <h2 id="installation"><a class="header" href="#installation">Installation <a name="install"></a></a></h2>
@@ -364,7 +960,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="introduction-1"><a class="header" href="#introduction-1">Introduction <a name="introduction"></a></a></h2>
+<h2 id="introduction-2"><a class="header" href="#introduction-2">Introduction <a name="introduction"></a></a></h2>
 <p>Every capability provider has a capability contract - an interface definition - that defines a service and a set of operations it supports. Even actor-to-actor messages, which don't use capability contracts, benefit by well-defined API contracts. In wasmCloud, we define these API contracts in Smithy files.</p>
 <h2 id="important-links-1"><a class="header" href="#important-links-1">Important links <a name="links"></a></a></h2>
 <p><a href="HOW-TO/smithy-notes.html#https://wasmcloud.com/docs/hosts/abis/wasmbus/interfaces/">Interfaces</a></p>
@@ -517,7 +1113,7 @@ but the only note you need to know is :</p>
 </blockquote>
 <p><em><strong>host_id</strong></em> : is the id returned from Stage 1 </p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rationale"><a class="header" href="#rationale">Rationale</a></h1>
-<h2 id="context"><a class="header" href="#context">Context</a></h2>
+<h2 id="context-1"><a class="header" href="#context-1">Context</a></h2>
 <p>IPCEI CIS WP2</p>
 <ul>
 <li>Cloud Infrastructure and Services</li>
@@ -890,7 +1486,7 @@ but the only note you need to know is :</p>
 <li><a href="https://wasmcloud.com/blog/wasmcloud_third_anniversary/">Reflections on Three Years of wasmCloud, Kevin Hoffman</a></li>
 <li><a href="https://wasmcloud.com/blog/webassembly_components_and_wasmcloud_actors_a_glimpse_of_the_future/">WebAssembly Components and wasmCloud Actors: A Glimpse of the Future, Taylor Thomas</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="architecture-1"><a class="header" href="#architecture-1">Architecture</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="architecture"><a class="header" href="#architecture">Architecture</a></h1>
 <h2 id="components"><a class="header" href="#components">components</a></h2>
 <ul>
 <li>
