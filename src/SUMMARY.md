@@ -14,6 +14,7 @@
 - [UC-01: Listing products](./USE-CASES/UC-01/index.md)
 - [UC-02: Use product (Regular)](./USE-CASES/UC-02/index.md)
 - [UC-03: Use product (Discount)](./USE-CASES/UC-03/index.md)
+- [UC-04: Use product (Bundle)](./USE-CASES/UC-04/index.md)
 
 # Architecture decision records
 - [Monorepo code organization](./ADR/ard001-monorepo_code_organization.md)
