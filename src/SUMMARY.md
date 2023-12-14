@@ -9,6 +9,10 @@
 - [Software Architecture](./ARCHITECTURE/architecture.md)
 - [Functional Specification](./ARCHITECTURE/functional-specification.md)
 
+# Use Cases
+
+- [UC-01: Listing products](./USE-CASES/UC-01/index.md)
+
 # Architecture decision records
 - [Monorepo code organization](./ADR/ard001-monorepo_code_organization.md)
 
