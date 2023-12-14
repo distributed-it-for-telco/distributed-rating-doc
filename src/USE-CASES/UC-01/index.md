@@ -2,7 +2,7 @@
 
 ## Business process model
 
-![Process diagram depicting the retrival of customer product inventory](./uc01-bpmn.svg)
+![Process diagram depicting the retrival of customer product inventory](./bpmn.svg)
 
 ## User story
 
