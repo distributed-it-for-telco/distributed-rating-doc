@@ -180,17 +180,50 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="consumption-of-a-product-with-discount-bucket-using-postpaid-account"><a class="header" href="#consumption-of-a-product-with-discount-bucket-using-postpaid-account">Consumption of a product with discount bucket using postpaid account</a></h1>
-<h2 id="business-process-model"><a class="header" href="#business-process-model">Business process model</a></h2>
-<p><img src="./bpmn.svg" alt="Process diagram depicting the consumption of a product with discount bucket from postpaid account" /></p>
-<h2 id="user-story"><a class="header" href="#user-story">User story</a></h2>
-<p><strong>As a</strong> a postpaid customer of a teleco service provider
-<strong>I want to</strong> select a one shot service over IP
-<strong>so that</strong> I can consume this service from a providers mobile app
-<strong>and</strong> the cost of this service will be reflected in my bill</p>
-<p><strong>As a</strong> Teleco  Service Provider
-<strong>I want to</strong> rate the one shot service in a distributed mode
-<strong>so that</strong> I will send rated usage to the billing to be reflected in the customers bill</p>
+                        <h1 id="consumption-of-a-product-with-discount-threshold-using-postpaid-account"><a class="header" href="#consumption-of-a-product-with-discount-threshold-using-postpaid-account">Consumption of a product with discount threshold using postpaid account</a></h1>
+<div id="admonition-pertaining-to" class="admonition admonish-abstract">
+<div class="admonition-title">
+<p>Pertaining to</p>
+<p><a class="admonition-anchor-link" href="#admonition-pertaining-to"></a></p>
+</div>
+<div>
+<ul>
+<li>Customer account type: <strong>POSTPAID</strong></li>
+<li>Product offer type: <strong>REGULAR</strong></li>
+</ul>
+</div>
+</div>
+<div id="admonition-use-case" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Use case</p>
+<p><a class="admonition-anchor-link" href="#admonition-use-case"></a></p>
+</div>
+<div>
+<p><strong>As a</strong> a customer of a <em>Teleco provider</em> with <em>postpaid</em> account<br />
+<strong>I want to</strong> select some product with <em>threshold discount</em><br />
+<strong>so that I can</strong> consume it from a providers mobile app<br />
+<strong>and</strong> the cost will be reflected in my bill<br />
+<strong>and</strong> benifit from the offered discount</p>
+</div>
+</div>
+<div id="admonition-use-case-1" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Use case</p>
+<p><a class="admonition-anchor-link" href="#admonition-use-case-1"></a></p>
+</div>
+<div>
+<p><strong>As a</strong> <em>Teleco provider</em> offering <em>threshold discount</em> products<br />
+<strong>I want to</strong> calculate rated usage for it in a distributed manner<br />
+<strong>so that I can</strong> be reflected in the customers bill</p>
+</div>
+</div>
+<h2 id="business-process"><a class="header" href="#business-process">Business process</a></h2>
+<h3 id="client-request-process-model"><a class="header" href="#client-request-process-model">Client request process model</a></h3>
+<p><img src="../product-use-client-bpmn.svg" alt="Process diagram depicting the Client request for product consumption" /></p>
+<h3 id="threshold-discount-rating-process-model"><a class="header" href="#threshold-discount-rating-process-model">Threshold discount rating process model</a></h3>
+<p><img src="./bpmn.svg" alt="Process diagram depicting the consumption of a product with threshold discount from postpaid account" /></p>
+<h3 id="legend"><a class="header" href="#legend">Legend</a></h3>
+<p>{{#include ../legend.md}}</p>
 
                     </main>
 
