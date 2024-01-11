@@ -1,5 +1,8 @@
 # Functional Specification
 
+**TABLE OF CONTENT**
+<!-- toc -->
+
 ## Introduction
 
 The aim of this page is to describe the business aspects for the distributed charging and rating process. The specification should try to describe when possible the similarities between the distributed rating and the charging and billing components in TMF.
@@ -12,10 +15,7 @@ Distributed Rating aims to explore the use of distributed architecture for the r
 
 Given the fact that this part is a research activity, this component will aim to comply with the TMF guidelines while allowing room for the needs of its innovative nature. in the first evolution the system may mock any external components to expedite the research activities.
 
-The first evolution should focus on services that are provided over IP through a client application, this should facilitate the tracking of the usage through the client application.
-
-**TABLE OF CONTENT**
-<!-- toc -->
+The first evolution should focus on products provided over IP through a client application to facilitate the tracking of their usage through the client application.
 
 ## Charging & Billing
 
@@ -56,7 +56,7 @@ Below is the data schema of the product usage management as defined in TMF-635, 
 
 The purpose of Product Rating & Assignment is to rate a value (monetary or other) to Product Usage or a set of Product Usages and assign the result to a Product and a Billing Account. The charge may be either a credit or a debit and can be handled either online or offline.
 
-Online charging is performed in real-time, requiring an authorization component which may affect how the service is rendered and enables an operator to provide prepaid services to its customers. Whereas offline charging is performed after the service is rendered and is not required to be done in real-time and generally relates to subscription based products.
+Online charging is performed in real-time, necessitating an authorization component that can impact the delivery of the product and enables the operator to provide prepaid products to their customers. Conversely, offline charging takes place after the product has been delivered and does not necessitate real-time processing, and typically pertains to subscription-based products.
 
 in the distributed rating, optimally the process of usage and rating should be done on the edge or the FOG levels to minimize the loud on the infrastructure.
 
@@ -70,7 +70,7 @@ Below is the data schema of the product usage management as defined in TMF-635, 
 
 This process is responsible for holding, calculating, applying policies and managing functionality/interfaces for the Product balances, Here the values resulting from rating and the application of discounts are applied to a Product balance. The balance affected by the value may be monetary or other balances such as minutes, points, or tokens.
 
-The rating agent should ensure that the balance is impacted and reduce it to match the service usage. The aim is to ensure that the balance is impacted instantly and is managed in a distributed manner. The operations for balance management (like top-up operations) will be out of scope of the first evolution and only the reduction of balance based on usage will be represented.
+The rating agent should ensure that the balance is impacted and reduce it to match the product usage. The aim is to ensure that the balance is impacted instantly and is managed in a distributed manner. The operations for balance management (like top-up operations) will be out of scope of the first evolution and only the reduction of balance based on usage will be represented.
 
 Below is the data schema of the balance as defined in TMF-654
 
@@ -80,11 +80,11 @@ Below is the data schema of the balance as defined in TMF-654
 
 ### Bill Calculation
 
-Customer Bill Invoice Management processes ensure the bill invoice is created, physically and/or electronically produced and distributed to customers, and that the appropriate taxes, discounts, adjustments, rebates and credits for the products and services delivered to customers have been applied. These processes are accountable for assuring that enterprise revenue is billed and invoices delivered appropriately to customers.
+Customer Bill Invoice Management processes ensure the bill invoice is created, physically and/or electronically produced and distributed to customers, and that the appropriate taxes, discounts, adjustments, rebates and credits for the products delivered to customers have been applied. These processes are accountable for assuring that enterprise revenue is billed and invoices delivered appropriately to customers.
 
 These processes are responsible for, but not limited to:
 
-* Establishment and application of taxes and charges to the services delivered to customers;
+* Establishment and application of taxes and charges to the products delivered to customers;
 * Application of the adjustment (adjustment decision done in Customer Bill Inquiry Handling);
 * Creation of accurate Customer bill invoices including all adjustments, rebates, discounts, credits, etc.
 * Production & distribution of Customer bill in physical and/or electronic form to customers in accordance with the billing cycle;
@@ -98,7 +98,7 @@ The implementation of the Bill Calculation component is out of scope of the dist
 
 #### Customer Product Inventory
 
-The customer product inventory component holds the information about the customer and his installed products. it's used to track all the services that the customer has subscribed to asl well as their cost. in the first release the customer inventory will be a simple key-value store that holds the customer id as the key and party information with a list of their installed product in the value. the figure below show the schema of the data stored in the value.
+The customer product inventory component holds the information about the customer and his installed products. it's used to track all the products that the customer has subscribed to as well as their cost. in the first release the customer inventory will be a simple key-value store that holds the customer id as the key and party information with a list of their installed product in the value. the figure below show the schema of the data stored in the value.
 
 ```mermaid
 {{#include customer_inventory-class_diagram.mmd}}
@@ -188,40 +188,23 @@ Provides the value of a given characteristic.
 
 #### Customer
 
-The end user that is benefiting from the service irrespective of his relation with different entities involved.
+The end user that is benefiting from the product irrespective of his relation with different entities involved.
 
 ```admonish example title="Customer Example"
-- Person requesting to watch a movie on a streaming service through his teleco account.
-- Person requesting to consume a hosting service from a cloud provider which relies on a teleco service for connectivity
+- Person requesting to watch a movie on a streaming provider through his teleco account.
+- Person requesting to consume a hosting products from a cloud provider which relies on a teleco products for connectivity
 ```
 
 #### Vendor
 
-The entity that's managing the customer account. a vendor can be reselling a service, building a composite service or providing his own services as well.
+The entity that's managing the customer account. a vendor can be reselling a product, building a composite product or providing his own products as well.
 
 Depending on the usecase the same entity can be regarded as vendor, provider or a partner.
 
-```admonish example title="Vendor Example"
-- Orange reselling the streaming services to Orange customers
-- Dropbox composing file management service by using AWS storage and Orange 5g slice
-- Orange selling data bundles for customer to consume
-```
-
 #### Provider
 
-The entity providing their services for partners with a revenue sharing model. providers can also be represented as the Vendor in case of selling directly yo the Customer.
-
-```admonish example title="Provider Example"
-- Streaming service provider allowing Orange customers access to their service through their Orange account
-- AWS providing storage services used by dropbox to compose file management service
-- Orange selling data bundles for customer to consume
-```
+The entity providing their products for partners with a revenue sharing model. providers can also be represented as the Vendor in case of selling directly yo the Customer.
 
 #### Partner
 
-Describes the relation between Vendors and providers, providers are considered a partner for the vendor that's reselling/composing their services. Providers are also considered partners to other providers if the use other services.
-
-```admonish example title="Partner Example"
-- Streaming provider is a partner for Orange when providing streaming service through orange account
-- AWS & Orange is a partner for DropBox when composing file management service
-```
+Describes the relation between Vendors and providers, providers are considered a partner for the vendor that's reselling/composing their products. Providers are also considered partners to other providers if the use other products.
