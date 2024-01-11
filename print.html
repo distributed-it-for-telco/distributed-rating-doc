@@ -362,15 +362,14 @@
 <tr><td>GREEN</td><td>Offer-dependent Actors <br><ins><em>There is as many actor types as offers</em></ins></td></tr>
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="functional-specification"><a class="header" href="#functional-specification">Functional Specification</a></h1>
-<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
-<p>The aim of this page is to describe the business aspects for the distributed charging and rating process. The specification should try to describe when possible the similarities between the distributed rating and the charging and billing components in TMF.</p>
-<h3 id="context"><a class="header" href="#context">Context</a></h3>
-<p>Distributed Rating aims to explore the use of distributed architecture for the rating and part of the charging process to optimize the utilization of the various infrastructure components. For reference the software architecture for the stream can be found <a href="ARCHITECTURE/./architecture.html">here</a>.</p>
-<h3 id="assumptions"><a class="header" href="#assumptions">Assumptions</a></h3>
-<p>Given the fact that this part is a research activity, this component will aim to comply with the TMF guidelines while allowing room for the needs of its innovative nature. in the first evolution the system may mock any external components to expedite the research activities.</p>
-<p>The first evolution should focus on services that are provided over IP through a client application, this should facilitate the tracking of the usage through the client application.</p>
 <p><strong>TABLE OF CONTENT</strong></p>
 <ul>
+<li><a href="ARCHITECTURE/functional-specification.html#introduction">Introduction</a>
+<ul>
+<li><a href="ARCHITECTURE/functional-specification.html#context">Context</a></li>
+<li><a href="ARCHITECTURE/functional-specification.html#assumptions">Assumptions</a></li>
+</ul>
+</li>
 <li><a href="ARCHITECTURE/functional-specification.html#charging--billing">Charging &amp; Billing</a></li>
 <li><a href="ARCHITECTURE/functional-specification.html#charging-and-billing-within-etom">Charging and Billing within eTOM</a>
 <ul>
@@ -395,6 +394,13 @@
 </ul>
 </li>
 </ul>
+<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
+<p>The aim of this page is to describe the business aspects for the distributed charging and rating process. The specification should try to describe when possible the similarities between the distributed rating and the charging and billing components in TMF.</p>
+<h3 id="context"><a class="header" href="#context">Context</a></h3>
+<p>Distributed Rating aims to explore the use of distributed architecture for the rating and part of the charging process to optimize the utilization of the various infrastructure components. For reference the software architecture for the stream can be found <a href="ARCHITECTURE/./architecture.html">here</a>.</p>
+<h3 id="assumptions"><a class="header" href="#assumptions">Assumptions</a></h3>
+<p>Given the fact that this part is a research activity, this component will aim to comply with the TMF guidelines while allowing room for the needs of its innovative nature. in the first evolution the system may mock any external components to expedite the research activities.</p>
+<p>The first evolution should focus on products provided over IP through a client application to facilitate the tracking of their usage through the client application.</p>
 <h2 id="charging--billing"><a class="header" href="#charging--billing">Charging &amp; Billing</a></h2>
 <p><img src="ARCHITECTURE/./charging_billing_overview.svg" alt="Charging &amp; Billing BPM" /></p>
 <p>The process called &quot;Billing&quot; consists of a set of different processes, each working on one type of data:</p>
@@ -486,7 +492,7 @@ classDiagram
 </pre>
 <h3 id="product-rating--rate-assignment"><a class="header" href="#product-rating--rate-assignment">Product Rating &amp; Rate Assignment</a></h3>
 <p>The purpose of Product Rating &amp; Assignment is to rate a value (monetary or other) to Product Usage or a set of Product Usages and assign the result to a Product and a Billing Account. The charge may be either a credit or a debit and can be handled either online or offline.</p>
-<p>Online charging is performed in real-time, requiring an authorization component which may affect how the service is rendered and enables an operator to provide prepaid services to its customers. Whereas offline charging is performed after the service is rendered and is not required to be done in real-time and generally relates to subscription based products.</p>
+<p>Online charging is performed in real-time, necessitating an authorization component that can impact the delivery of the product and enables the operator to provide prepaid products to their customers. Conversely, offline charging takes place after the product has been delivered and does not necessitate real-time processing, and typically pertains to subscription-based products.</p>
 <p>in the distributed rating, optimally the process of usage and rating should be done on the edge or the FOG levels to minimize the loud on the infrastructure.</p>
 <p>Below is the data schema of the product usage management as defined in TMF-635, the main entity used in the product rating and rate assignment process is the RatedProductUsage entity</p>
 <pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': {
@@ -585,7 +591,7 @@ classDiagram
 </pre>
 <h3 id="product-balance-management"><a class="header" href="#product-balance-management">Product Balance Management</a></h3>
 <p>This process is responsible for holding, calculating, applying policies and managing functionality/interfaces for the Product balances, Here the values resulting from rating and the application of discounts are applied to a Product balance. The balance affected by the value may be monetary or other balances such as minutes, points, or tokens.</p>
-<p>The rating agent should ensure that the balance is impacted and reduce it to match the service usage. The aim is to ensure that the balance is impacted instantly and is managed in a distributed manner. The operations for balance management (like top-up operations) will be out of scope of the first evolution and only the reduction of balance based on usage will be represented.</p>
+<p>The rating agent should ensure that the balance is impacted and reduce it to match the product usage. The aim is to ensure that the balance is impacted instantly and is managed in a distributed manner. The operations for balance management (like top-up operations) will be out of scope of the first evolution and only the reduction of balance based on usage will be represented.</p>
 <p>Below is the data schema of the balance as defined in TMF-654</p>
 <pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': {
   'lineColor': '#a8201a',
@@ -636,10 +642,10 @@ classDiagram
   RealizingResourceRef &quot;*&quot; -- &quot;1&quot; ProductRef
 </pre>
 <h3 id="bill-calculation"><a class="header" href="#bill-calculation">Bill Calculation</a></h3>
-<p>Customer Bill Invoice Management processes ensure the bill invoice is created, physically and/or electronically produced and distributed to customers, and that the appropriate taxes, discounts, adjustments, rebates and credits for the products and services delivered to customers have been applied. These processes are accountable for assuring that enterprise revenue is billed and invoices delivered appropriately to customers.</p>
+<p>Customer Bill Invoice Management processes ensure the bill invoice is created, physically and/or electronically produced and distributed to customers, and that the appropriate taxes, discounts, adjustments, rebates and credits for the products delivered to customers have been applied. These processes are accountable for assuring that enterprise revenue is billed and invoices delivered appropriately to customers.</p>
 <p>These processes are responsible for, but not limited to:</p>
 <ul>
-<li>Establishment and application of taxes and charges to the services delivered to customers;</li>
+<li>Establishment and application of taxes and charges to the products delivered to customers;</li>
 <li>Application of the adjustment (adjustment decision done in Customer Bill Inquiry Handling);</li>
 <li>Creation of accurate Customer bill invoices including all adjustments, rebates, discounts, credits, etc.</li>
 <li>Production &amp; distribution of Customer bill in physical and/or electronic form to customers in accordance with the billing cycle;</li>
@@ -650,7 +656,7 @@ classDiagram
 <p>The implementation of the Bill Calculation component is out of scope of the distributed rating however the system should ensure that it can generate Proof of Usages and rated events that can be forwarded to the Bill calculation component - through events or shared storage - to support post paid business scenarios. The support for aggregated rating will not be addressed in the first release and can be included in later evolution due to the technical complexity associated with it.</p>
 <h3 id="managed-entities"><a class="header" href="#managed-entities">Managed entities</a></h3>
 <h4 id="customer-product-inventory"><a class="header" href="#customer-product-inventory">Customer Product Inventory</a></h4>
-<p>The customer product inventory component holds the information about the customer and his installed products. it's used to track all the services that the customer has subscribed to asl well as their cost. in the first release the customer inventory will be a simple key-value store that holds the customer id as the key and party information with a list of their installed product in the value. the figure below show the schema of the data stored in the value.</p>
+<p>The customer product inventory component holds the information about the customer and his installed products. it's used to track all the products that the customer has subscribed to as well as their cost. in the first release the customer inventory will be a simple key-value store that holds the customer id as the key and party information with a list of their installed product in the value. the figure below show the schema of the data stored in the value.</p>
 <pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': {
   'lineColor': '#a8201a',
   'primaryColor': '#fae5c7',
@@ -851,7 +857,7 @@ Provides the value of a given characteristic.</p>
 </details>
 <h3 id="system-personas"><a class="header" href="#system-personas">System Personas</a></h3>
 <h4 id="customer"><a class="header" href="#customer">Customer</a></h4>
-<p>The end user that is benefiting from the service irrespective of his relation with different entities involved.</p>
+<p>The end user that is benefiting from the product irrespective of his relation with different entities involved.</p>
 <div id="admonition-customer-example" class="admonition admonish-example">
 <div class="admonition-title">
 <p>Customer Example</p>
@@ -859,72 +865,63 @@ Provides the value of a given characteristic.</p>
 </div>
 <div>
 <ul>
-<li>Person requesting to watch a movie on a streaming service through his teleco account.</li>
-<li>Person requesting to consume a hosting service from a cloud provider which relies on a teleco service for connectivity</li>
+<li>Person requesting to watch a movie on a streaming provider through his teleco account.</li>
+<li>Person requesting to consume a hosting products from a cloud provider which relies on a teleco products for connectivity</li>
 </ul>
 </div>
 </div>
 <h4 id="vendor"><a class="header" href="#vendor">Vendor</a></h4>
-<p>The entity that's managing the customer account. a vendor can be reselling a service, building a composite service or providing his own services as well.</p>
+<p>The entity that's managing the customer account. a vendor can be reselling a product, building a composite product or providing his own products as well.</p>
 <p>Depending on the usecase the same entity can be regarded as vendor, provider or a partner.</p>
-<div id="admonition-vendor-example" class="admonition admonish-example">
-<div class="admonition-title">
-<p>Vendor Example</p>
-<p><a class="admonition-anchor-link" href="ARCHITECTURE/functional-specification.html#admonition-vendor-example"></a></p>
-</div>
-<div>
-<ul>
-<li>Orange reselling the streaming services to Orange customers</li>
-<li>Dropbox composing file management service by using AWS storage and Orange 5g slice</li>
-<li>Orange selling data bundles for customer to consume</li>
-</ul>
-</div>
-</div>
 <h4 id="provider"><a class="header" href="#provider">Provider</a></h4>
-<p>The entity providing their services for partners with a revenue sharing model. providers can also be represented as the Vendor in case of selling directly yo the Customer.</p>
-<div id="admonition-provider-example" class="admonition admonish-example">
-<div class="admonition-title">
-<p>Provider Example</p>
-<p><a class="admonition-anchor-link" href="ARCHITECTURE/functional-specification.html#admonition-provider-example"></a></p>
-</div>
-<div>
-<ul>
-<li>Streaming service provider allowing Orange customers access to their service through their Orange account</li>
-<li>AWS providing storage services used by dropbox to compose file management service</li>
-<li>Orange selling data bundles for customer to consume</li>
-</ul>
-</div>
-</div>
+<p>The entity providing their products for partners with a revenue sharing model. providers can also be represented as the Vendor in case of selling directly yo the Customer.</p>
 <h4 id="partner"><a class="header" href="#partner">Partner</a></h4>
-<p>Describes the relation between Vendors and providers, providers are considered a partner for the vendor that's reselling/composing their services. Providers are also considered partners to other providers if the use other services.</p>
-<div id="admonition-partner-example" class="admonition admonish-example">
+<p>Describes the relation between Vendors and providers, providers are considered a partner for the vendor that's reselling/composing their products. Providers are also considered partners to other providers if the use other products.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="listing-of-customer-products"><a class="header" href="#listing-of-customer-products">Listing of customer products</a></h1>
+<div id="admonition-pertaining-to" class="admonition admonish-abstract">
 <div class="admonition-title">
-<p>Partner Example</p>
-<p><a class="admonition-anchor-link" href="ARCHITECTURE/functional-specification.html#admonition-partner-example"></a></p>
+<p>Pertaining to</p>
+<p><a class="admonition-anchor-link" href="USE-CASES/UC-01/index.html#admonition-pertaining-to"></a></p>
 </div>
 <div>
 <ul>
-<li>Streaming provider is a partner for Orange when providing streaming service through orange account</li>
-<li>AWS &amp; Orange is a partner for DropBox when composing file management service</li>
+<li>Customer account type: <strong>ANY</strong></li>
+<li>Product offer type: <strong>ANY</strong></li>
 </ul>
 </div>
 </div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="listing-of-customer-products"><a class="header" href="#listing-of-customer-products">Listing of customer products</a></h1>
-<h2 id="business-process-model"><a class="header" href="#business-process-model">Business process model</a></h2>
+<div id="admonition-customer-use-case" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Customer Use case</p>
+<p><a class="admonition-anchor-link" href="USE-CASES/UC-01/index.html#admonition-customer-use-case"></a></p>
+</div>
+<div>
+<p><strong>As a</strong> a customer of a <em>Teleco provider</em><br />
+<strong>I want to</strong> list products available to me<br />
+<strong>so that I can</strong> use some of them</p>
+</div>
+</div>
+<div id="admonition-vendor-use-case" class="admonition admonish-example">
+<div class="admonition-title">
+<p>Vendor Use case</p>
+<p><a class="admonition-anchor-link" href="USE-CASES/UC-01/index.html#admonition-vendor-use-case"></a></p>
+</div>
+<div>
+<p><strong>As a</strong> vendor providing products <em>over IP</em> through a <em>Teleco provider</em><br />
+<strong>I want to</strong> have integration with the Teleco provider product inventory<br />
+<strong>so that I can</strong> list the products I provide<br />
+<strong>and</strong> make the products available for consumption</p>
+</div>
+</div>
+<h2 id="business-process"><a class="header" href="#business-process">Business process</a></h2>
+<h3 id="rating-coordinator-process-model"><a class="header" href="#rating-coordinator-process-model">Rating Coordinator process model</a></h3>
 <p><img src="USE-CASES/UC-01/./bpmn.svg" alt="Process diagram depicting the retrival of customer product inventory" /></p>
-<h2 id="user-story"><a class="header" href="#user-story">User story</a></h2>
-<p><strong>As a</strong> a customer of a teleco service provider
-<strong>I want to</strong> list products available to me
-<strong>so that</strong> I can use some of them</p>
-<p><strong>As a</strong> vendor
-<strong>I want to</strong> sell over IP services provided by my teleco Service Providers partners
-<strong>so that</strong> I can monitor the usage of this service
-<strong>and</strong> relay it to my partners rating agent for rating
-<strong>and</strong> I can track my shared revenue for this service</p>
+<h3 id="legend"><a class="header" href="#legend">Legend</a></h3>
+<p>{{#include ../legend.md}}</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="consumption-of-a-regular-product-using-postpaid-account"><a class="header" href="#consumption-of-a-regular-product-using-postpaid-account">Consumption of a regular product using postpaid account</a></h1>
-<h2 id="business-process-model-1"><a class="header" href="#business-process-model-1">Business process model</a></h2>
+<h2 id="business-process-model"><a class="header" href="#business-process-model">Business process model</a></h2>
 <p><img src="USE-CASES/UC-02/./bpmn.svg" alt="Process diagram depicting the consumption of regular product from postpaid account" /></p>
-<h2 id="user-story-1"><a class="header" href="#user-story-1">User story</a></h2>
+<h2 id="user-story"><a class="header" href="#user-story">User story</a></h2>
 <p><strong>As a</strong> a postpaid customer of a teleco service provider
 <strong>I want to</strong> select a one shot service over IP
 <strong>so that</strong> I can consume this service from a providers mobile app
@@ -933,9 +930,9 @@ Provides the value of a given characteristic.</p>
 <strong>I want to</strong> rate the one shot service in a distributed mode
 <strong>so that</strong> I will send rated usage to the billing to be reflected in the customers bill</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="consumption-of-a-product-with-discount-bucket-using-postpaid-account"><a class="header" href="#consumption-of-a-product-with-discount-bucket-using-postpaid-account">Consumption of a product with discount bucket using postpaid account</a></h1>
-<h2 id="business-process-model-2"><a class="header" href="#business-process-model-2">Business process model</a></h2>
+<h2 id="business-process-model-1"><a class="header" href="#business-process-model-1">Business process model</a></h2>
 <p><img src="USE-CASES/UC-03/./bpmn.svg" alt="Process diagram depicting the consumption of a product with discount bucket from postpaid account" /></p>
-<h2 id="user-story-2"><a class="header" href="#user-story-2">User story</a></h2>
+<h2 id="user-story-1"><a class="header" href="#user-story-1">User story</a></h2>
 <p><strong>As a</strong> a postpaid customer of a teleco service provider
 <strong>I want to</strong> select a one shot service over IP
 <strong>so that</strong> I can consume this service from a providers mobile app
@@ -944,9 +941,9 @@ Provides the value of a given characteristic.</p>
 <strong>I want to</strong> rate the one shot service in a distributed mode
 <strong>so that</strong> I will send rated usage to the billing to be reflected in the customers bill</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="consumption-of-a-product-with-bundle-bucket-using-postpaid-account"><a class="header" href="#consumption-of-a-product-with-bundle-bucket-using-postpaid-account">Consumption of a product with bundle bucket using postpaid account</a></h1>
-<h2 id="business-process-model-3"><a class="header" href="#business-process-model-3">Business process model</a></h2>
+<h2 id="business-process-model-2"><a class="header" href="#business-process-model-2">Business process model</a></h2>
 <p><img src="USE-CASES/UC-04/./bpmn.svg" alt="Process diagram depicting the consumption of a product with bundle bucket from postpaid account" /></p>
-<h2 id="user-story-3"><a class="header" href="#user-story-3">User story</a></h2>
+<h2 id="user-story-2"><a class="header" href="#user-story-2">User story</a></h2>
 <p><strong>As a</strong> a postpaid customer of a teleco service provider
 <strong>I want to</strong> select a bundled service of 3 movies for 1 dollar
 <strong>so that</strong> I can consume this service from a providers mobile app
