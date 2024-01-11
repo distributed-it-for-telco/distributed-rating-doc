@@ -1,0 +1,47 @@
+%%{init: {'theme': 'base', 'themeVariables': {
+  'lineColor': '#a8201a',
+  'primaryColor': '#fae5c7',
+  'primaryBorderColor': '#0f8b8d'
+}}}%%
+classDiagram
+  direction LR
+  class PartyAccountRef{
+    String id
+    String href
+    String name
+  }
+  class RelatedPartyRef{
+    String id
+    String href
+    String role
+    String name
+  }
+  class BucketBalance{
+    [ SID CustomerAccountBalance ]
+    String id
+    String href
+    String name
+    String discription
+    String bucketType
+    TimePeriod validFor
+    Quantity remainedAmount
+    Quantity reservedAmount
+    String status
+  }
+  class RealizingResourceRef{
+    String id
+    String href
+    String name
+    String @type
+    String value
+  }
+  class ProductRef{
+    String id
+    String href
+    String name
+  }
+  PartyAccountRef "1" --o "1" BucketBalance
+  RelatedPartyRef "0..*" --o "1" BucketBalance
+  BucketBalance "1" o-- "0..*" RealizingResourceRef
+  BucketBalance "1" o-- "0..*" ProductRef
+  RealizingResourceRef "*" -- "1" ProductRef

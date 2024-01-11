@@ -235,7 +235,11 @@ which establishes the invoice from billable items received. It is part of the &q
 <p>Conventionally the usage is collected on the network component and forwarded to be processed in the usage management component.</p>
 <p>In the distributed rating, the Client SDK should do the usage collection and forward it to the rating agent to be processed in real-time.</p>
 <p>Below is the data schema of the product usage management as defined in TMF-635, the main entity used in the usage management process is the Usage and UsageSpecification</p>
-<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
+<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': {
+  'lineColor': '#a8201a',
+  'primaryColor': '#fae5c7',
+  'primaryBorderColor': '#0f8b8d'
+}}}%%
 classDiagram
   direction LR
   class RelatedParty{
@@ -298,16 +302,17 @@ classDiagram
   Usage -- &quot;1&quot; UsageStatusType
   Usage *--&gt; &quot;0..*&quot; UsageCharacteristic
   UsageCharacteristic *--&gt; &quot;0..*&quot; CharacteristicRelationship
-
 </pre>
-<p>classDef clazz fill:#ffe6cc
-class CharacteristicRelationship,RelatedParty,Usage,UsageCharacteristic,UsageSpecificationRef,UsageStatusType clazz</p>
 <h3 id="product-rating--rate-assignment"><a class="header" href="#product-rating--rate-assignment">Product Rating &amp; Rate Assignment</a></h3>
 <p>The purpose of Product Rating &amp; Assignment is to rate a value (monetary or other) to Product Usage or a set of Product Usages and assign the result to a Product and a Billing Account. The charge may be either a credit or a debit and can be handled either online or offline.</p>
 <p>Online charging is performed in real-time, requiring an authorization component which may affect how the service is rendered and enables an operator to provide prepaid services to its customers. Whereas offline charging is performed after the service is rendered and is not required to be done in real-time and generally relates to subscription based products.</p>
 <p>in the distributed rating, optimally the process of usage and rating should be done on the edge or the FOG levels to minimize the loud on the infrastructure.</p>
 <p>Below is the data schema of the product usage management as defined in TMF-635, the main entity used in the product rating and rate assignment process is the RatedProductUsage entity</p>
-<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
+<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': {
+  'lineColor': '#a8201a',
+  'primaryColor': '#fae5c7',
+  'primaryBorderColor': '#0f8b8d'
+}}}%%
 classDiagram
   direction LR
   class RelatedParty{
@@ -401,7 +406,11 @@ classDiagram
 <p>This process is responsible for holding, calculating, applying policies and managing functionality/interfaces for the Product balances, Here the values resulting from rating and the application of discounts are applied to a Product balance. The balance affected by the value may be monetary or other balances such as minutes, points, or tokens.</p>
 <p>The rating agent should ensure that the balance is impacted and reduce it to match the service usage. The aim is to ensure that the balance is impacted instantly and is managed in a distributed manner. The operations for balance management (like top-up operations) will be out of scope of the first evolution and only the reduction of balance based on usage will be represented.</p>
 <p>Below is the data schema of the balance as defined in TMF-654</p>
-<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
+<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': {
+  'lineColor': '#a8201a',
+  'primaryColor': '#fae5c7',
+  'primaryBorderColor': '#0f8b8d'
+}}}%%
 classDiagram
   direction LR
   class PartyAccountRef{
@@ -461,7 +470,11 @@ classDiagram
 <h3 id="managed-entities"><a class="header" href="#managed-entities">Managed entities</a></h3>
 <h4 id="customer-product-inventory"><a class="header" href="#customer-product-inventory">Customer Product Inventory</a></h4>
 <p>The customer product inventory component holds the information about the customer and his installed products. it's used to track all the services that the customer has subscribed to asl well as their cost. in the first release the customer inventory will be a simple key-value store that holds the customer id as the key and party information with a list of their installed product in the value. the figure below show the schema of the data stored in the value.</p>
-<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
+<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': {
+  'lineColor': '#a8201a',
+  'primaryColor': '#fae5c7',
+  'primaryBorderColor': '#0f8b8d'
+}}}%%
 classDiagram
   direction LR
   class Party {
@@ -556,7 +569,11 @@ A base / value business entity used to represent money.</p>
 </details>
 <h4 id="rated-usage-inventory"><a class="header" href="#rated-usage-inventory">Rated Usage Inventory</a></h4>
 <p>The rated usage inventory component holds the information about the customer's consumption and its associated cost. it's used to hold the rated usage information that can be forwarded later on to the billing component. the figure below show the schema of the rated usage.</p>
-<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
+<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': {
+  'lineColor': '#a8201a',
+  'primaryColor': '#fae5c7',
+  'primaryBorderColor': '#0f8b8d'
+}}}%%
 classDiagram
   direction TB
   class Party {
