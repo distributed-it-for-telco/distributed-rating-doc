@@ -49,73 +49,8 @@ In the distributed rating, the Client SDK should do the usage collection and for
 Below is the data schema of the product usage management as defined in TMF-635, the main entity used in the usage management process is the Usage and UsageSpecification
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
-classDiagram
-  direction LR
-  class RelatedParty{
-    URI href
-    String id
-    String name
-    String role
-    String @type
-    String @baseType
-    String @referredType
-    URI @schemaLocation
-  }
-  class UsageSpecificationRef{
-    URI href
-    String id
-    String name
-    String @type
-    String @baseType
-    String @referredType
-    URI @schemaLocation
-  }
-  class Usage{
-    URI href
-    String id
-    String usageType
-    Date usageDate
-    UsageStatusType status
-    String @type
-    String @baseType
-    URI @schemaLocation
-  }
-  class UsageStatusType{
-    <<Enumeration>>
-    received
-    rejected
-    recycled
-    guided
-    rated
-    rerated
-  }
-  class UsageCharacteristic{
-    String id
-    String name
-    String valueType
-    Any value
-    String @type
-    String @baseType
-    URI @schemaLocation
-  }
-  class CharacteristicRelationship{
-    URI href
-    String id
-    String relationshipType
-    String @type
-    String @baseType
-    URI @schemaLocation
-  }
-  RelatedParty "0..*" <--* Usage
-  UsageSpecificationRef "0..1" <--* Usage
-  Usage -- "1" UsageStatusType
-  Usage *--> "0..*" UsageCharacteristic
-  UsageCharacteristic *--> "0..*" CharacteristicRelationship
-
+{{#include product_usage-class_diagram.mmd}}
 ```
-  classDef clazz fill:#ffe6cc
-  class CharacteristicRelationship,RelatedParty,Usage,UsageCharacteristic,UsageSpecificationRef,UsageStatusType clazz
 
 ### Product Rating & Rate Assignment
 
@@ -128,95 +63,7 @@ in the distributed rating, optimally the process of usage and rating should be d
 Below is the data schema of the product usage management as defined in TMF-635, the main entity used in the product rating and rate assignment process is the RatedProductUsage entity
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
-classDiagram
-  direction LR
-  class RelatedParty{
-    URI href
-    String id
-    String name
-    String role
-    String @type
-    String @baseType
-    String @referredType
-    URI @schemaLocation
-  }
-  class UsageSpecificationRef{
-    URI href
-    String id
-    String name
-    String @type
-    String @baseType
-    String @referredType
-    URI @schemaLocation
-  }
-  class Usage{
-    URI href
-    String id
-    String usageType
-    Date usageDate
-    UsageStatusType status
-    String @type
-    String @baseType
-    URI @schemaLocation
-  }
-  class UsageCharacteristic{
-    String id
-    String name
-    String valueType
-    Any value
-    String @type
-    String @baseType
-    URI @schemaLocation
-  }
-  class CharacteristicRelationship{
-    URI href
-    String id
-    String relationshipType
-    String @type
-    String @baseType
-    URI @schemaLocation
-  }
-  class UsageStatusType{
-    <<Enumeration>>
-    received
-    rejected
-    recycled
-    guided
-    rated
-    rerated
-  }
-  class RatedProductUsage{
-    Money bucketValueConvertedInAmount
-    bool isBilled
-    bool isTaxExempted
-    String offerTariffType
-    String ratingAmountType
-    Date ratingDate
-    Money taxExcludedRatingAmount
-    Money taxIncludedRatingAmount
-    float taxRate
-    String usageRatingTag
-    String @type
-    String @baseType
-    URI @schemaLocation
-  }
-  class ProductRef{
-    URI href
-    String id
-    String name
-    String @type
-    String @baseType
-    String @referredType
-    URI @schemaLocation
-  }
-  RelatedParty "0..*" <--* Usage
-  UsageSpecificationRef "0..1" <--* Usage
-  Usage -- "1" UsageStatusType
-  Usage *--> "0..*" UsageCharacteristic
-  Usage *--> "0..*" RatedProductUsage
-  UsageCharacteristic *--> "0..*" CharacteristicRelationship
-  RatedProductUsage *--> "0..1" ProductRef
+{{#include product_rating-class_diagram.mmd}}
 ```
 
 ### Product Balance Management
@@ -228,49 +75,7 @@ The rating agent should ensure that the balance is impacted and reduce it to mat
 Below is the data schema of the balance as defined in TMF-654
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
-classDiagram
-  direction LR
-  class PartyAccountRef{
-    String id
-    String href
-    String name
-  }
-  class RelatedPartyRef{
-    String id
-    String href
-    String role
-    String name
-  }
-  class BucketBalance{
-    [ SID CustomerAccountBalance ]
-    String id
-    String href
-    String name
-    String discription
-    String bucketType
-    TimePeriod validFor
-    Quantity remainedAmount
-    Quantity reservedAmount
-    String status
-  }
-  class RealizingResourceRef{
-    String id
-    String href
-    String name
-    String @type
-    String value
-  }
-  class ProductRef{
-    String id
-    String href
-    String name
-  }
-  PartyAccountRef "1" --o "1" BucketBalance
-  RelatedPartyRef "0..*" --o "1" BucketBalance
-  BucketBalance "1" o-- "0..*" RealizingResourceRef
-  BucketBalance "1" o-- "0..*" ProductRef
-  RealizingResourceRef "*" -- "1" ProductRef
+{{#include product_balance-class_diagram.mmd}}
 ```
 
 ### Bill Calculation
@@ -296,60 +101,7 @@ The implementation of the Bill Calculation component is out of scope of the dist
 The customer product inventory component holds the information about the customer and his installed products. it's used to track all the services that the customer has subscribed to asl well as their cost. in the first release the customer inventory will be a simple key-value store that holds the customer id as the key and party information with a list of their installed product in the value. the figure below show the schema of the data stored in the value.
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
-classDiagram
-  direction LR
-  class Party {
-    string id
-    string name
-  }
-  class CustomerInventory {
-    Party relatedParty
-    List~Product~ products
-  }
-  class ProductOfferingRef {
-    string id
-    string name
-    string agentId
-    Quantity unitOfMeasure
-  }
-  class Quantity {
-    string amount
-    string units
-  }
-  class Product {
-    string id
-    string partnerId
-    string description
-    ProductOfferingRef productOffering
-    ProductPrice productPrice
-  }
-  class ProductPrice {
-    PriceType priceType
-    DataTime validTill
-    string description
-    Quantity unitOfMeasure
-    Price price
-  }
-  class PriceType {
-    <<Enumeration>>
-    recurring
-    none-recurring
-    penalty
-    one-time
-  }
-  class Price {
-    string unit
-    float value
-  }
-  Party --o CustomerInventory
-  CustomerInventory *-- Product
-  ProductOfferingRef --o Product
-  ProductOfferingRef *-- Quantity
-  Product o-- ProductPrice
-  Quantity --* ProductPrice
-  ProductPrice o-- PriceType
-  ProductPrice *-- Price
+{{#include customer_inventory-class_diagram.mmd}}
 ```
 
   productPrice: An amount, usually of money, that represents the actual price paid by a Customer for a purchase, a rent or a lease of a Product. The price is valid for a defined period of time.
@@ -389,51 +141,7 @@ A base / value business entity used to represent money.
 The rated usage inventory component holds the information about the customer's consumption and its associated cost. it's used to hold the rated usage information that can be forwarded later on to the billing component. the figure below show the schema of the rated usage.
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#4169e1', 'background': '#ffe6cc'}}}%%
-classDiagram
-  direction TB
-  class Party {
-    string id
-    string name
-    string role
-    string @referredType
-  }
-  class RatedUsage {
-    string id
-    string usageDate
-    string description
-    string usageType
-    string status
-    Party relatedParty
-    RatedProductUsage ratedProductUsage
-    List~UsageCharacteristic~ usageCharacteristics
-  }
-  class UsageCharacteristic {
-    string id
-    string name
-    string valueType
-    string value
-  }
-  class RatedProductUsage {
-    bool isBilled
-    string ratingAmountType
-    string ratingDate
-    BucketValueConvertedInAmount bucketValueConvertedInAmount
-    ProductRef productRef
-  }
-  class BucketValueConvertedInAmount {
-    string unit
-    int value
-  }
-  class ProductRef {
-    string id
-    string name
-  }
-  Party --o RatedUsage
-  UsageCharacteristic --* RatedUsage
-  RatedUsage *-- RatedProductUsage
-  RatedProductUsage o-- ProductRef
-  RatedProductUsage o-- BucketValueConvertedInAmount
+{{#include rated_usage-class_diagram.mmd}}
 ```
 
 ```admonish summary title="Rated usage inventory field descriptions" collapsible=true
