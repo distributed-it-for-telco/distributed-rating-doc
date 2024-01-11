@@ -1,16 +1,39 @@
-# Consumption of a regular product using postpaid account
+# Product usage request
 
-## Business process model
+```admonish abstract title="Pertaining to"
+- Customer account type: **POSTPAID**
+- Product offer type: **REGULAR**
+```
+
+```admonish example title="Customer Use case"
+**As a** a customer of a *Teleco provider* with *postpaid* account  
+**I want to** select some regular product from the *Teleco provider* mobile app  
+**so that** the cost will be reflected in my bill  
+```
+
+```admonish example title="Vendor Use case"
+**As a** vendor providing products *over IP* through a *Teleco provider*  
+**I want to** have integration with the Teleco provider rating process  
+**so that I can** monitor the usage of the products I provide  
+**and** track revenue of the products based on consumption  
+```
+
+```admonish example title="Teleco Provider Use case"
+**As a** Teleco Provider
+**I want to** rate the consumption of movie streaming products
+**so that** I can charge the customer for his usage.
+```
+
+## Business process
+
+### Client request process model
+
+![Process diagram depicting the Client request for product consumption](../product-use-client-bpmn.svg)
+
+### Rating Coordinator process model
 
 ![Process diagram depicting the consumption of regular product from postpaid account](./bpmn.svg)
 
-## User story
+### Legend
 
-**As a** a postpaid customer of a teleco service provider
-**I want to** select a one shot service over IP
-**so that** I can consume this service from a providers mobile app
-**and** the cost of this service will be reflected in my bill
-
-**As a** Teleco  Service Provider
-**I want to** rate the one shot service in a distributed mode
-**so that** I will send rated usage to the billing to be reflected in the customers bill
+{{#include ../legend.md}}
