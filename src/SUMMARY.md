@@ -12,6 +12,7 @@
 # Use Cases
 
 - [UC-01: Customer product inventory](./USE-CASES/UC-01/index.md)
+- [UC-02: Rate usage - Overview](./USE-CASES/UC-02/index.md)
 - [UC-03: Rate usage - Regular](./USE-CASES/UC-03/index.md)
 - [UC-04: Rate usage - Threshold](./USE-CASES/UC-04/index.md)
 - [UC-05: Rate usage - Bundle](./USE-CASES/UC-05/index.md)
