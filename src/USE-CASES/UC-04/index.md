@@ -1,4 +1,4 @@
-# Consumption of a product with bundle bucket using postpaid account
+# Rating of bundle product offer
 
 ```admonish abstract title="Pertaining to"
 - Customer account type: **POSTPAID**
@@ -15,18 +15,18 @@
 ```admonish example title="Use case"
 **As a** Teleco Provider  
 **I want to** sell a bundled product like 3 movies for 1 dollar in a distributed mode  
-**so that** I will deduct the correct cost from the customer buckets  
+**so that** I will deduct the correct cost from the customer bundle  
 ```
 
-## Business process
+## Business processes
 
-### Client request process model
+### Product consumption overview
 
-![Process diagram depicting the Client request for product consumption](../product-use-client-bpmn.svg)
+![Diagram depicting the product consumption process](../UC-02/product-use-client-bpmn.svg)
 
-### Rating Coordinator process model
+### Bundle product rating
 
-![Process diagram depicting the consumption of a product with bundle bucket from postpaid account](./bpmn.svg)
+![Diagram depicting the rating process of a bundle product](./bpmn.svg)
 
 ### Legend
 

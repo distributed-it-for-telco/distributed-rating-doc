@@ -1,4 +1,4 @@
-# Listing of customer products
+# Retrival of customer product inventory
 
 ```admonish abstract title="Pertaining to"
 - Customer account type: **ANY**
@@ -18,11 +18,11 @@
 **and** make the products available for consumption  
 ```
 
-## Business process
+## Business processes
 
-### Rating Coordinator process model
+### Process model for the retrival of customer product inventory
 
-![Process diagram depicting the retrival of customer product inventory](./bpmn.svg)
+![Process model for the retrival of customer product inventory](./bpmn.svg)
 
 ### Legend
 

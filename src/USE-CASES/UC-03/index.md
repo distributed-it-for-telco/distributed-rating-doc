@@ -1,33 +1,32 @@
-# Consumption of a product with discount threshold using postpaid account
+# Rating of threshold product
 
 ```admonish abstract title="Pertaining to"
 - Customer account type: **POSTPAID**
-- Product offer type: **REGULAR**
+- Product offer type: **THRESHOLD**
 ```
 
 ```admonish example title="Use case"
 **As a** a customer of a *Teleco provider* with *postpaid* account  
-**I want to** select some product with *threshold discount*  
+**I want to** select some product with *threshold* product offer  
 **so that I can** consume it from a providers mobile app  
 **and** the cost will be reflected in my bill  
-**and** benifit from the offered discount  
 ```
 
 ```admonish example title="Use case"
-**As a** *Teleco provider* offering *threshold discount* products  
+**As a** *Teleco provider* with *threshold* product offer  
 **I want to** calculate rated usage for it in a distributed manner  
 **so that I can** be reflected in the customers bill  
 ```
 
-## Business process
+## Business processes
 
-### Client request process model
+### Product consumption overview
 
-![Process diagram depicting the Client request for product consumption](../product-use-client-bpmn.svg)
+![Diagram depicting the product consumption process](../UC-02/product-use-client-bpmn.svg)
 
-### Threshold discount rating process model
+### Threshold product rating
 
-![Process diagram depicting the consumption of a product with threshold discount from postpaid account](./bpmn.svg)
+![Diagram depicting the rating process of a threshold product](./bpmn.svg)
 
 ### Legend
 

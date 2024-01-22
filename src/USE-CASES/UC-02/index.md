@@ -1,4 +1,4 @@
-# Product usage request
+# Rating of regular product
 
 ```admonish abstract title="Pertaining to"
 - Customer account type: **POSTPAID**
@@ -24,15 +24,15 @@
 **so that** I can charge the customer for his usage.
 ```
 
-## Business process
+## Business processes
 
-### Client request process model
+### Product consumption overview
 
-![Process diagram depicting the Client request for product consumption](../product-use-client-bpmn.svg)
+![Diagram depicting the product consumption process](../UC-02/product-use-client-bpmn.svg)
 
-### Rating Coordinator process model
+### Regular product rating
 
-![Process diagram depicting the consumption of regular product from postpaid account](./bpmn.svg)
+![Diagram depicting the rating process of a regular product](./bpmn.svg)
 
 ### Legend
 
