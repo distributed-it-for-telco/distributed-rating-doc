@@ -1,32 +1,32 @@
-# Rating of bundle product offer
+# Rating of threshold product
 
 ```admonish abstract title="Pertaining to"
 - Customer account type: **POSTPAID**
-- Product offer type: **REGULAR**
+- Product offer type: **THRESHOLD**
 ```
 
 ```admonish example title="Use case"
-**As a** a postpaid customer of a teleco provider  
-**I want to** select a bundled product of 3 movies for 1 dollar  
-**so that** I can consume this product from a providers mobile app  
-**and** the cost of this product will be reflected in my bill  
+**As a** customer of a *Teleco provider* with *postpaid* account  
+**I want to** select some product with *threshold* product offer  
+**so that I can** consume it from a providers mobile app  
+**and** the cost will be reflected in my bill  
 ```
 
 ```admonish example title="Use case"
-**As a** Teleco Provider  
-**I want to** sell a bundled product like 3 movies for 1 dollar in a distributed mode  
-**so that** I will deduct the correct cost from the customer bundle  
+**As a** *Teleco provider* with *threshold* product offer  
+**I want to** calculate rated usage for it in a distributed manner  
+**so that I can** be reflected in the customers bill  
 ```
 
 ## Business processes
 
 ### Product consumption overview
 
-![Diagram depicting the product consumption process](../UC-02/product-use-client-bpmn.svg)
+![Diagram depicting the product consumption process](../UC-02/rating-bpm.svg)
 
-### Bundle product rating
+### Threshold product rating
 
-![Diagram depicting the rating process of a bundle product](./bpmn.svg)
+![Diagram depicting the rating process of a threshold product](./rating-bpm.svg)
 
 ### Legend
 

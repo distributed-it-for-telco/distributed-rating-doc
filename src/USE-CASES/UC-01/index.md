@@ -6,7 +6,7 @@
 ```
 
 ```admonish example title="Customer Use case"
-**As a** a customer of a *Teleco provider*  
+**As a** customer of a *Teleco provider*  
 **I want to** list products available to me  
 **so that I can** use some of them  
 ```
@@ -22,7 +22,7 @@
 
 ### Process model for the retrival of customer product inventory
 
-![Process model for the retrival of customer product inventory](./bpmn.svg)
+![Process model for the retrival of customer product inventory](./list-bpm.svg)
 
 ### Legend
 
