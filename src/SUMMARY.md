@@ -19,6 +19,7 @@
 
 # Architecture decision records
 - [Monorepo code organization](./ADR/ard001-monorepo_code_organization.md)
+- [Product composition](./ADR/product-composition.md)
 
 # How-to
 - [WasmCloud Kickstart](./HOW-TO/kickstart.md)

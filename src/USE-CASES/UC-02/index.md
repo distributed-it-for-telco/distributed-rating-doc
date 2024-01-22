@@ -22,6 +22,8 @@
 
 ## Product composition
 
+ADR: [Product composition](/ADR/product-composition.md)
+
 For a composed product that depend on existing products,
 the rating platform needs to build product dependency model,
 and map it to corresponding agents for product usage rating,
