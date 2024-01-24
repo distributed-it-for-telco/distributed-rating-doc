@@ -214,9 +214,9 @@
 </li>
 </ul>
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
-<p>The aim of this page is to describe the business aspects for the distributed charging and rating process. The specification should try to describe when possible the similarities between the distributed rating and the charging and billing components in TMF.</p>
+<p>The aim of this page is to describe the business aspects for the distributed charging and rating process. The specification should try to describe when possible the similarities between the <em>distributed rating</em> and the charging and billing components in TMF.</p>
 <h3 id="context"><a class="header" href="#context">Context</a></h3>
-<p>Distributed Rating aims to explore the use of distributed architecture for the rating and part of the charging process to optimize the utilization of the various infrastructure components. For reference the software architecture for the stream can be found <a href="./architecture.html">here</a>.</p>
+<p><em>Distributed rating</em> aims to explore the use of distributed architecture for the rating and part of the charging process to optimize the utilization of the various infrastructure components. For reference the software architecture for the stream can be found <a href="./architecture.html">here</a>.</p>
 <h3 id="assumptions"><a class="header" href="#assumptions">Assumptions</a></h3>
 <p>Given the fact that this part is a research activity, this component will aim to comply with the TMF guidelines while allowing room for the needs of its innovative nature. in the first evolution the system may mock any external components to expedite the research activities.</p>
 <p>The first evolution should focus on products provided over IP through a client application to facilitate the tracking of their usage through the client application.</p>
@@ -239,7 +239,7 @@ which establishes the invoice from billable items received. It is part of the &q
 <h3 id="product-usage-management"><a class="header" href="#product-usage-management">Product Usage Management</a></h3>
 <p>The Product Usage management processes encompass the functions required to guide, distribute, mediate, summarize, accumulate, and analyze Product Usage records. These processes may occur in real-time, near real-time (i.e. just at the end of the usage), or may be executed on a periodic basis.</p>
 <p>Conventionally the usage is collected on the network component and forwarded to be processed in the usage management component.</p>
-<p>In the distributed rating, the Client SDK should do the usage collection and forward it to the rating agent to be processed in real-time.</p>
+<p>In the <em>distributed rating</em>, the Client SDK should do the usage collection and forward it to the <em>Rating Agent</em> to be processed in real-time.</p>
 <p>Below is the data schema of the product usage management as defined in TMF-635, the main entity used in the usage management process is the Usage and UsageSpecification</p>
 <pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': {
   'lineColor': '#a8201a',
@@ -312,7 +312,7 @@ classDiagram
 <h3 id="product-rating--rate-assignment"><a class="header" href="#product-rating--rate-assignment">Product Rating &amp; Rate Assignment</a></h3>
 <p>The purpose of Product Rating &amp; Assignment is to rate a value (monetary or other) to Product Usage or a set of Product Usages and assign the result to a Product and a Billing Account. The charge may be either a credit or a debit and can be handled either online or offline.</p>
 <p>Online charging is performed in real-time, necessitating an authorization component that can impact the delivery of the product and enables the operator to provide prepaid products to their customers. Conversely, offline charging takes place after the product has been delivered and does not necessitate real-time processing, and typically pertains to subscription-based products.</p>
-<p>in the distributed rating, optimally the process of usage and rating should be done on the edge or the FOG levels to minimize the loud on the infrastructure.</p>
+<p>in the <em>distributed rating</em>, optimally the process of usage and rating should be done on the edge or the FOG levels to minimize the loud on the infrastructure.</p>
 <p>Below is the data schema of the product usage management as defined in TMF-635, the main entity used in the product rating and rate assignment process is the RatedProductUsage entity</p>
 <pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': {
   'lineColor': '#a8201a',
@@ -410,7 +410,7 @@ classDiagram
 </pre>
 <h3 id="product-balance-management"><a class="header" href="#product-balance-management">Product Balance Management</a></h3>
 <p>This process is responsible for holding, calculating, applying policies and managing functionality/interfaces for the Product balances, Here the values resulting from rating and the application of discounts are applied to a Product balance. The balance affected by the value may be monetary or other balances such as minutes, points, or tokens.</p>
-<p>The rating agent should ensure that the balance is impacted and reduce it to match the product usage. The aim is to ensure that the balance is impacted instantly and is managed in a distributed manner. The operations for balance management (like top-up operations) will be out of scope of the first evolution and only the reduction of balance based on usage will be represented.</p>
+<p>The <em>Rating Agent</em> should ensure that the balance is impacted and reduce it to match the product usage. The aim is to ensure that the balance is impacted instantly and is managed in a distributed manner. The operations for balance management (like top-up operations) will be out of scope of the first evolution and only the reduction of balance based on usage will be represented.</p>
 <p>Below is the data schema of the balance as defined in TMF-654</p>
 <pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': {
   'lineColor': '#a8201a',
@@ -472,7 +472,7 @@ classDiagram
 <li>Alignment and management of promotional material insertion into distributed Customer bills</li>
 <li>Establishment and management of third party arrangements to support Customer bill invoice generation, production and distribution.</li>
 </ul>
-<p>The implementation of the Bill Calculation component is out of scope of the distributed rating however the system should ensure that it can generate Proof of Usages and rated events that can be forwarded to the Bill calculation component - through events or shared storage - to support post paid business scenarios. The support for aggregated rating will not be addressed in the first release and can be included in later evolution due to the technical complexity associated with it.</p>
+<p>The implementation of the Bill Calculation component is out of scope of the <em>distributed rating</em> however the system should ensure that it can generate Proof of Usages and rated events that can be forwarded to the Bill calculation component - through events or shared storage - to support post paid business scenarios. The support for aggregated rating will not be addressed in the first release and can be included in later evolution due to the technical complexity associated with it.</p>
 <h3 id="managed-entities"><a class="header" href="#managed-entities">Managed entities</a></h3>
 <h4 id="customer-product-inventory"><a class="header" href="#customer-product-inventory">Customer Product Inventory</a></h4>
 <p>The customer product inventory component holds the information about the customer and his installed products. it's used to track all the products that the customer has subscribed to as well as their cost. in the first release the customer inventory will be a simple key-value store that holds the customer id as the key and party information with a list of their installed product in the value. the figure below show the schema of the data stored in the value.</p>
@@ -574,7 +574,7 @@ A base / value business entity used to represent money.</p>
 </div>
 </details>
 <h4 id="rated-usage-inventory"><a class="header" href="#rated-usage-inventory">Rated Usage Inventory</a></h4>
-<p>The rated usage inventory component holds the information about the customer's consumption and its associated cost. it's used to hold the rated usage information that can be forwarded later on to the billing component. the figure below show the schema of the rated usage.</p>
+<p>The rated usage inventory component holds the information about the customer's usage and its associated cost. it's used to hold the rated usage information that can be forwarded later on to the billing component. the figure below show the schema of the rated usage.</p>
 <pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': {
   'lineColor': '#a8201a',
   'primaryColor': '#fae5c7',
@@ -685,7 +685,7 @@ Provides the value of a given characteristic.</p>
 <div>
 <ul>
 <li>Person requesting to watch a movie on a streaming provider through his teleco account.</li>
-<li>Person requesting to consume a hosting products from a cloud provider which relies on a teleco products for connectivity</li>
+<li>Person requesting to use a hosting products from a cloud provider which relies on a teleco products for connectivity</li>
 </ul>
 </div>
 </div>
