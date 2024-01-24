@@ -17,7 +17,7 @@
 **As a** Teleco Provider  
 **I want to** provide products from multiple partners  
 **and** relay the rating to partner's agent  
-**so that** I can ensure all partners have rated the product before consumption  
+**so that** I can ensure all partners have rated the product before usage  
 ```
 
 ## Product composition

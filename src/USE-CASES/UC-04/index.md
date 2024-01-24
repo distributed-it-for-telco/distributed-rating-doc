@@ -8,7 +8,7 @@
 ```admonish example title="Use case"
 **As a** customer of a *Teleco provider* with *postpaid* account  
 **I want to** select some product with *threshold* product offer  
-**so that I can** consume it from a providers mobile app  
+**so that I can** use it from a providers mobile app  
 **and** the cost will be reflected in my bill  
 ```
 

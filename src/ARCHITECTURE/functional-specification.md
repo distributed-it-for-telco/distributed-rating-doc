@@ -5,11 +5,11 @@
 
 ## Introduction
 
-The aim of this page is to describe the business aspects for the distributed charging and rating process. The specification should try to describe when possible the similarities between the distributed rating and the charging and billing components in TMF.
+The aim of this page is to describe the business aspects for the distributed charging and rating process. The specification should try to describe when possible the similarities between the *distributed rating* and the charging and billing components in TMF.
 
 ### Context
 
-Distributed Rating aims to explore the use of distributed architecture for the rating and part of the charging process to optimize the utilization of the various infrastructure components. For reference the software architecture for the stream can be found [here](./architecture.md).
+*Distributed rating* aims to explore the use of distributed architecture for the rating and part of the charging process to optimize the utilization of the various infrastructure components. For reference the software architecture for the stream can be found [here](./architecture.md).
 
 ### Assumptions
 
@@ -44,7 +44,7 @@ The Product Usage management processes encompass the functions required to guide
 
 Conventionally the usage is collected on the network component and forwarded to be processed in the usage management component.
 
-In the distributed rating, the Client SDK should do the usage collection and forward it to the rating agent to be processed in real-time.
+In the *distributed rating*, the Client SDK should do the usage collection and forward it to the *Rating Agent* to be processed in real-time.
 
 Below is the data schema of the product usage management as defined in TMF-635, the main entity used in the usage management process is the Usage and UsageSpecification
 
@@ -58,7 +58,7 @@ The purpose of Product Rating & Assignment is to rate a value (monetary or other
 
 Online charging is performed in real-time, necessitating an authorization component that can impact the delivery of the product and enables the operator to provide prepaid products to their customers. Conversely, offline charging takes place after the product has been delivered and does not necessitate real-time processing, and typically pertains to subscription-based products.
 
-in the distributed rating, optimally the process of usage and rating should be done on the edge or the FOG levels to minimize the loud on the infrastructure.
+in the *distributed rating*, optimally the process of usage and rating should be done on the edge or the FOG levels to minimize the loud on the infrastructure.
 
 Below is the data schema of the product usage management as defined in TMF-635, the main entity used in the product rating and rate assignment process is the RatedProductUsage entity
 
@@ -70,7 +70,7 @@ Below is the data schema of the product usage management as defined in TMF-635, 
 
 This process is responsible for holding, calculating, applying policies and managing functionality/interfaces for the Product balances, Here the values resulting from rating and the application of discounts are applied to a Product balance. The balance affected by the value may be monetary or other balances such as minutes, points, or tokens.
 
-The rating agent should ensure that the balance is impacted and reduce it to match the product usage. The aim is to ensure that the balance is impacted instantly and is managed in a distributed manner. The operations for balance management (like top-up operations) will be out of scope of the first evolution and only the reduction of balance based on usage will be represented.
+The *Rating Agent* should ensure that the balance is impacted and reduce it to match the product usage. The aim is to ensure that the balance is impacted instantly and is managed in a distributed manner. The operations for balance management (like top-up operations) will be out of scope of the first evolution and only the reduction of balance based on usage will be represented.
 
 Below is the data schema of the balance as defined in TMF-654
 
@@ -92,7 +92,7 @@ These processes are responsible for, but not limited to:
 * Alignment and management of promotional material insertion into distributed Customer bills
 * Establishment and management of third party arrangements to support Customer bill invoice generation, production and distribution.
 
-The implementation of the Bill Calculation component is out of scope of the distributed rating however the system should ensure that it can generate Proof of Usages and rated events that can be forwarded to the Bill calculation component - through events or shared storage - to support post paid business scenarios. The support for aggregated rating will not be addressed in the first release and can be included in later evolution due to the technical complexity associated with it.
+The implementation of the Bill Calculation component is out of scope of the *distributed rating* however the system should ensure that it can generate Proof of Usages and rated events that can be forwarded to the Bill calculation component - through events or shared storage - to support post paid business scenarios. The support for aggregated rating will not be addressed in the first release and can be included in later evolution due to the technical complexity associated with it.
 
 ### Managed entities
 
@@ -138,7 +138,7 @@ A base / value business entity used to represent money.
 
 #### Rated Usage Inventory
 
-The rated usage inventory component holds the information about the customer's consumption and its associated cost. it's used to hold the rated usage information that can be forwarded later on to the billing component. the figure below show the schema of the rated usage.
+The rated usage inventory component holds the information about the customer's usage and its associated cost. it's used to hold the rated usage information that can be forwarded later on to the billing component. the figure below show the schema of the rated usage.
 
 ```mermaid
 {{#include rated_usage-class_diagram.mmd}}
@@ -192,7 +192,7 @@ The end user that is benefiting from the product irrespective of his relation wi
 
 ```admonish example title="Customer Example"
 - Person requesting to watch a movie on a streaming provider through his teleco account.
-- Person requesting to consume a hosting products from a cloud provider which relies on a teleco products for connectivity
+- Person requesting to use a hosting products from a cloud provider which relies on a teleco products for connectivity
 ```
 
 #### Vendor

@@ -8,7 +8,7 @@
 ```admonish example title="Use case"
 **As a** postpaid customer of a teleco provider  
 **I want to** select a bundled product of 3 movies for 1 dollar  
-**so that** I can consume this product from a providers mobile app  
+**so that** I can use this product from a providers mobile app  
 **and** the cost of this product will be reflected in my bill  
 ```
 

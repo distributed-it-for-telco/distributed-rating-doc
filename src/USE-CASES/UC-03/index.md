@@ -15,12 +15,12 @@
 **As a** vendor providing products *over IP* through a *Teleco provider*  
 **I want to** have integration with the Teleco provider rating process  
 **so that I can** monitor the usage of the products I provide  
-**and** track revenue of the products based on consumption  
+**and** track revenue of the products based on usage  
 ```
 
 ```admonish example title="Teleco Provider Use case"
 **As a** Teleco Provider
-**I want to** rate the consumption of movie streaming products
+**I want to** rate the usage of movie streaming products
 **so that** I can charge the customer for his usage.
 ```
 

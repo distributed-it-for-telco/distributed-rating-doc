@@ -15,7 +15,7 @@
 **As a** vendor providing products *over IP* through a *Teleco provider*  
 **I want to** have integration with the Teleco provider product inventory  
 **so that I can** list the products I provide  
-**and** make the products available for consumption  
+**and** make the products available for usage  
 ```
 
 ## Business processes
