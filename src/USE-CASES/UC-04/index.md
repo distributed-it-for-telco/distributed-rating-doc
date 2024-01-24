@@ -20,9 +20,7 @@
 
 ## Business processes
 
-### Product consumption overview
-
-![Diagram depicting the product consumption process](../UC-02/rating-bpm.svg)
+{{#include ../UC-02/product-usage-overview.md}}
 
 ### Threshold product rating
 

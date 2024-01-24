@@ -37,21 +37,7 @@ in turn each of its product dependencies may have other dependencies.
 
 ## Business processes
 
-### Product consumption overview
-
-![Diagram depicting the product consumption process](../UC-02/rating-bpm.svg)
-
-#### Product dependencies traversal
-
-As depicted in the process model, the *Rating coordinator* is responsible for
-composing and traversing dependency graph for a product,
-it acheave this by recursively walking down the graph,
-and asking each agent for its dependencies,
-sotring the resulting model in a graph datastructure;
-which will be traversed twice:
-
-- First time to validate the usage request, traversing in ascending order
-- Second time to rate the usage, traversing in descinding order
+{{#include ./product-usage-overview.md}}
 
 ### Legend
 
