@@ -14,4 +14,4 @@ the *Usage Collector* to carry out its main three tasks:
 2. Validate the usage request by all the agents.
 3. Trigger rating for each agent in order of their dependencies.
 
-![Diagram depicting the product usage process](/USE-CASES/UC-02/rating-bpm.svg)
+![Diagram depicting the product usage process](../UC-02/rating-bpm.svg)
