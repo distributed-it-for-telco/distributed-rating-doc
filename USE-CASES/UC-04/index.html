@@ -217,8 +217,21 @@
 </div>
 </div>
 <h2 id="business-processes"><a class="header" href="#business-processes">Business processes</a></h2>
-<h3 id="product-consumption-overview"><a class="header" href="#product-consumption-overview">Product consumption overview</a></h3>
-<p><img src="../UC-02/rating-bpm.svg" alt="Diagram depicting the product consumption process" /></p>
+<h3 id="product-usage-overview"><a class="header" href="#product-usage-overview">Product usage overview</a></h3>
+<p>The process of product usage in the <em>distributed rating</em> system, which is
+illustrated in the model below, begins with the client request going through
+the <em>Rating Coordinator</em> and each <em>Rating Agent</em> before finally issuing
+the <em>Usage Proof</em>, which is collected and stored by the <em>Usage Collector</em>,
+focusing on the crucial role of the <em>Rating Coordinator</em> in decoupling
+the <em>Rating Agent</em> and standardizing the communication between them.</p>
+<p>Also, the process model illustrates the iterative approach used by
+the <em>Usage Collector</em> to carry out its main three tasks:</p>
+<ol>
+<li>Construct the agent dependency graph, by recursively quering each agent for its dependencies.</li>
+<li>Validate the usage request by all the agents.</li>
+<li>Trigger rating for each agent in order of their dependencies.</li>
+</ol>
+<p><img src="/USE-CASES/UC-02/rating-bpm.svg" alt="Diagram depicting the product usage process" /></p>
 <h3 id="threshold-product-rating"><a class="header" href="#threshold-product-rating">Threshold product rating</a></h3>
 <p><img src="./rating-bpm.svg" alt="Diagram depicting the rating process of a threshold product" /></p>
 <h3 id="legend"><a class="header" href="#legend">Legend</a></h3>

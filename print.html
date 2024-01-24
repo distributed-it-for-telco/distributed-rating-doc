@@ -1005,19 +1005,21 @@ flowchart LR
   class telemetry actor
 </pre>
 <h2 id="business-processes-1"><a class="header" href="#business-processes-1">Business processes</a></h2>
-<h3 id="product-consumption-overview"><a class="header" href="#product-consumption-overview">Product consumption overview</a></h3>
-<p><img src="USE-CASES/UC-02/../UC-02/rating-bpm.svg" alt="Diagram depicting the product consumption process" /></p>
-<h4 id="product-dependencies-traversal"><a class="header" href="#product-dependencies-traversal">Product dependencies traversal</a></h4>
-<p>As depicted in the process model, the <em>Rating coordinator</em> is responsible for
-composing and traversing dependency graph for a product,
-it acheave this by recursively walking down the graph,
-and asking each agent for its dependencies,
-sotring the resulting model in a graph datastructure;
-which will be traversed twice:</p>
-<ul>
-<li>First time to validate the usage request, traversing in ascending order</li>
-<li>Second time to rate the usage, traversing in descinding order</li>
-</ul>
+<h3 id="product-usage-overview"><a class="header" href="#product-usage-overview">Product usage overview</a></h3>
+<p>The process of product usage in the <em>distributed rating</em> system, which is
+illustrated in the model below, begins with the client request going through
+the <em>Rating Coordinator</em> and each <em>Rating Agent</em> before finally issuing
+the <em>Usage Proof</em>, which is collected and stored by the <em>Usage Collector</em>,
+focusing on the crucial role of the <em>Rating Coordinator</em> in decoupling
+the <em>Rating Agent</em> and standardizing the communication between them.</p>
+<p>Also, the process model illustrates the iterative approach used by
+the <em>Usage Collector</em> to carry out its main three tasks:</p>
+<ol>
+<li>Construct the agent dependency graph, by recursively quering each agent for its dependencies.</li>
+<li>Validate the usage request by all the agents.</li>
+<li>Trigger rating for each agent in order of their dependencies.</li>
+</ol>
+<p><img src="USE-CASES/UC-02//USE-CASES/UC-02/rating-bpm.svg" alt="Diagram depicting the product usage process" /></p>
 <h3 id="legend-1"><a class="header" href="#legend-1">Legend</a></h3>
 <div class="table-wrapper"><table><thead><tr><th>Term</th><th>description</th></tr></thead><tbody>
 <tr><td><em>Party</em></td><td>A customer that has subscribed to a product</td></tr>
@@ -1077,8 +1079,21 @@ which will be traversed twice:</p>
 </div>
 </div>
 <h2 id="business-processes-2"><a class="header" href="#business-processes-2">Business processes</a></h2>
-<h3 id="product-consumption-overview-1"><a class="header" href="#product-consumption-overview-1">Product consumption overview</a></h3>
-<p><img src="USE-CASES/UC-03/../UC-02/rating-bpm.svg" alt="Diagram depicting the product consumption process" /></p>
+<h3 id="product-usage-overview-1"><a class="header" href="#product-usage-overview-1">Product usage overview</a></h3>
+<p>The process of product usage in the <em>distributed rating</em> system, which is
+illustrated in the model below, begins with the client request going through
+the <em>Rating Coordinator</em> and each <em>Rating Agent</em> before finally issuing
+the <em>Usage Proof</em>, which is collected and stored by the <em>Usage Collector</em>,
+focusing on the crucial role of the <em>Rating Coordinator</em> in decoupling
+the <em>Rating Agent</em> and standardizing the communication between them.</p>
+<p>Also, the process model illustrates the iterative approach used by
+the <em>Usage Collector</em> to carry out its main three tasks:</p>
+<ol>
+<li>Construct the agent dependency graph, by recursively quering each agent for its dependencies.</li>
+<li>Validate the usage request by all the agents.</li>
+<li>Trigger rating for each agent in order of their dependencies.</li>
+</ol>
+<p><img src="USE-CASES/UC-03//USE-CASES/UC-02/rating-bpm.svg" alt="Diagram depicting the product usage process" /></p>
 <h3 id="regular-product-rating"><a class="header" href="#regular-product-rating">Regular product rating</a></h3>
 <p><img src="USE-CASES/UC-03/./rating-bpm.svg" alt="Diagram depicting the rating process of a regular product" /></p>
 <h3 id="legend-2"><a class="header" href="#legend-2">Legend</a></h3>
@@ -1129,8 +1144,21 @@ which will be traversed twice:</p>
 </div>
 </div>
 <h2 id="business-processes-3"><a class="header" href="#business-processes-3">Business processes</a></h2>
-<h3 id="product-consumption-overview-2"><a class="header" href="#product-consumption-overview-2">Product consumption overview</a></h3>
-<p><img src="USE-CASES/UC-04/../UC-02/rating-bpm.svg" alt="Diagram depicting the product consumption process" /></p>
+<h3 id="product-usage-overview-2"><a class="header" href="#product-usage-overview-2">Product usage overview</a></h3>
+<p>The process of product usage in the <em>distributed rating</em> system, which is
+illustrated in the model below, begins with the client request going through
+the <em>Rating Coordinator</em> and each <em>Rating Agent</em> before finally issuing
+the <em>Usage Proof</em>, which is collected and stored by the <em>Usage Collector</em>,
+focusing on the crucial role of the <em>Rating Coordinator</em> in decoupling
+the <em>Rating Agent</em> and standardizing the communication between them.</p>
+<p>Also, the process model illustrates the iterative approach used by
+the <em>Usage Collector</em> to carry out its main three tasks:</p>
+<ol>
+<li>Construct the agent dependency graph, by recursively quering each agent for its dependencies.</li>
+<li>Validate the usage request by all the agents.</li>
+<li>Trigger rating for each agent in order of their dependencies.</li>
+</ol>
+<p><img src="USE-CASES/UC-04//USE-CASES/UC-02/rating-bpm.svg" alt="Diagram depicting the product usage process" /></p>
 <h3 id="threshold-product-rating"><a class="header" href="#threshold-product-rating">Threshold product rating</a></h3>
 <p><img src="USE-CASES/UC-04/./rating-bpm.svg" alt="Diagram depicting the rating process of a threshold product" /></p>
 <h3 id="legend-3"><a class="header" href="#legend-3">Legend</a></h3>
@@ -1181,8 +1209,21 @@ which will be traversed twice:</p>
 </div>
 </div>
 <h2 id="business-processes-4"><a class="header" href="#business-processes-4">Business processes</a></h2>
-<h3 id="product-consumption-overview-3"><a class="header" href="#product-consumption-overview-3">Product consumption overview</a></h3>
-<p><img src="USE-CASES/UC-05/../UC-02/rating-bpm.svg" alt="Diagram depicting the product consumption process" /></p>
+<h3 id="product-usage-overview-3"><a class="header" href="#product-usage-overview-3">Product usage overview</a></h3>
+<p>The process of product usage in the <em>distributed rating</em> system, which is
+illustrated in the model below, begins with the client request going through
+the <em>Rating Coordinator</em> and each <em>Rating Agent</em> before finally issuing
+the <em>Usage Proof</em>, which is collected and stored by the <em>Usage Collector</em>,
+focusing on the crucial role of the <em>Rating Coordinator</em> in decoupling
+the <em>Rating Agent</em> and standardizing the communication between them.</p>
+<p>Also, the process model illustrates the iterative approach used by
+the <em>Usage Collector</em> to carry out its main three tasks:</p>
+<ol>
+<li>Construct the agent dependency graph, by recursively quering each agent for its dependencies.</li>
+<li>Validate the usage request by all the agents.</li>
+<li>Trigger rating for each agent in order of their dependencies.</li>
+</ol>
+<p><img src="USE-CASES/UC-05//USE-CASES/UC-02/rating-bpm.svg" alt="Diagram depicting the product usage process" /></p>
 <h3 id="bundle-product-rating"><a class="header" href="#bundle-product-rating">Bundle product rating</a></h3>
 <p><img src="USE-CASES/UC-05/./rating-bpm.svg" alt="Diagram depicting the rating process of a bundle product" /></p>
 <h3 id="legend-4"><a class="header" href="#legend-4">Legend</a></h3>
