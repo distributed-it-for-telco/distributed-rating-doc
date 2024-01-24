@@ -5,14 +5,14 @@
 - Product offer type: **THRESHOLD**
 ```
 
-```admonish example title="Use case"
+```admonish example title="Customer Use case"
 **As a** customer of a *Teleco provider* with *postpaid* account  
 **I want to** select some product with *threshold* product offer  
 **so that I can** use it from a providers mobile app  
 **and** the cost will be reflected in my bill  
 ```
 
-```admonish example title="Use case"
+```admonish example title="Teleco provider Use case"
 **As a** *Teleco provider* with *threshold* product offer  
 **I want to** calculate rated usage for it in a distributed manner  
 **so that I can** be reflected in the customers bill  
