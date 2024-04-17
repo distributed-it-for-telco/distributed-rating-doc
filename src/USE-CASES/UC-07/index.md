@@ -20,7 +20,6 @@ And offer ads services to advertisers
 ```
 
 ## Product composition
-```
 
 In this use case, we are managing one offer with two related products. The first product is the virtual room and the second product is the advertisement viewed in these rooms.
 
@@ -31,8 +30,9 @@ Balance recharge is out of scope for this release.
 
 Once avatar enters the room, they can watch an advertisement, these views are then charged to the advertisers account.
 
-```
+```mermaid
 {{#include ./product-composition.mmd}}
+```
 
 ## Business processes
 there's no change in the business process for rating as the rating logic is the same
