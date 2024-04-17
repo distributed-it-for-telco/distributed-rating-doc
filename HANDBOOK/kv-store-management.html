@@ -191,7 +191,7 @@
 </ul>
 <h3 id="runbook-goals-"><a class="header" href="#runbook-goals-">Runbook Goals :</a></h3>
 <ul>
-<li>How to manage kv store using cli </li>
+<li>How to manage kv store using cli</li>
 </ul>
 <h3 id="preconditions"><a class="header" href="#preconditions">Preconditions</a></h3>
 <ul>
@@ -218,14 +218,14 @@
 <blockquote>
 <p>nats kv -s connect.cosmonic.sh --creds ~/.cosmo/user.creds ls <em><strong>bucket-id</strong></em></p>
 </blockquote>
-<p><em><strong>bucket-id</strong></em> : is the id of bucket returned from Stage 1 </p>
+<p><em><strong>bucket-id</strong></em> : is the id of bucket returned from Stage 1</p>
 <h2 id="stage-3--put-key-and-value"><a class="header" href="#stage-3--put-key-and-value">Stage 3 : put key and value <a name="stage3"></a></a></h2>
 <p>open your terminal and execute the below command</p>
 <blockquote>
 <p>nats kv -s connect.cosmonic.sh --creds ~/.cosmo/user.creds put 125b2a01-09a1-4d64-8bfc-5aa222e9c560 <em><strong>key</strong></em> <em><strong>value</strong></em></p>
 </blockquote>
 <blockquote>
-<p>ex nats kv -s connect.cosmonic.sh --creds ~/.cosmo/user.creds put 125b2a01-09a1-4d64-8bfc-5aa222e9c560 customer1 '{\n        &quot;product&quot;: {\n           &quot;id&quot;:1234,\n           &quot;offerId&quot;:534,\n           &quot;description&quot;:&quot;”Video on Demand”&quot;,\n           &quot;productPrice&quot;: {\n              &quot;description&quot;:&quot;”Cost per movie”&quot;,\n              &quot;validTill&quot;:&quot;1/March/2024&quot;,\n              &quot;priceType&quot;:&quot;non-recurring&quot;,\n              &quot;unitOfMeasure&quot;: {\n                 &quot;amount&quot;:&quot;1&quot;,\n                 &quot;units&quot;:&quot;”movie”&quot;\n              },\n              &quot;price&quot;: {\n                 &quot;unit&quot;:&quot;eur&quot;,\n                 &quot;value&quot;:&quot;1&quot;\n              },\n              &quot;ratingAgent&quot;: {}\n           }\n        }\n    }'</p>
+<p>ex nats kv -s connect.cosmonic.sh --creds ~/.cosmo/user.creds put 125b2a01-09a1-4d64-8bfc-5aa222e9c560 customer1 '{\n        "product": {\n           "id":1234,\n           "offerId":534,\n           "description":"”Video on Demand”",\n           "productPrice": {\n              "description":"”Cost per movie”",\n              "validTill":"1/March/2024",\n              "priceType":"non-recurring",\n              "unitOfMeasure": {\n                 "amount":"1",\n                 "units":"”movie”"\n              },\n              "price": {\n                 "unit":"eur",\n                 "value":"1"\n              },\n              "ratingAgent": {}\n           }\n        }\n    }'</p>
 </blockquote>
 <h2 id="stage-4--get-value-using-key"><a class="header" href="#stage-4--get-value-using-key">Stage 4 : Get value using key <a name="stage4"></a></a></h2>
 <p>open your terminal and execute the below command</p>

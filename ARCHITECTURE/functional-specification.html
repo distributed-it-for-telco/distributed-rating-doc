@@ -222,16 +222,16 @@
 <p>The first evolution should focus on products provided over IP through a client application to facilitate the tracking of their usage through the client application.</p>
 <h2 id="charging--billing"><a class="header" href="#charging--billing">Charging &amp; Billing</a></h2>
 <p><img src="./charging_billing_overview.svg" alt="Charging &amp; Billing BPM" /></p>
-<p>The process called &quot;Billing&quot; consists of a set of different processes, each working on one type of data:</p>
+<p>The process called "Billing" consists of a set of different processes, each working on one type of data:</p>
 <ul>
 <li><strong>Charging</strong>
-in charge of controlling the usage and decrementation of bundles. It is part of the &quot;Factory&quot; platform and uses the Charging rules and features described at the Product level.</li>
+in charge of controlling the usage and decrementation of bundles. It is part of the "Factory" platform and uses the Charging rules and features described at the Product level.</li>
 <li><strong>Rating</strong>
-which valuates the usage tickets sent by the Charging. It is part of the &quot;Offer &amp; Products&quot; platform and uses the tariffs and tariff plans described in the Offers to determine the tariff codes (InstalledTariff) that will be used to make the invoice.</li>
+which valuates the usage tickets sent by the Charging. It is part of the "Offer &amp; Products" platform and uses the tariffs and tariff plans described in the Offers to determine the tariff codes (InstalledTariff) that will be used to make the invoice.</li>
 <li><strong>Bill</strong>
-alculation, which calculates the billable items (AppliedTariff) that will be sent to billing to be put on the bill. It is part of the &quot;Offer &amp; Products&quot; platform and uses the rates and tariff plan described in the Offers</li>
+alculation, which calculates the billable items (AppliedTariff) that will be sent to billing to be put on the bill. It is part of the "Offer &amp; Products" platform and uses the rates and tariff plan described in the Offers</li>
 <li><strong>Invoicing</strong>
-which establishes the invoice from billable items received. It is part of the &quot;Party&quot; platform and uses commercial catalog information to calculate invoice elements and layout.</li>
+which establishes the invoice from billable items received. It is part of the "Party" platform and uses commercial catalog information to calculate invoice elements and layout.</li>
 </ul>
 <p>Part of the charging and rating will be distributed in the new architecture, the rating component should then feed the generated tariff to the billing component. There's no direct impact from the invoicing component so it will not be discussed in this document's scope.</p>
 <h2 id="charging-and-billing-within-etom"><a class="header" href="#charging-and-billing-within-etom">Charging and Billing within eTOM</a></h2>

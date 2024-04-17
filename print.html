@@ -179,23 +179,8 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="about-the-distributed-rating-project"><a class="header" href="#about-the-distributed-rating-project">About the distributed-rating project</a></h1>
-<p>Mermaid test</p>
-<pre class="mermaid">graph TD;
-    A--&gt;B;
-    A--&gt;C;
-    B--&gt;D;
-    C--&gt;D;
-</pre>
-<p>Admonish test</p>
-<div id="admonition-info" class="admonition admonish-info">
-<div class="admonition-title">
-<p>Info</p>
-<p><a class="admonition-anchor-link" href="about.html#admonition-info"></a></p>
-</div>
-<div>
-<p>A beautifully styled message.</p>
-</div>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="concepts"><a class="header" href="#concepts">Concepts</a></h1>
+<p>This project aims to explore the use of distributed architecture in various processes in the teleco industry, starting with the rating and charging process.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="concepts"><a class="header" href="#concepts">Concepts</a></h1>
 <h2 id="third-party-management"><a class="header" href="#third-party-management">third party management</a></h2>
 <ul>
 <li>definitions
@@ -284,7 +269,7 @@
 <h3 id="composite-case"><a class="header" href="#composite-case">composite case</a></h3>
 <p><img src="CONCEPTS/./contract-agent-detailed-composite.drawio.svg" alt="" /></p>
 <ul>
-<li>note that there is &quot;shortcut&quot; in <code>3. get vendor identity</code>. It does not really return an identity but a &quot;vendor service subscription&quot; authorization token. Check next paragraph</li>
+<li>note that there is "shortcut" in <code>3. get vendor identity</code>. It does not really return an identity but a "vendor service subscription" authorization token. Check next paragraph</li>
 </ul>
 <h2 id="identity-management"><a class="header" href="#identity-management">identity management</a></h2>
 <p>The IAM have been simplified in the previous diagrams.</p>
@@ -403,16 +388,16 @@
 <p>The first evolution should focus on products provided over IP through a client application to facilitate the tracking of their usage through the client application.</p>
 <h2 id="charging--billing"><a class="header" href="#charging--billing">Charging &amp; Billing</a></h2>
 <p><img src="ARCHITECTURE/./charging_billing_overview.svg" alt="Charging &amp; Billing BPM" /></p>
-<p>The process called &quot;Billing&quot; consists of a set of different processes, each working on one type of data:</p>
+<p>The process called "Billing" consists of a set of different processes, each working on one type of data:</p>
 <ul>
 <li><strong>Charging</strong>
-in charge of controlling the usage and decrementation of bundles. It is part of the &quot;Factory&quot; platform and uses the Charging rules and features described at the Product level.</li>
+in charge of controlling the usage and decrementation of bundles. It is part of the "Factory" platform and uses the Charging rules and features described at the Product level.</li>
 <li><strong>Rating</strong>
-which valuates the usage tickets sent by the Charging. It is part of the &quot;Offer &amp; Products&quot; platform and uses the tariffs and tariff plans described in the Offers to determine the tariff codes (InstalledTariff) that will be used to make the invoice.</li>
+which valuates the usage tickets sent by the Charging. It is part of the "Offer &amp; Products" platform and uses the tariffs and tariff plans described in the Offers to determine the tariff codes (InstalledTariff) that will be used to make the invoice.</li>
 <li><strong>Bill</strong>
-alculation, which calculates the billable items (AppliedTariff) that will be sent to billing to be put on the bill. It is part of the &quot;Offer &amp; Products&quot; platform and uses the rates and tariff plan described in the Offers</li>
+alculation, which calculates the billable items (AppliedTariff) that will be sent to billing to be put on the bill. It is part of the "Offer &amp; Products" platform and uses the rates and tariff plan described in the Offers</li>
 <li><strong>Invoicing</strong>
-which establishes the invoice from billable items received. It is part of the &quot;Party&quot; platform and uses commercial catalog information to calculate invoice elements and layout.</li>
+which establishes the invoice from billable items received. It is part of the "Party" platform and uses commercial catalog information to calculate invoice elements and layout.</li>
 </ul>
 <p>Part of the charging and rating will be distributed in the new architecture, the rating component should then feed the generated tariff to the billing component. There's no direct impact from the invoicing component so it will not be discussed in this document's scope.</p>
 <h2 id="charging-and-billing-within-etom"><a class="header" href="#charging-and-billing-within-etom">Charging and Billing within eTOM</a></h2>
@@ -1375,7 +1360,7 @@ the <em>Usage Collector</em> to carry out its main three tasks:</p>
 <p>when can we use this traits will be mentioned in this <a href="HOW-TO/smithy-notes.html#https://wasmcloud.com/docs/hosts/abis/wasmbus/interfaces/traits#codegenrust">link</a>
 but the only note you need to know is :</p>
 <ul>
-<li>you should add the import for codegenrust in your smithy file to see the effect of using this trait </li>
+<li>you should add the import for codegenrust in your smithy file to see the effect of using this trait</li>
 </ul>
 <blockquote>
 <p>use org.wasmcloud.model#codegenRust</p>
@@ -1391,7 +1376,7 @@ but the only note you need to know is :</p>
 </ul>
 <h3 id="runbook-goals-"><a class="header" href="#runbook-goals-">Runbook Goals :</a></h3>
 <ul>
-<li>How to manage kv store using cli </li>
+<li>How to manage kv store using cli</li>
 </ul>
 <h3 id="preconditions"><a class="header" href="#preconditions">Preconditions</a></h3>
 <ul>
@@ -1418,14 +1403,14 @@ but the only note you need to know is :</p>
 <blockquote>
 <p>nats kv -s connect.cosmonic.sh --creds ~/.cosmo/user.creds ls <em><strong>bucket-id</strong></em></p>
 </blockquote>
-<p><em><strong>bucket-id</strong></em> : is the id of bucket returned from Stage 1 </p>
+<p><em><strong>bucket-id</strong></em> : is the id of bucket returned from Stage 1</p>
 <h2 id="stage-3--put-key-and-value"><a class="header" href="#stage-3--put-key-and-value">Stage 3 : put key and value <a name="stage3"></a></a></h2>
 <p>open your terminal and execute the below command</p>
 <blockquote>
 <p>nats kv -s connect.cosmonic.sh --creds ~/.cosmo/user.creds put 125b2a01-09a1-4d64-8bfc-5aa222e9c560 <em><strong>key</strong></em> <em><strong>value</strong></em></p>
 </blockquote>
 <blockquote>
-<p>ex nats kv -s connect.cosmonic.sh --creds ~/.cosmo/user.creds put 125b2a01-09a1-4d64-8bfc-5aa222e9c560 customer1 '{\n        &quot;product&quot;: {\n           &quot;id&quot;:1234,\n           &quot;offerId&quot;:534,\n           &quot;description&quot;:&quot;”Video on Demand”&quot;,\n           &quot;productPrice&quot;: {\n              &quot;description&quot;:&quot;”Cost per movie”&quot;,\n              &quot;validTill&quot;:&quot;1/March/2024&quot;,\n              &quot;priceType&quot;:&quot;non-recurring&quot;,\n              &quot;unitOfMeasure&quot;: {\n                 &quot;amount&quot;:&quot;1&quot;,\n                 &quot;units&quot;:&quot;”movie”&quot;\n              },\n              &quot;price&quot;: {\n                 &quot;unit&quot;:&quot;eur&quot;,\n                 &quot;value&quot;:&quot;1&quot;\n              },\n              &quot;ratingAgent&quot;: {}\n           }\n        }\n    }'</p>
+<p>ex nats kv -s connect.cosmonic.sh --creds ~/.cosmo/user.creds put 125b2a01-09a1-4d64-8bfc-5aa222e9c560 customer1 '{\n        "product": {\n           "id":1234,\n           "offerId":534,\n           "description":"”Video on Demand”",\n           "productPrice": {\n              "description":"”Cost per movie”",\n              "validTill":"1/March/2024",\n              "priceType":"non-recurring",\n              "unitOfMeasure": {\n                 "amount":"1",\n                 "units":"”movie”"\n              },\n              "price": {\n                 "unit":"eur",\n                 "value":"1"\n              },\n              "ratingAgent": {}\n           }\n        }\n    }'</p>
 </blockquote>
 <h2 id="stage-4--get-value-using-key"><a class="header" href="#stage-4--get-value-using-key">Stage 4 : Get value using key <a name="stage4"></a></a></h2>
 <p>open your terminal and execute the below command</p>
@@ -1468,7 +1453,7 @@ but the only note you need to know is :</p>
 <blockquote>
 <p>wash ctl link del <em><strong>&lt;link_id&gt;</strong></em> wasmcloud:keyvalue -x 125b2a01-09a1-4d64-8bfc-5aa222e9c560 --ctl-port 4222 --ctl-host connect.cosmonic.sh --ctl-credsfile ~/.cosmo/user.creds</p>
 </blockquote>
-<p><em><strong>link_id</strong></em> : is the id returned from Stage 1 </p>
+<p><em><strong>link_id</strong></em> : is the id returned from Stage 1</p>
 <h2 id="stage-3--create-link"><a class="header" href="#stage-3--create-link">Stage 3 : Create Link <a name="stage3"></a></a></h2>
 <p>open your terminal and execute the below command</p>
 <blockquote>
@@ -1492,7 +1477,7 @@ but the only note you need to know is :</p>
 </ul>
 <h3 id="runbook-goals--2"><a class="header" href="#runbook-goals--2">Runbook Goals :</a></h3>
 <ul>
-<li>Shudown a host in a local machine </li>
+<li>Shudown a host in a local machine</li>
 </ul>
 <h3 id="preconditions-2"><a class="header" href="#preconditions-2">Preconditions</a></h3>
 <ul>
@@ -1517,7 +1502,7 @@ but the only note you need to know is :</p>
 <blockquote>
 <p>wash ctl stop host <em><strong>&lt;host_id&gt;</strong></em> -x 125b2a01-09a1-4d64-8bfc-5aa222e9c560 --ctl-port 4222 --ctl-host connect.cosmonic.sh --ctl-credsfile ~/.cosmo/user.creds</p>
 </blockquote>
-<p><em><strong>host_id</strong></em> : is the id returned from Stage 1 </p>
+<p><em><strong>host_id</strong></em> : is the id returned from Stage 1</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rationale"><a class="header" href="#rationale">Rationale</a></h1>
 <h2 id="context-1"><a class="header" href="#context-1">Context</a></h2>
 <p>IPCEI CIS WP2</p>
@@ -1533,7 +1518,7 @@ but the only note you need to know is :</p>
 <ul>
 <li>service providers are no longer those who are in direct contact with the customer or those who invoice the customer, there are aggregators, marketplaces...</li>
 <li>the pricing rules for the usage of technical services may be different depending on the reseller (composite services, service bundles, discounts on purchase, on usage)</li>
-<li>even more: &quot;à la carte&quot; pricing for each customer</li>
+<li>even more: "à la carte" pricing for each customer</li>
 </ul>
 </li>
 <li>
@@ -1542,11 +1527,11 @@ but the only note you need to know is :</p>
 <li>each of the partners contributes to the specific pricing of the customer, the pricing is made directly at the same time as the consumption of the service</li>
 <li>to do a parallel with rights management: it is easier to have components that each carry their authorization model rather than applying the model externally to the entire system</li>
 <li>each partner brings (in the form of an agent) the valuation engine of his service, possibly configured / overloaded by a partner reusing this service</li>
-<li>&quot;as code&quot; rating engine approach rather than a fixed and parameterized system</li>
+<li>"as code" rating engine approach rather than a fixed and parameterized system</li>
 </ul>
 </li>
 <li>
-<p>Prerequisites for this scenario are: &quot;reasonably secure&quot; device environment, possibility of deploying code on this environment, ability to detect fraud</p>
+<p>Prerequisites for this scenario are: "reasonably secure" device environment, possibility of deploying code on this environment, ability to detect fraud</p>
 </li>
 <li>
 <p>Orange offers an SDK to its partners allowing them to simply integrate the enhancement of the service into the application used to consume the service</p>
@@ -1569,7 +1554,7 @@ but the only note you need to know is :</p>
 <p>establish a shared trust between the 3 main actors (Service Provider, Vendor and Consumer)</p>
 <ul>
 <li>being able to distribute (crypto) proofs <em>of usage, of subscription...</em></li>
-<li>&quot;good enought&quot; security model, especially on the users devices</li>
+<li>"good enought" security model, especially on the users devices</li>
 </ul>
 </li>
 <li>
@@ -1579,7 +1564,7 @@ but the only note you need to know is :</p>
 <h2 id="requirements-1"><a class="header" href="#requirements-1">Requirements</a></h2>
 <ul>
 <li>
-<p>the solution </p>
+<p>the solution</p>
 <ul>
 <li>cannot rely on DPI to identify trafic usage (cf. HTTP2/3/QUIC)</li>
 <li>is over-IP</li>
@@ -1653,13 +1638,13 @@ but the only note you need to know is :</p>
 </li>
 <li>in a 3-party interaction (user, vendor, provider)
 <ul>
-<li>either the provider has to trust the vendor to &quot;recover user's paiments&quot; 
+<li>either the provider has to trust the vendor to "recover user's paiments"
 <ul>
 <li>needs pre-agreement or a base of trusted vendors) <strong>DONT: incompatible w/ requirements</strong></li>
 </ul>
 </li>
 <li>either the vendor is paying the provider immediatly for the user's usage</li>
-<li>either the vendor has already bought a &quot;pre-paid bucket&quot; to the provider</li>
+<li>either the vendor has already bought a "pre-paid bucket" to the provider</li>
 </ul>
 </li>
 </ul>
@@ -1805,7 +1790,7 @@ but the only note you need to know is :</p>
 <h3 id="composite-case-1"><a class="header" href="#composite-case-1">composite case</a></h3>
 <p><img src="ARCHIVE/./contract-agent-detailed-composite.drawio.svg" alt="" /></p>
 <ul>
-<li>note that there is &quot;shortcut&quot; in <code>3. get vendor identity</code>. It does not really return an identity but a &quot;vendor service subscription&quot; authorization token. Check next paragraph</li>
+<li>note that there is "shortcut" in <code>3. get vendor identity</code>. It does not really return an identity but a "vendor service subscription" authorization token. Check next paragraph</li>
 </ul>
 <h2 id="identity-management-1"><a class="header" href="#identity-management-1">identity management</a></h2>
 <p>The IAM have been simplified in the previous diagrams.</p>
@@ -1856,7 +1841,7 @@ but the only note you need to know is :</p>
 <li>
 <p><strong>recommandations for this prototype</strong></p>
 <ul>
-<li>use wasmCloud &quot;at the egde&quot;, do not try to implement the whole solution with wasmCloud</li>
+<li>use wasmCloud "at the egde", do not try to implement the whole solution with wasmCloud</li>
 </ul>
 </li>
 </ul>
@@ -1944,7 +1929,7 @@ but the only note you need to know is :</p>
 <p>is there a risk of a rating-agent doing non-legitimate modifications of its associated bucket / an other bucket?</p>
 </li>
 <li>
-<p>if those risks are too high, can we have &quot;server-side&quot; rating agent proxy to mitigate them?</p>
+<p>if those risks are too high, can we have "server-side" rating agent proxy to mitigate them?</p>
 </li>
 </ul>
 <h3 id="stateless-agents"><a class="header" href="#stateless-agents">stateless agents</a></h3>
@@ -1962,7 +1947,7 @@ but the only note you need to know is :</p>
 </ul>
 <h3 id="message-delivery-guarantee"><a class="header" href="#message-delivery-guarantee">message delivery guarantee</a></h3>
 <ul>
-<li>by design &quot;naked NATS&quot; does <a href="https://docs.nats.io/nats-concepts/overview/compare-nats">not guarantee message delivery</a>, does wasmCloud implement it?</li>
+<li>by design "naked NATS" does <a href="https://docs.nats.io/nats-concepts/overview/compare-nats">not guarantee message delivery</a>, does wasmCloud implement it?</li>
 </ul>
 <h3 id="do-interfaces-support-inheritance-"><a class="header" href="#do-interfaces-support-inheritance-">do interfaces support inheritance ?</a></h3>
 <h3 id="how-to-use-links"><a class="header" href="#how-to-use-links">how to use links</a></h3>
