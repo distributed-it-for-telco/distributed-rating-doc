@@ -1,17 +1,2 @@
 # About the distributed-rating project
-
-Mermaid test
-
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
-
-Admonish test
-
-```admonish info
-A beautifully styled message.
-```
+This project aims to explore the use of distributed architecture in various processes in the teleco industry, starting with the rating and charging process.
