@@ -218,33 +218,32 @@ And offer ads services to advertisers</p>
 </div>
 </div>
 <h2 id="product-composition"><a class="header" href="#product-composition">Product composition</a></h2>
-<pre><code>
-In this use case, we are managing one offer with two related products. The first product is the virtual room and the second product is the advertisement viewed in these rooms.
-
-Unlike other use cases, the products are provided by the teleco provider.
+<p>In this use case, we are managing one offer with two related products. The first product is the virtual room and the second product is the advertisement viewed in these rooms.</p>
+<p>Unlike other use cases, the products are provided by the teleco provider.
 The customer of the teleco provider is the advertising company. while the user of the service is the avatar entering the room and watching the advertisement.
 Each virtual room has a capacity for the number of avatars that can enter the room. Once the quota is reached the room is closed. The advertiser should be able to avail a room again by recharging his balance for the virtual room.
-Balance recharge is out of scope for this release.
-
-Once avatar enters the room, they can watch an advertisement, these views are then charged to the advertisers account.
-
-</code></pre>
-<p>%%{init: {'theme': 'base', 'themeVariables': {
-'lineColor': '#a8201a',
-'primaryColor': '#fae5c7',
-'primaryBorderColor': '#0f8b8d'
+Balance recharge is out of scope for this release.</p>
+<p>Once avatar enters the room, they can watch an advertisement, these views are then charged to the advertisers account.</p>
+<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': {
+  'lineColor': '#a8201a',
+  'primaryColor': '#fae5c7',
+  'primaryBorderColor': '#0f8b8d'
 }}}%%
 flowchart LR
-meta(MetaVerse Bundle)
-room(Virtual Room)
-ads(Advertisements)</p>
-<p>meta --&gt; room
-meta --&gt; ads</p>
-<p>classDef domain fill:#fffff7
-class meta domain</p>
-<p>classDef offer fill:#d6e8d5
+  meta(MetaVerse Bundle)
+  room(Virtual Room)
+  ads(Advertisements)
+
+  meta --&gt; room
+  meta --&gt; ads
+
+classDef domain fill:#fffff7
+class meta domain
+
+classDef offer fill:#d6e8d5
 class room offer
-class ads offer</p>
+class ads offer
+</pre>
 <h2 id="business-processes"><a class="header" href="#business-processes">Business processes</a></h2>
 <p>there's no change in the business process for rating as the rating logic is the same</p>
 <?xml version="1.0" encoding="UTF-8"?>
