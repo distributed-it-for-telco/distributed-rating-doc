@@ -1,0 +1,32 @@
+sequenceDiagram
+    Offer Admin->>+Product Catalog: Create an offer "MetaAds" with 2 atomic offers "RoomAccess" & ""for advertising over the multiverse
+    Offer Admin->>+Product Catalog: Define the price with prepaid plan
+    Offer Admin->>+Product Catalog: select the agent to use for rating and publish the offer
+
+    Partner->>+Marketplace: purchase the "MetaAds" and top up the balance
+    Marketplace->>+Product inventory: Update customer installed products
+    Marketplace->>+Distributed Rating: Top up balance for the customer on "MetaAds" offer
+    Marketplace->>Metaverse: upload partner content interface in metaverse
+    Metaverse->>Metaverse: fill the rooms dedicated to the partner
+    Metaverse->>Distributed Rating: Reset the room capacity
+
+    Avatar ->> Metaverse: Request access to virtual room
+    Metaverse ->> Distributed Rating: send usage for "RoomAccess"
+        Metaverse ->> Distributed Rating: rate usage, verify room balance
+    alt room capacity exhausted
+        Distributed Rating -->> Metaverse: Insufficent balance
+    else
+        Distributed Rating -->> Metaverse: grant access
+        Metaverse ->> Avatar: Display catalog content
+        Metaverse ->> Distributed Rating:rate usage, verify ads balance
+        alt ads balance exhausted
+            Distributed Rating -->> Metaverse: Insufficent balance
+        else
+            Distributed Rating -->> Distributed Rating: reserve credit for watching video
+            Distributed Rating -->> Metaverse: grant access
+            Metaverse ->> Avatar: play the movie
+            Metverse ->> Distributed Rating: update the credit reservation
+        end
+    end
+    Metaverse ->> Distributed Rating: rate usage, verify the room balance and
+    
