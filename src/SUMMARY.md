@@ -2,14 +2,16 @@
 
 [About](./about.md)
 
-# Concepts
+## Concepts
+
 - [Concepts](./CONCEPTS/concepts.md)
 
-# Architecture
+## Architecture
+
 - [Software Architecture](./ARCHITECTURE/architecture.md)
 - [Functional Specification](./ARCHITECTURE/functional-specification.md)
 
-# Use Cases
+## Use Cases
 
 - [UC-01: Customer product inventory](./USE-CASES/UC-01/index.md)
 - [UC-02: Rate usage - Overview](./USE-CASES/UC-02/index.md)
@@ -19,20 +21,26 @@
 - [UC-06: CQRS - Usage Proof](./USE-CASES/UC-06/index.md)
 - [UC-07: Rate usage - MetaVerse](./USE-CASES/UC-07/index.md)
 
-# Architecture decision records
+## Architecture decision records
+
 - [Monorepo code organization](./ADR/ard001-monorepo_code_organization.md)
 
-# How-to
+## Studies
+
+- [Wasm v1 migration](./STUDIES/migration-towards-wasmv1.md)
+
+## How-to
+
 - [WasmCloud Kickstart](./HOW-TO/kickstart.md)
 - [Smithy](./HOW-TO/smithy-notes.md)
 
-# Handbook
+## Handbook
+
 - [Key-Value store management](./HANDBOOK/kv-store-management.md)
 - [Link management](./HANDBOOK/link-management.md)
 - [Shutdown host](./HANDBOOK/shutdown-host.md)
 
-
-# Archives
+## Archives
 
 - [Rationale](./ARCHIVE/rationale.md)
 - [Requirements](./ARCHIVE/requirements.md)
