@@ -3,12 +3,19 @@
     1- explore the changes to the wasm echo-system after thr release of wasm 1.0 and adopting the component model and it tools
     2- suggest a strategy for migrating the existing code to the latest version of wasm
     3- attempt to make the migrated app compatible to and standard wasm standard runtime
+## Motivation
+    - With The announcement of the release of wasm 1.0 and the standardization of component model approach, the wasm main sponsers like wasmcloud iimmedietly started adopting wasm 1.0, which is a breaking change to the current state of the distributed-rating project, mandating a code migration
+## Terms:
+- [WASM](https://webassembly.org/):  a binary instruction format for a stack-based virtual machine
+- [WIT](https://component-model.bytecodealliance.org/design/wit.html)  (Wasm Interface Type): an Interface definition language(IDL) used to define "WASM" Component Model interfaces and worlds
+- [WASI](https://wasi.dev) (WebAssembly System Interface):  a group of standard API specifications for software compiled to the W3C WebAssembly (Wasm) standard. WASI is designed to provide a secure standard interface for applications that can be compiled to Wasm from any language, and that may run anywhere
+
 ## POC approach:
 - The initial goal was to try create a very basic use case based on the rating agent old scenarios
     - [wasm-http-capability]->[**http-listener]->[**rating-agent]->[key-value-capability (redis)]
     - initial plan was not to target any wasm specific platform and use the standardized runtime (wasmtime) since it should be a reference to all platforms
     - suggested steps for dev:
-        1. migrate the interface definitions from old "smithy IDL" to the new standard "wit IDL"
+        1. migrate the interface definitions from old "smithy IDL" to the new standard "[wit IDL](https://component-model.bytecodealliance.org/design/wit.html)"
         2. create a simple http server (as an initial seed for an API gateway) as wasm component which implements wasi/http interface
         3. create a wasm component with basic rating-agent logic
         4. the rating agent should call the key-value store with an instnace of wasi/keyvalue interface
