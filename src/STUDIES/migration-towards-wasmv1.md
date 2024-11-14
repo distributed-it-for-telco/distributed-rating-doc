@@ -53,3 +53,19 @@ graph LR;
     > Conclusion: wasmcloud already uses rpc under the hood when doing component communications
     
     - Wasmcloud provides interfaces for customizing RPC calls, through wasmcloud configuration files
+
+### Phase 3: Migrating a set of components and log all common issues,
+    - first target components
+        - Rating Coordinator
+        - 2 Rating agents to demonstrate both simple and composite rating scenarios
+    - findings
+        - versions for wit depenedencies needed to be fixed across all components, as the main branch is still evolving
+            - a master file was created with a git-commit based version for each dependency as a reference for all components
+        - wasmcloud with its underlying wrpc, has trouble when attempting to re-use wit defined struct between components
+            - component compilation successds, however, failure occurs at runtime
+            - resoltion was to redefine the shred types as non composite types, i.e. basic wit types only can be shared
+            - //TODO: need example here
+        - wit IDL is missing some important types like map
+            - the workaround is to try manually create defintion for such types
+        - unable to create defintions for builder types, which was feasible in previous smithy interface
+        - need to pay attention to wasmcloud updates, as it caused a crash in development environment acorss all developer machines 
