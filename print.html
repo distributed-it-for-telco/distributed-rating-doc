@@ -1422,92 +1422,144 @@ class ads offer
 <li>only one lifecycle (~release) for all artifacts</li>
 </ul>
 <p>We will want to reassess this decision in the target implementation</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="migration-towards-wasm-v1-and-wasi-component-model"><a class="header" href="#migration-towards-wasm-v1-and-wasi-component-model">Migration towards wasm v1 and wasi component model</a></h1>
-<h2 id="objectives"><a class="header" href="#objectives">Objectives:</a></h2>
-<pre><code>1- explore the changes to the wasm echo-system after thr release of wasm 1.0 and adopting the component model and it tools
-2- suggest a strategy for migrating the existing code to the latest version of wasm
-3- attempt to make the migrated app compatible to and standard wasm standard runtime
-</code></pre>
-<h2 id="motivation"><a class="header" href="#motivation">Motivation</a></h2>
-<pre><code>- With The announcement of the release of wasm 1.0 and the standardization of component model approach, the wasm main sponsers like wasmcloud iimmedietly started adopting wasm 1.0, which is a breaking change to the current state of the distributed-rating project, mandating a code migration
-</code></pre>
-<h2 id="terms"><a class="header" href="#terms">Terms:</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><ul>
+<li>How to use what have been done.</li>
+<li>prerequisites ::  what versions of wash / wasm host / (rust targets ?) have to be</li>
+<li>commons
 <ul>
-<li><a href="https://webassembly.org/">WASM</a>:  a binary instruction format for a stack-based virtual machine</li>
-<li><a href="https://component-model.bytecodealliance.org/design/wit.html">WIT</a>  (Wasm Interface Type): an Interface definition language(IDL) used to define "WASM" Component Model interfaces and worlds</li>
-<li><a href="https://wasi.dev">WASI</a> (WebAssembly System Interface):  a group of standard API specifications for software compiled to the W3C WebAssembly (Wasm) standard. WASI is designed to provide a secure standard interface for applications that can be compiled to Wasm from any language, and that may run anywhere</li>
+<li>serialization</li>
+<li>error handling</li>
+<li>builder</li>
 </ul>
-<h2 id="poc-approach"><a class="header" href="#poc-approach">POC approach:</a></h2>
-<h3 id="phase-1-simple-use-case-with-wasm-10"><a class="header" href="#phase-1-simple-use-case-with-wasm-10">Phase 1: Simple use case with wasm 1.0</a></h3>
+</li>
+<li>inter-component communications
 <ul>
-<li>The initial goal was to try create a very basic use case based on the rating agent old scenarios</li>
+<li>wrpc</li>
+<li>build time composition vs runtime composition</li>
 </ul>
-<pre class="mermaid">graph LR;
-    
-    A[&quot;Http-Server (wasi-http implementation)&quot;]--&gt;B[&quot;Http-Listener (API gateway)&quot;];
-    B--&gt;C[&quot;Simple rating agent&quot;];
-    C--&gt;D[&quot;Key value store (redis)&quot;];
-</pre>
-<ul>
-<li>initial plan was not to target any wasm specific platform and use the standardized runtime (wasmtime) since it should be a reference to all platforms</li>
-<li>suggested steps for dev:
+</li>
+<li>wasmcloud vs wasmtime</li>
+<li>current difficulties</li>
+</ul>
+<hr />
+<h1 id="this-file-documents-the-summary-of-work-done-in-order-to-migrate-the-application-to-web-assembly-version--v10-and-component-model"><a class="header" href="#this-file-documents-the-summary-of-work-done-in-order-to-migrate-the-application-to-web-assembly-version--v10-and-component-model">This file documents the summary of work done in order to migrate the application to web assembly version &gt; V1.0 and component model</a></h1>
+<h2 id="main-changes"><a class="header" href="#main-changes">Main changes:</a></h2>
 <ol>
-<li>migrate the interface definitions from old "smithy IDL" to the new standard "<a href="https://component-model.bytecodealliance.org/design/wit.html">wit IDL</a>"</li>
-<li>create a simple http server (as an initial seed for an API gateway) as wasm component which implements wasi/http interface</li>
-<li>create a wasm component with basic rating-agent logic</li>
-<li>the rating agent should call the key-value store with an instnace of wasi/keyvalue interface</li>
-<li>call the rating agent from the http server</li>
+<li>The apotion of The WebAssembly component model as a broad-reaching architecture for building interoperable Wasm libraries, applications, and environments.</li>
+<li>smithy interface language(IDL) has been deprecated in favor of <a href="https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md">WIT IDL</a></li>
+<li>Access to low level system APIs are granted through WebAssembly System Interfaces <a href="https://wasi.dev/">WASI</a> interfaces, written in wit, as well.</li>
 </ol>
-</li>
-<li>Challenges and resolutions:
-<ol>
-<li>Smithy IDL and WIT IDL have a few in common, and currently there are no tools to automate the migration. we had to write the interface manually  =&gt; This is a one-time issue and shall impose no concern in the future development as all old interfaces are already migrated
-<ul>
-<li>wasmcloud have some useful insights about this here https://github.com/wasmCloud/wasmCloud/issues/336 &amp; https://wasmcloud.com/docs/0.82/concepts/interface-driven-development</li>
-</ul>
-</li>
-<li>Managing WIT dependencies is not mature, even using tooll such as wit-deps, as all dependencies must be included inside the project directory.</li>
-<li>WIT IDL , and wit-bindgen (the tool responsible for creating language specific interfaces) are still missing features that can be (and was in our case) criritcal, like defining serializable entities
-<ul>
-<li>The current workaround for this was to copy all interface definitions into a duplicate definitions with implement both mapping functionalities to oiriginal entities and also serialization behavior</li>
-<li>Despite being currently the most realistic solution, it carries many drawbacks, as any changes in the wit files will demand a repetion for such task for the modified entities, which is not a best practice</li>
-</ul>
-</li>
-<li>An attempt to use javascript as an alternative to rust for developing one of the components, however the tools available that support languages other than rust are somehow behind the maurity level of those for rust. We had to switch back to rust</li>
-<li>[<strong>Blocker</strong>] At the current time of writing this document, most <strong>"wasi"</strong> interfaces are in draft phase and have no reference implementation for wasmtime, including <strong>0wasi/keyvalue</strong>, which currently only implemented im-memeory store. We attempted to create an implementation on our own, without success. That is why we were forced to switch back to use wasmcloud runtime and tooling.</li>
-<li>developing for wasmcloud, has a significant divergence from developing for the standard wasm runtime, and sometimes demands using wasmcloud specific dependencies</li>
-</ol>
-</li>
-</ul>
-<h3 id="phase-2-second-level-component-communication"><a class="header" href="#phase-2-second-level-component-communication">Phase 2: second level component communication</a></h3>
-<ul>
-<li>
-<p>The Distributed rating application is using a rating agent tree to calculate the required rate</p>
-</li>
-<li>
-<p>previoulsy such communication was achieved using wasmcloud "wasm-bus", for which we need to identify suitable alternative</p>
-</li>
-<li>
-<p>We investigated the usage of "RPC", and the findings were as follows:</p>
-<ul>
-<li>we have three RPC threads in the wasm community
-<ol>
-<li><a href="https://github.com/WebAssembly/wasi-grpc"><strong>wasi-grpc</strong></a> : this is a system interface only, currently at draft phase, meaning that it has <em>no implementation yet</em>.
-<ul>
-<li>https://github.com/WebAssembly/WASI/issues/540</li>
-<li>Nothing mentions if it is specific to Google's grpc prototcol or something more general</li>
-</ul>
-</li>
-<li><a href="https://github.com/bytecodealliance/wrpc"><strong>wrpc</strong></a>: this is a project hosted by bytecodealliance, it is as defined in its <a href="https://github.com/bytecodealliance/wrpc">repository</a> <code>Component-native transport-agnostic RPC protocol and framework based on WebAssembly Interface Types (WIT)</code>. It requires rust plus either docker or nats-server</li>
-<li><a href="https://wasmcloud.com/docs/hosts/lattice-protocols/rpc"><strong>wasmcloud rpc</strong></a> : wasmCloud was the first reference implementation for wRPC. It uses it to make distributed communication between components to feel exactly like composing components</li>
-</ol>
-</li>
-</ul>
 <blockquote>
-<p>Conclusion: wasmcloud already uses rpc under the hood when doing component communications</p>
+<p><strong>Note</strong> : One of the goals of this migration was to depend mainly on standard APIs and standard runtime (<a href="https://wasmtime.dev/">wasmtime</a>), however, this goal was not possible at the current time, due to a set of reasons explained below</p>
 </blockquote>
+<hr />
+<h2 id="current-standing"><a class="header" href="#current-standing">Current Standing:</a></h2>
 <ul>
-<li>Wasmcloud provides interfaces for customizing RPC calls, through wasmcloud configuration files</li>
+<li>due to the pause of the project, only these components have been migrated
+<ul>
+<li>rating agents:
+<ul>
+<li>aws-stor-rating-agent</li>
+<li>orange-vod-metaverse-agent</li>
+<li>orange-vod-rating-agent</li>
+<li>streaming-rating-agent</li>
+<li>video-rating-agent</li>
+</ul>
+</li>
+<li>usage coolectors
+<ul>
+<li>usage-collector-aws</li>
+<li>usage-collector-orange</li>
+<li>usage-collector-video-provider</li>
+<li>usage-collector-dropbox</li>
+<li>usage-collector-orange-connectivity</li>
+</ul>
+</li>
+<li>rating-coordinator</li>
+<li>kv-balance-manager (balance-management in new directory)</li>
+<li>API-gateway (partially due to the missing of remaining components)</li>
+</ul>
+</li>
+<li>These are the points that needs investigation to be migrated to new version
+<ul>
+<li>CQRS approach for distributed data
+<ul>
+<li>the possibility of re-attempting using concordance</li>
+<li>or finding an alternate</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>These are the points that has been marked as "complete but better to investigate for enhancement"
+<ul>
+<li>Error-handling: fix the error type hierarchy</li>
+<li>Builder DSL: two models were implemented that need comparison and selecting one of them</li>
+</ul>
+</li>
+<li>Topics that still needs investigation which does not have impact on migration
+<ul>
+<li>contract as code</li>
+<li>deployment options for the new version
+<ul>
+<li>The use of purple OS</li>
+<li>The possibility of suing IOT devices as a cluster, by utilizing the lightweight characteristics of wasm infrastructure.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="highlights"><a class="header" href="#highlights">Highlights:</a></h2>
+<h3 id="1-the-usage-of-wasmcloud-over-wasmtime"><a class="header" href="#1-the-usage-of-wasmcloud-over-wasmtime">1. The usage of wasmcloud over wasmtime</a></h3>
+<ul>
+<li>The initial plan was to use wasmtime as a runtime for the new app, as wasmtime is the standard wasm runtime, and all other frameworks use it as a base for their runtime. The motivation was to make the code as independant from specific providers to maintain portability.since all providers customize certain features to fit their infrastucture</li>
+<li>Unfortunately, wasmtime at the time of writing this documentation is still incomplete and missing some critical features, including some important WASI interfaces which in turn are still in draft phase and not in implementation phase yet.</li>
+<li>Before we take the decision to go back to wasmcloud, we tried to find workarounds for the problems, but unfortunately unsuccessfull</li>
+<li>More details about this topic can be found at the migration study in the <a href="MIGRATION/./initial-study.html">studies</a> file</li>
+</ul>
+<h3 id="2-the-commons-component"><a class="header" href="#2-the-commons-component">2. The Commons component:</a></h3>
+<ul>
+<li>in the previous version, common functionalities were exposed to other wasm actors as rust crate, defined in cargo.toml</li>
+<li>in the newer version, according to the component model, all bahaviour should be exposed to components other than self through wit-defined interfaces, to ensure portability and interoperability at large scale, therefore, a special component was created which contains both wit interfaces and implementations for such common functionalities.</li>
+<li>due to the nature of this comonents, plus some limitations that exists in the runtime environment, the common component is not deployed as a standalone running component, rather, it is composed at build time with each component that depends on it.</li>
+<li>more information about the exposed interfaces and how-to use each interface can be found in the README file in the component source code</li>
+</ul>
+<h3 id="3-inter-component-communication"><a class="header" href="#3-inter-component-communication">3. Inter-component communication</a></h3>
+<ul>
+<li>Before migrating to wasmcloud, wasmtime supported only one way to communicate between components, that is to compose both components at build time to generate new wasm components which containes all features.</li>
+<li>Wasmcloud provided a mechanism to facilitate communication between separately deployed components, through the <a href="https://github.com/bytecodealliance/wrpc">WRPC Project</a>
+<ul>
+<li>by only referncing the wit interface, wasmcloud is able to make a "behind the scene" wrpc call to the default implementation of that interface, defined in the wadm configuration file, assuming only one implementation exist</li>
+<li>in the case where multiple implementations exist, we had to use wasmcloud specific APIs to manage the calls, other wise this would not be feasible</li>
+<li>finally, the WRPC project contains some issues affecting component communication using user defined wit-types. mandating build time composition in that case using <a href="https://github.com/bytecodealliance/wac">WAC tool</a>. The composition in that case only is a workaround, not a design decision</li>
+<li><span style="font-weight: 700">To summarize</span>: we use runtime linking (wrpc) only to communicate between two deployed components <strong>(by design)</strong>. We use build time linking (composition) when sharing user defined type <strong>(as a wrokaround)</strong>, or when the depenant component is not deployable, like the commons <strong>(by design)</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="4-current-challenges"><a class="header" href="#4-current-challenges">4. Current Challenges</a></h3>
+<ul>
+<li>Continous evolution of the ecosystem
+<ul>
+<li>Most wasm projects,including wasmcloud, are not at a stable point, and keeps changing at a pace that causes request revision of the code, and sometimes disturb the development process itslef</li>
+<li>examples:
+<ul>
+<li>many wasi interfaces are still at phase-1 or phase-2, meaning there is no standard implementation, and specific provider implementation is needed like wasmcloud</li>
+<li>wasmcloud has made non-backward compatible to the project templates, also switched some dev-tools like wit-deps without explicit migration guide</li>
+<li>wasmcloud is quickly adopting new rust targets, which caused disturpance during development cycle</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>slow learning curve
+<ul>
+<li>new comers to the eco-system are requied to have in depth knowledge of many items, many of them are not trivial:
+<ul>
+<li>rust is the de-facto language for wasm developemnt, and even wit IDL quoted many concepts from rust, so a good knowledge of rust concepts is a must</li>
+<li>The concepts of component model is a must to know in order to be able to go through and be able to develop across the vast eco system</li>
+</ul>
+</li>
+<li>the laguage used in the documentation is both quite academic and far from being easily readable</li>
+<li>the structure of the documentation is pretty poor</li>
+<li>the distribution of the repository of the tools for the ecosystem makes it harder to search for anwers properly</li>
 </ul>
 </li>
 </ul>
