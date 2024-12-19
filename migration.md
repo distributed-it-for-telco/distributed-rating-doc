@@ -58,10 +58,24 @@
 - in the newer version, according to the component model, all bahaviour should be exposed to components other than self through wit-defined interfaces, to ensure portability and interoperability at large scale, therefore, a special component was created which contains both wit interfaces and implementations for such common functionalities.
 - due to the nature of this comonents, plus some limitations that exists in the runtime environment, the common component is not deployed as a standalone running component, rather, it is composed at build time with each component that depends on it.
 - more information about the exposed interfaces and how-to use each interface can be found in the README file in the component source code
-### 1. Inter-component communication
+### 3. Inter-component communication
 - Before migrating to wasmcloud, wasmtime supported only one way to communicate between components, that is to compose both components at build time to generate new wasm components which containes all features.
 - Wasmcloud provided a mechanism to facilitate communication between separately deployed components, through the [WRPC Project](https://github.com/bytecodealliance/wrpc)
    - by only referncing the wit interface, wasmcloud is able to make a "behind the scene" wrpc call to the default implementation of that interface, defined in the wadm configuration file, assuming only one implementation exist
    - in the case where multiple implementations exist, we had to use wasmcloud specific APIs to manage the calls, other wise this would not be feasible
    - finally, the WRPC project contains some issues affecting component communication using user defined wit-types. mandating build time composition in that case using [WAC tool](https://github.com/bytecodealliance/wac). The composition in that case only is a workaround, not a design decision
-   - To summarize, we use runtime linking (wrpc) only to communicate between two deployed components (by design). We use build time linking (composition) when sharing user defined type (as a wrokaround), or when the depenant component is not deployable, like the commons (per design)
+   - <span style="font-weight: 700">To summarize</span>: we use runtime linking (wrpc) only to communicate between two deployed components __(by design)__. We use build time linking (composition) when sharing user defined type __(as a wrokaround)__, or when the depenant component is not deployable, like the commons __(by design)__
+### 4. Current Challenges
+- Continous evolution of the ecosystem
+    - Most wasm projects,including wasmcloud, are not at a stable point, and keeps changing at a pace that causes request revision of the code, and sometimes disturb the development process itslef
+    - examples:
+        - many wasi interfaces are still at phase-1 or phase-2, meaning there is no standard implementation, and specific provider implementation is needed like wasmcloud
+        - wasmcloud has made non-backward compatible to the project templates, also switched some dev-tools like wit-deps without explicit migration guide
+        - wasmcloud is quickly adopting new rust targets, which caused disturpance during development cycle
+- slow learning curve
+    - new comers to the eco-system are requied to have in depth knowledge of many items, many of them are not trivial:
+        - rust is the de-facto language for wasm developemnt, and even wit IDL quoted many concepts from rust, so a good knowledge of rust concepts is a must
+        - The concepts of component model is a must to know in order to be able to go through and be able to develop across the vast eco system
+    - the laguage used in the documentation is both quite academic and far from being easily readable
+    - the structure of the documentation is pretty poor
+    - the distribution of the repository of the tools for the ecosystem makes it harder to search for anwers properly
