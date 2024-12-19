@@ -52,7 +52,7 @@
 - The initial plan was to use wasmtime as a runtime for the new app, as wasmtime is the standard wasm runtime, and all other frameworks use it as a base for their runtime. The motivation was to make the code as independant from specific providers to maintain portability.since all providers customize certain features to fit their infrastucture
 - Unfortunately, wasmtime at the time of writing this documentation is still incomplete and missing some critical features, including some important WASI interfaces which in turn are still in draft phase and not in implementation phase yet.
 - Before we take the decision to go back to wasmcloud, we tried to find workarounds for the problems, but unfortunately unsuccessfull
-- More details about this topic can be found at the migration study in the [studies](./src/STUDIES/migration-towards-wasmv1.md) file
+- More details about this topic can be found at the migration study in the [studies](./initial-study.md) file
 ### 2. The Commons component:
 - in the previous version, common functionalities were exposed to other wasm actors as rust crate, defined in cargo.toml
 - in the newer version, according to the component model, all bahaviour should be exposed to components other than self through wit-defined interfaces, to ensure portability and interoperability at large scale, therefore, a special component was created which contains both wit interfaces and implementations for such common functionalities.

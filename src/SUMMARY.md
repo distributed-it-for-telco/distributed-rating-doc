@@ -25,9 +25,9 @@
 
 - [Monorepo code organization](./ADR/ard001-monorepo_code_organization.md)
 
-# Studies
+# MIGRATION
 
-- [Wasm v1 migration](./STUDIES/migration-towards-wasmv1.md)
+- [Wasm v1 migration](./MIGRATION/index.md)
 
 # How-to
 
